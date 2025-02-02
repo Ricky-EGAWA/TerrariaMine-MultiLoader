@@ -1,8 +1,8 @@
-package com.example.examplemod;
+package com.ricky.terrariamod;
 
 import net.fabricmc.api.ModInitializer;
 
-public class ExampleMod implements ModInitializer {
+public class TerrariaMod implements ModInitializer {
     
     @Override
     public void onInitialize() {

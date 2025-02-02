@@ -1,8 +1,7 @@
-package com.example.examplemod.mixin;
+package com.ricky.terrariamod.mixin;
 
-import com.example.examplemod.Constants;
+import com.ricky.terrariamod.Constants;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

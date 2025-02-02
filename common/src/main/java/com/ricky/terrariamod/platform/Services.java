@@ -1,7 +1,7 @@
-package com.example.examplemod.platform;
+package com.ricky.terrariamod.platform;
 
-import com.example.examplemod.Constants;
-import com.example.examplemod.platform.services.IPlatformHelper;
+import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 
