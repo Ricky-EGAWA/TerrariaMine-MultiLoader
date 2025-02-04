@@ -2,6 +2,7 @@ package com.ricky.terrariamod.platform;
 
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.platform.services.IPlatformHelper;
+import com.ricky.terrariamod.platform.services.IRegistryFactory;
 
 import java.util.ServiceLoader;
 
@@ -13,6 +14,7 @@ public class Services {
     // In this example we provide a platform helper which provides information about what platform the mod is running on.
     // For example this can be used to check if the code is running on Forge vs Fabric, or to ask the modloader if another
     // mod is loaded.
+    public static final IRegistryFactory REGISTRY_FACTORY = load(IRegistryFactory.class);
     public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
 
     // This code is used to load a service for the current environment. Your implementation of the service must be defined
@@ -23,7 +25,8 @@ public class Services {
 
         final T loadedService = ServiceLoader.load(clazz)
                 .findFirst()
-                .orElseThrow(() -> new NullPointerException("Failed to load service for " + clazz.getName()));
+                .orElseThrow(
+                        () -> new NullPointerException("Failed to load service for " + clazz.getName()));
         Constants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
         return loadedService;
     }
