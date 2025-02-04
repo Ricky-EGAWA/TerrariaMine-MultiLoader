@@ -18,10 +18,8 @@
             "com.ricky.terrariamod.TerrariaMod"
         ]
     },
-//    TODO mixinに問題があれば修正
     "mixins": [
-        "${mod_id}.mixins.json",
-        "${mod_id}.fabric.mixins.json"
+        "terrariamod.fabric.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=0.14",
