@@ -17,12 +17,46 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        // アイテムモデルの登録
         simpleItem(ModItems.COBALT_INGOT);
+        simpleItem(ModItems.ORICHALCUM_INGOT);
+        simpleItem(ModItems.ADAMANTITE_INGOT);
+        simpleItem(ModItems.HELLSTONE_INGOT);
+        simpleItem(ModItems.COBALT_RAW);
+        simpleItem(ModItems.ORICHALCUM_RAW);
+        simpleItem(ModItems.ADAMANTITE_RAW);
+        simpleItem(ModItems.HELLSTONE_RAW);
+        simpleItem(ModItems.SPIDER_FANG);
+        // 他のアイテムを追加することができます
+
+        handheldItem(ModItems.COBALT_PICKAXE);
+        handheldItem(ModItems.COBALT_AXE);
+        handheldItem(ModItems.COBALT_SHOVEL);
+        handheldItem(ModItems.COBALT_SWORD);
+        handheldItem(ModItems.ORICHALCUM_PICKAXE);
+        handheldItem(ModItems.ORICHALCUM_AXE);
+        handheldItem(ModItems.ORICHALCUM_SHOVEL);
+        handheldItem(ModItems.ORICHALCUM_SWORD);
+        handheldItem(ModItems.ADAMANTITE_PICKAXE);
+        handheldItem(ModItems.ADAMANTITE_AXE);
+        handheldItem(ModItems.ADAMANTITE_SHOVEL);
+        handheldItem(ModItems.ADAMANTITE_SWORD);
+        handheldItem(ModItems.HELLSTONE_PICKAXE);
+        handheldItem(ModItems.HELLSTONE_AXE);
+        handheldItem(ModItems.HELLSTONE_SHOVEL);
+        handheldItem(ModItems.HELLSTONE_SWORD);
+
     }
+
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Constants.MOD_ID,"item/" + item.getId().getPath()));
+    }
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld")).texture("layer0",
                 new ResourceLocation(Constants.MOD_ID,"item/" + item.getId().getPath()));
     }
 }
