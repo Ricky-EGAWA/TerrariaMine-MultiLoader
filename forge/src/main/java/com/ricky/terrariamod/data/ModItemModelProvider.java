@@ -46,6 +46,54 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.HELLSTONE_SHOVEL);
         handheldItem(ModItems.HELLSTONE_SWORD);
 
+        //region 防具
+        simpleItem(ModItems.OAK_HELMET);
+        simpleItem(ModItems.OAK_CHESTPLATE);
+        simpleItem(ModItems.OAK_LEGGINGS);
+        simpleItem(ModItems.OAK_BOOTS);
+
+        simpleItem(ModItems.COPPER_HELMET);
+        simpleItem(ModItems.COPPER_CHESTPLATE);
+        simpleItem(ModItems.COPPER_LEGGINGS);
+        simpleItem(ModItems.COPPER_BOOTS);
+
+        simpleItem(ModItems.OBSIDIAN_HELMET);
+        simpleItem(ModItems.OBSIDIAN_CHESTPLATE);
+        simpleItem(ModItems.OBSIDIAN_LEGGINGS);
+        simpleItem(ModItems.OBSIDIAN_BOOTS);
+
+        simpleItem(ModItems.CACTUS_HELMET);
+        simpleItem(ModItems.CACTUS_CHESTPLATE);
+        simpleItem(ModItems.CACTUS_LEGGINGS);
+        simpleItem(ModItems.CACTUS_BOOTS);
+
+        simpleItem(ModItems.PUMPKIN_HELMET);
+        simpleItem(ModItems.PUMPKIN_CHESTPLATE);
+        simpleItem(ModItems.PUMPKIN_LEGGINGS);
+        simpleItem(ModItems.PUMPKIN_BOOTS);
+
+        simpleItem(ModItems.GLASS_HELMET);
+        simpleItem(ModItems.NIGHT_HELMET);
+        simpleItem(ModItems.COBALT_HELMET);
+        simpleItem(ModItems.COBALT_CHESTPLATE);
+        simpleItem(ModItems.COBALT_LEGGINGS);
+        simpleItem(ModItems.COBALT_BOOTS);
+
+        simpleItem(ModItems.ORICHALCUM_HELMET);
+        simpleItem(ModItems.ORICHALCUM_CHESTPLATE);
+        simpleItem(ModItems.ORICHALCUM_LEGGINGS);
+        simpleItem(ModItems.ORICHALCUM_BOOTS);
+
+        simpleItem(ModItems.ADAMANTITE_HELMET);
+        simpleItem(ModItems.ADAMANTITE_CHESTPLATE);
+        simpleItem(ModItems.ADAMANTITE_LEGGINGS);
+        simpleItem(ModItems.ADAMANTITE_BOOTS);
+
+        simpleItem(ModItems.HELLSTONE_HELMET);
+        simpleItem(ModItems.HELLSTONE_CHESTPLATE);
+        simpleItem(ModItems.HELLSTONE_LEGGINGS);
+        simpleItem(ModItems.HELLSTONE_BOOTS);
+        //endregion
     }
 
 

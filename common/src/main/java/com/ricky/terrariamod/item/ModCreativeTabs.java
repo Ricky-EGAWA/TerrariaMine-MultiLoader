@@ -14,6 +14,73 @@ public class ModCreativeTabs {
     public static final RegistryProvider<CreativeModeTab> CREATIVE_TABS =
             RegistryProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MOD_ID);
 
+    public static final RegistryObject<CreativeModeTab> ARMOR_TAB = CREATIVE_TABS.register("armor_tab",
+            () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
+                    .title(Component.translatable("itemgroup.armor_tab"))
+                    .icon(() -> new ItemStack(ModItems.COBALT_CHESTPLATE.get()))
+                    .displayItems((parameters, output) -> {
+                        // OAK Armor
+                        output.accept(ModItems.OAK_HELMET.get());
+                        output.accept(ModItems.OAK_CHESTPLATE.get());
+                        output.accept(ModItems.OAK_LEGGINGS.get());
+                        output.accept(ModItems.OAK_BOOTS.get());
+
+                        // COPPER Armor
+                        output.accept(ModItems.COPPER_HELMET.get());
+                        output.accept(ModItems.COPPER_CHESTPLATE.get());
+                        output.accept(ModItems.COPPER_LEGGINGS.get());
+                        output.accept(ModItems.COPPER_BOOTS.get());
+
+                        // OBSIDIAN Armor
+                        output.accept(ModItems.OBSIDIAN_HELMET.get());
+                        output.accept(ModItems.OBSIDIAN_CHESTPLATE.get());
+                        output.accept(ModItems.OBSIDIAN_LEGGINGS.get());
+                        output.accept(ModItems.OBSIDIAN_BOOTS.get());
+
+                        // CACTUS Armor
+                        output.accept(ModItems.CACTUS_HELMET.get());
+                        output.accept(ModItems.CACTUS_CHESTPLATE.get());
+                        output.accept(ModItems.CACTUS_LEGGINGS.get());
+                        output.accept(ModItems.CACTUS_BOOTS.get());
+
+                        // PUMPKIN Armor
+                        output.accept(ModItems.PUMPKIN_HELMET.get());
+                        output.accept(ModItems.PUMPKIN_CHESTPLATE.get());
+                        output.accept(ModItems.PUMPKIN_LEGGINGS.get());
+                        output.accept(ModItems.PUMPKIN_BOOTS.get());
+
+                        // GLASS & NIGHT Armor
+                        output.accept(ModItems.GLASS_HELMET.get());
+                        output.accept(ModItems.NIGHT_HELMET.get());
+
+                        // COBALT Armor
+                        output.accept(ModItems.COBALT_HELMET.get());
+                        output.accept(ModItems.COBALT_CHESTPLATE.get());
+                        output.accept(ModItems.COBALT_LEGGINGS.get());
+                        output.accept(ModItems.COBALT_BOOTS.get());
+
+                        // ORICHALCUM Armor
+                        output.accept(ModItems.ORICHALCUM_HELMET.get());
+                        output.accept(ModItems.ORICHALCUM_CHESTPLATE.get());
+                        output.accept(ModItems.ORICHALCUM_LEGGINGS.get());
+                        output.accept(ModItems.ORICHALCUM_BOOTS.get());
+
+                        // ADAMANTITE Armor
+                        output.accept(ModItems.ADAMANTITE_HELMET.get());
+                        output.accept(ModItems.ADAMANTITE_CHESTPLATE.get());
+                        output.accept(ModItems.ADAMANTITE_LEGGINGS.get());
+                        output.accept(ModItems.ADAMANTITE_BOOTS.get());
+
+                        // HELLSTONE Armor
+                        output.accept(ModItems.HELLSTONE_HELMET.get());
+                        output.accept(ModItems.HELLSTONE_CHESTPLATE.get());
+                        output.accept(ModItems.HELLSTONE_LEGGINGS.get());
+                        output.accept(ModItems.HELLSTONE_BOOTS.get());
+                    })
+                    .build()
+    );
+
+
     public static final RegistryObject<CreativeModeTab> TOOL_TAB = CREATIVE_TABS.register("tool_tab",
             () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
                     .title(Component.translatable("itemgroup.tool_tab"))

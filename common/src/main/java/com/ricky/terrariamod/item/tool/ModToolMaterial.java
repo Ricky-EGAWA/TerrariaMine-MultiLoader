@@ -1,5 +1,6 @@
-package com.ricky.terrariamod.item;
+package com.ricky.terrariamod.item.tool;
 
+import com.ricky.terrariamod.item.ModItems;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 
