@@ -1,6 +1,7 @@
 package com.ricky.terrariamod;
 
 import com.ricky.terrariamod.block.ModBlocks;
+import com.ricky.terrariamod.item.ModCreativeTabs;
 import com.ricky.terrariamod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -21,6 +22,7 @@ public class TerrariaMod implements ModInitializer {
         ModItems.register();
         ModBlocks.register();
         //クリエイティブタブ
+        ModCreativeTabs.register();
 
     }
 }
