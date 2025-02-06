@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "terrariamod:item/cobalt_shovel"
+  }
+}

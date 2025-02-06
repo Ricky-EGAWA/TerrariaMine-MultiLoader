@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "terrariamod:block/pearl_sandstone_bottom",
+    "side": "terrariamod:block/pearl_sandstone_side",
+    "top": "terrariamod:block/pearl_sandstone_top"
+  }
+}

@@ -74,6 +74,7 @@ public class ModItems {
     public static final RegistryObject<Item> HELLSTONE_SWORD = ITEMS.register("hellstone_sword",
             () -> new SwordItem(ModToolMaterial.HELLSTONE_INGOT, 5, -2.4f, new Item.Properties()));
     //endregion
+
     //region 防具
     public static final RegistryObject<Item> OAK_HELMET = ITEMS.register("oak_helmet",
             () -> new ModArmorItem(ModArmorMaterials.OAK, ArmorItem.Type.HELMET, new Item.Properties()));

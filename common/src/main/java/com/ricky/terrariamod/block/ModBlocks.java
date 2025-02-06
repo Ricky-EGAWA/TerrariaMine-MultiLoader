@@ -3,11 +3,13 @@ package com.ricky.terrariamod.block;
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.registry.RegistryProvider;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Supplier;
 
@@ -17,13 +19,98 @@ public class ModBlocks {
     public static final RegistryProvider<Item> ITEMS =
             RegistryProvider.get(Registries.ITEM, Constants.MOD_ID);
 
-    public static final Supplier<Block> COBALT_BLOCK = BLOCKS.register("cobalt_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE))
-    );
-    public static final Supplier<Item> COBALT_BLOCK_ITEM = ITEMS.register("cobalt_block",
-            () -> new BlockItem(COBALT_BLOCK.get(), new Item.Properties())
-    );
 
+    // ブロック登録
+    //region 鉱石
+    public static final Supplier<Block> COBALT_BLOCK = registerBlockWithItem("cobalt_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final Supplier<Block> COBALT_ORE = registerBlockWithItem("cobalt_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).strength(50f, 1200f), UniformInt.of(2, 5)));
+    public static final Supplier<Block> DEEPSLATE_COBALT_ORE = registerBlockWithItem("deepslate_cobalt_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).strength(50f, 1200f), UniformInt.of(2, 5)));
+    public static final Supplier<Block> ORICHALCUM_BLOCK = registerBlockWithItem("orichalcum_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final Supplier<Block> ORICHALCUM_ORE = registerBlockWithItem("orichalcum_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).strength(50f, 1200f), UniformInt.of(2, 5)));
+    public static final Supplier<Block> DEEPSLATE_ORICHALCUM_ORE = registerBlockWithItem("deepslate_orichalcum_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).strength(50f, 1200f), UniformInt.of(2, 5)));
+    public static final Supplier<Block> ADAMANTITE_BLOCK = registerBlockWithItem("adamantite_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final Supplier<Block> ADAMANTITE_ORE = registerBlockWithItem("adamantite_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).strength(50f, 1200f), UniformInt.of(2, 5)));
+    public static final Supplier<Block> DEEPSLATE_ADAMANTITE_ORE = registerBlockWithItem("deepslate_adamantite_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).strength(50f, 1200f), UniformInt.of(2, 5)));
+    public static final Supplier<Block> HELLSTONE_BLOCK = registerBlockWithItem("hellstone_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final Supplier<Block> HELLSTONE_ORE = registerBlockWithItem("hellstone_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).strength(50f, 1200f), UniformInt.of(2, 5)));
+    //endregion
+
+    //region バイオーム特有
+    public static final Supplier<Block> EBON_STONE = registerBlockWithItem("ebon_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final Supplier<Block> EBON_SAND = registerBlockWithItem("ebon_sand",
+            () -> new SandBlock(10947717, BlockBehaviour.Properties.copy(Blocks.SAND)));
+    public static final Supplier<Block> EBON_SANDSTONE = registerBlockWithItem("ebon_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
+    public static final Supplier<Block> EBON_ICE = registerBlockWithItem("ebon_ice",
+            () -> new IceBlock(BlockBehaviour.Properties.copy(Blocks.ICE)));
+    public static final Supplier<Block> CRIM_STONE = registerBlockWithItem("crim_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final Supplier<Block> CRIM_SAND = registerBlockWithItem("crim_sand",
+            () -> new SandBlock(11732246, BlockBehaviour.Properties.copy(Blocks.SAND)));
+    public static final Supplier<Block> CRIM_SANDSTONE = registerBlockWithItem("crim_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
+    public static final Supplier<Block> CRIM_ICE = registerBlockWithItem("crim_ice",
+            () -> new IceBlock(BlockBehaviour.Properties.copy(Blocks.ICE)));
+    public static final Supplier<Block> PEARL_STONE = registerBlockWithItem("pearl_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final Supplier<Block> PEARL_SAND = registerBlockWithItem("pearl_sand",
+            () -> new SandBlock(15987186, BlockBehaviour.Properties.copy(Blocks.SAND)));
+    public static final Supplier<Block> PEARL_SANDSTONE = registerBlockWithItem("pearl_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
+    public static final Supplier<Block> PEARL_ICE = registerBlockWithItem("pearl_ice",
+            () -> new IceBlock(BlockBehaviour.Properties.copy(Blocks.ICE)));
+    //endregion
+
+    //region 花 キノコ
+    public static final Supplier<Block> DEATH_WEED = registerBlockWithItem("death_weed",
+            () -> new FlowerBlock(MobEffects.HARM, 10, BlockBehaviour.Properties.copy(Blocks.ALLIUM)));
+    public static final Supplier<Block> POTTED_DEATH_WEED = registerBlockWithItem("potted_death_weed",
+            () -> new FlowerPotBlock(DEATH_WEED.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    public static final Supplier<Block> SHIVER_THORN = registerBlockWithItem("shiver_thorn",
+            () -> new FlowerBlock(MobEffects.HARM, 10, BlockBehaviour.Properties.copy(Blocks.ALLIUM)));
+    public static final Supplier<Block> POTTED_SHIVER_THORN = registerBlockWithItem("potted_shiver_thorn",
+            () -> new FlowerPotBlock(SHIVER_THORN.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    public static final Supplier<Block> VILE_MUSHROOM = registerBlockWithItem("vile_mushroom",
+            () -> new FlowerBlock(MobEffects.HARM, 10, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)));
+    public static final Supplier<Block> POTTED_VILE_MUSHROOM = registerBlockWithItem("potted_vile_mushroom",
+            () -> new FlowerPotBlock(VILE_MUSHROOM.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    public static final Supplier<Block> VICIOUS_MUSHROOM = registerBlockWithItem("vicious_mushroom",
+            () -> new FlowerBlock(MobEffects.HARM, 10, BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)));
+    public static final Supplier<Block> POTTED_VICIOUS_MUSHROOM = registerBlockWithItem("potted_vicious_mushroom",
+            () -> new FlowerPotBlock(VICIOUS_MUSHROOM.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+    //endregion
+
+
+
+//    public static final Supplier<Block> GLOWING_MUSHROOM = registerBlockWithItem("glowing_mushroom",
+//            () -> new MushroomBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM).lightLevel(state -> 6), ModConfiguredFeatures.HUGE_GLOWING_MUSHROOM));
+    public static final Supplier<Block> GLOWING_MOSS = registerBlockWithItem("glowing_moss_block",
+            () -> new MossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK).lightLevel(state -> 6).mapColor(MapColor.COLOR_BLUE)));
+    public static final Supplier<Block> ICICLE = registerBlockWithItem("icicle",
+            () -> new PointedDripstoneBlock(BlockBehaviour.Properties.copy(Blocks.POINTED_DRIPSTONE)));
+    public static final Supplier<Block> GLOWING_MUSHROOM_BLOCK = registerBlockWithItem("glowing_mushroom_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM_BLOCK).lightLevel(state -> 6)));
+    public static final Supplier<Block> GLOWING_MUSHROOM_STEM = registerBlockWithItem("glowing_mushroom_stem",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM).lightLevel(state -> 6)));
+
+
+    private static Supplier<Block> registerBlockWithItem(String name, Supplier<Block> blockSupplier) {
+        Supplier<Block> block = BLOCKS.register(name, blockSupplier);
+        ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return block;
+    }
     public static void register() {
     }
 }

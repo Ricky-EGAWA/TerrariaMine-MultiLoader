@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "terrariamod:block/crim_sandstone_bottom",
+    "side": "terrariamod:block/crim_sandstone_side",
+    "top": "terrariamod:block/crim_sandstone_top"
+  }
+}

@@ -135,11 +135,60 @@ public class ModCreativeTabs {
                     .title(Component.translatable("itemgroup.block_tab"))
                     .icon(() -> new ItemStack(ModBlocks.COBALT_BLOCK.get()))
                     .displayItems((parameters, output) -> {
+                        // COBALT 系
                         output.accept(ModBlocks.COBALT_BLOCK.get());
-                        // 他のアイテムを追加
+                        output.accept(ModBlocks.COBALT_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_COBALT_ORE.get());
+
+                        // ORICHALCUM 系
+                        output.accept(ModBlocks.ORICHALCUM_BLOCK.get());
+                        output.accept(ModBlocks.ORICHALCUM_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_ORICHALCUM_ORE.get());
+
+                        // ADAMANTITE 系
+                        output.accept(ModBlocks.ADAMANTITE_BLOCK.get());
+                        output.accept(ModBlocks.ADAMANTITE_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_ADAMANTITE_ORE.get());
+
+                        // HELLSTONE 系
+                        output.accept(ModBlocks.HELLSTONE_BLOCK.get());
+                        output.accept(ModBlocks.HELLSTONE_ORE.get());
+
+                        // EBON 系
+                        output.accept(ModBlocks.EBON_STONE.get());
+                        output.accept(ModBlocks.EBON_SAND.get());
+                        output.accept(ModBlocks.EBON_SANDSTONE.get());
+                        output.accept(ModBlocks.EBON_ICE.get());
+
+                        // CRIM 系
+                        output.accept(ModBlocks.CRIM_STONE.get());
+                        output.accept(ModBlocks.CRIM_SAND.get());
+                        output.accept(ModBlocks.CRIM_SANDSTONE.get());
+                        output.accept(ModBlocks.CRIM_ICE.get());
+
+                        // PEARL 系
+                        output.accept(ModBlocks.PEARL_STONE.get());
+                        output.accept(ModBlocks.PEARL_SAND.get());
+                        output.accept(ModBlocks.PEARL_SANDSTONE.get());
+                        output.accept(ModBlocks.PEARL_ICE.get());
+
+                        // 花系
+                        output.accept(ModBlocks.DEATH_WEED.get());
+                        output.accept(ModBlocks.SHIVER_THORN.get());
+                        output.accept(ModBlocks.VILE_MUSHROOM.get());
+                        output.accept(ModBlocks.VICIOUS_MUSHROOM.get());
+
+                        // GLOWING 系
+                        output.accept(ModBlocks.GLOWING_MOSS.get());
+                        output.accept(ModBlocks.GLOWING_MUSHROOM_BLOCK.get());
+                        output.accept(ModBlocks.GLOWING_MUSHROOM_STEM.get());
+
+                        // ICICLE 系
+//                        output.accept(ModBlocks.ICICLE.get());
                     })
                     .build()
     );
+
 
     public static void register() {
         // クラスのロードを強制して登録を確実に行う
