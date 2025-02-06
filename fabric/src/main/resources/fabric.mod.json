@@ -16,6 +16,9 @@
     "entrypoints": {
         "main": [
             "com.ricky.terrariamod.TerrariaMod"
+        ],
+        "client": [
+            "com.ricky.terrariamod.TerrariaModClient"
         ]
     },
     "mixins": [

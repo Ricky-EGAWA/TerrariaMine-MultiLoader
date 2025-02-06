@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "terrariamod:block/pearl_log",
+    "side": "terrariamod:block/pearl_log"
+  }
+}

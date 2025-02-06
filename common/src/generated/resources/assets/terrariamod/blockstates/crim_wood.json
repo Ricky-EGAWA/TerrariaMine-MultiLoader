@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "terrariamod:block/crim_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "terrariamod:block/crim_wood"
+    },
+    "axis=z": {
+      "model": "terrariamod:block/crim_wood_horizontal",
+      "x": 90
+    }
+  }
+}

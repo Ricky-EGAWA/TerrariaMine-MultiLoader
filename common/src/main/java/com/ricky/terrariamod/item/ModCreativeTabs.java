@@ -135,7 +135,7 @@ public class ModCreativeTabs {
                     .title(Component.translatable("itemgroup.block_tab"))
                     .icon(() -> new ItemStack(ModBlocks.COBALT_BLOCK.get()))
                     .displayItems((parameters, output) -> {
-                        // COBALT 系
+                        //region 鉱石系
                         output.accept(ModBlocks.COBALT_BLOCK.get());
                         output.accept(ModBlocks.COBALT_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_COBALT_ORE.get());
@@ -153,8 +153,9 @@ public class ModCreativeTabs {
                         // HELLSTONE 系
                         output.accept(ModBlocks.HELLSTONE_BLOCK.get());
                         output.accept(ModBlocks.HELLSTONE_ORE.get());
+                        //endregion
 
-                        // EBON 系
+                        //region バイオーム構成
                         output.accept(ModBlocks.EBON_STONE.get());
                         output.accept(ModBlocks.EBON_SAND.get());
                         output.accept(ModBlocks.EBON_SANDSTONE.get());
@@ -171,6 +172,7 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.PEARL_SAND.get());
                         output.accept(ModBlocks.PEARL_SANDSTONE.get());
                         output.accept(ModBlocks.PEARL_ICE.get());
+                        //endregion
 
                         // 花系
                         output.accept(ModBlocks.DEATH_WEED.get());
@@ -182,6 +184,32 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.GLOWING_MOSS.get());
                         output.accept(ModBlocks.GLOWING_MUSHROOM_BLOCK.get());
                         output.accept(ModBlocks.GLOWING_MUSHROOM_STEM.get());
+
+                        //region 木材
+                        output.accept(ModBlocks.EBON_LOG.get());
+                        output.accept(ModBlocks.EBON_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_EBON_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_EBON_WOOD.get());
+                        output.accept(ModBlocks.EBON_PLANKS.get());
+                        output.accept(ModBlocks.EBON_LEAVES.get());
+//                        output.accept(ModBlocks.EBON_SAPLING.get());
+
+                        output.accept(ModBlocks.CRIM_LOG.get());
+                        output.accept(ModBlocks.CRIM_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_CRIM_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_CRIM_WOOD.get());
+                        output.accept(ModBlocks.CRIM_PLANKS.get());
+                        output.accept(ModBlocks.CRIM_LEAVES.get());
+//                        output.accept(ModBlocks.CRIM_SAPLING.get());
+
+                        output.accept(ModBlocks.PEARL_LOG.get());
+                        output.accept(ModBlocks.PEARL_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_PEARL_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_PEARL_WOOD.get());
+                        output.accept(ModBlocks.PEARL_PLANKS.get());
+                        output.accept(ModBlocks.PEARL_LEAVES.get());
+//                        output.accept(ModBlocks.PEARL_SAPLING.get());
+                        //endregion
 
                         // ICICLE 系
 //                        output.accept(ModBlocks.ICICLE.get());

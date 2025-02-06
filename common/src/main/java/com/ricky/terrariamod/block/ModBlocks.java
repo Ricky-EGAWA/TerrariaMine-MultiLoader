@@ -92,7 +92,53 @@ public class ModBlocks {
             () -> new FlowerPotBlock(VICIOUS_MUSHROOM.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
     //endregion
 
+    //region 木
+    public static final Supplier<Block> EBON_LOG = registerBlockWithItem("ebon_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+    public static final Supplier<Block> EBON_WOOD = registerBlockWithItem("ebon_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+    public static final Supplier<Block> STRIPPED_EBON_LOG = registerBlockWithItem("stripped_ebon_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Supplier<Block> STRIPPED_EBON_WOOD = registerBlockWithItem("stripped_ebon_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final Supplier<Block> EBON_PLANKS = registerBlockWithItem("ebon_planks",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final Supplier<Block> EBON_LEAVES = registerBlockWithItem("ebon_leaves",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).noOcclusion()));
+//    public static final Supplier<Block> EBON_SAPLING = registerBlockWithItem("ebon_sapling",
+//            () -> new SaplingBlock(new EbonSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
 
+    public static final Supplier<Block> CRIM_LOG = registerBlockWithItem("crim_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+    public static final Supplier<Block> CRIM_WOOD = registerBlockWithItem("crim_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+    public static final Supplier<Block> STRIPPED_CRIM_LOG = registerBlockWithItem("stripped_crim_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Supplier<Block> STRIPPED_CRIM_WOOD = registerBlockWithItem("stripped_crim_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final Supplier<Block> CRIM_PLANKS = registerBlockWithItem("crim_planks",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final Supplier<Block> CRIM_LEAVES = registerBlockWithItem("crim_leaves",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).noOcclusion()));
+//    public static final Supplier<Block> CRIM_SAPLING = registerBlockWithItem("crim_sapling",
+//            () -> new SaplingBlock(new CrimSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
+
+    public static final Supplier<Block> PEARL_LOG = registerBlockWithItem("pearl_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+    public static final Supplier<Block> PEARL_WOOD = registerBlockWithItem("pearl_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+    public static final Supplier<Block> STRIPPED_PEARL_LOG = registerBlockWithItem("stripped_pearl_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Supplier<Block> STRIPPED_PEARL_WOOD = registerBlockWithItem("stripped_pearl_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final Supplier<Block> PEARL_PLANKS = registerBlockWithItem("pearl_planks",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final Supplier<Block> PEARL_LEAVES = registerBlockWithItem("pearl_leaves",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).noOcclusion()));
+//    public static final Supplier<Block> PEARL_SAPLING = registerBlockWithItem("pearl_sapling",
+//            () -> new SaplingBlock(new PearlSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
+
+    //endregion
 
 //    public static final Supplier<Block> GLOWING_MUSHROOM = registerBlockWithItem("glowing_mushroom",
 //            () -> new MushroomBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM).lightLevel(state -> 6), ModConfiguredFeatures.HUGE_GLOWING_MUSHROOM));

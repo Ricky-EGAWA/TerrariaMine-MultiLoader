@@ -5,9 +5,11 @@ import com.ricky.terrariamod.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Supplier;
 
@@ -72,12 +74,75 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // ICICLE 系
 //        blockWithItem(ModBlocks.ICICLE);
+
+        //region 木材
+        logBlock(((RotatedPillarBlock) ModBlocks.EBON_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.EBON_WOOD.get()), blockTexture(ModBlocks.EBON_LOG.get()), blockTexture(ModBlocks.EBON_LOG.get()));
+
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_EBON_LOG.get()), blockTexture(ModBlocks.STRIPPED_EBON_LOG.get()),
+                new ResourceLocation(Constants.MOD_ID, "block/stripped_ebon_log_top"));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_EBON_WOOD.get()), blockTexture(ModBlocks.STRIPPED_EBON_LOG.get()),
+                blockTexture(ModBlocks.STRIPPED_EBON_LOG.get()));
+        blockItem(ModBlocks.EBON_LOG);
+        blockItem(ModBlocks.EBON_WOOD);
+
+        blockItem(ModBlocks.STRIPPED_EBON_LOG);
+        blockItem(ModBlocks.STRIPPED_EBON_WOOD);
+        blockWithItem(ModBlocks.EBON_PLANKS);
+        leavesBlock(ModBlocks.EBON_LEAVES);
+//        saplingBlock(ModBlocks.EBON_SAPLING);
+
+        logBlock(((RotatedPillarBlock) ModBlocks.CRIM_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.CRIM_WOOD.get()), blockTexture(ModBlocks.CRIM_LOG.get()), blockTexture(ModBlocks.CRIM_LOG.get()));
+
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_CRIM_LOG.get()), blockTexture(ModBlocks.STRIPPED_CRIM_LOG.get()),
+                new ResourceLocation(Constants.MOD_ID, "block/stripped_crim_log_top"));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_CRIM_WOOD.get()), blockTexture(ModBlocks.STRIPPED_CRIM_LOG.get()),
+                blockTexture(ModBlocks.STRIPPED_CRIM_LOG.get()));
+        blockItem(ModBlocks.CRIM_LOG);
+        blockItem(ModBlocks.CRIM_WOOD);
+        blockItem(ModBlocks.STRIPPED_CRIM_LOG);
+        blockItem(ModBlocks.STRIPPED_CRIM_WOOD);
+        blockWithItem(ModBlocks.CRIM_PLANKS);
+        leavesBlock(ModBlocks.CRIM_LEAVES);
+//        saplingBlock(ModBlocks.CRIM_SAPLING);
+
+        logBlock(((RotatedPillarBlock) ModBlocks.PEARL_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.PEARL_WOOD.get()), blockTexture(ModBlocks.PEARL_LOG.get()), blockTexture(ModBlocks.PEARL_LOG.get()));
+
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_PEARL_LOG.get()), blockTexture(ModBlocks.STRIPPED_PEARL_LOG.get()),
+                new ResourceLocation(Constants.MOD_ID, "block/stripped_pearl_log_top"));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_PEARL_WOOD.get()), blockTexture(ModBlocks.STRIPPED_PEARL_LOG.get()),
+                blockTexture(ModBlocks.STRIPPED_PEARL_LOG.get()));
+        blockItem(ModBlocks.PEARL_LOG);
+        blockItem(ModBlocks.PEARL_WOOD);
+        blockItem(ModBlocks.STRIPPED_PEARL_LOG);
+        blockItem(ModBlocks.STRIPPED_PEARL_WOOD);
+        blockWithItem(ModBlocks.PEARL_PLANKS);
+        leavesBlock(ModBlocks.PEARL_LEAVES);
+//        saplingBlock(ModBlocks.PEARL_SAPLING);
+
+        //endregion
     }
 
 
     private void blockWithItem(Supplier<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
+    private void leavesBlock(Supplier<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+    private void saplingBlock(Supplier<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+    private void blockItem(Supplier<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(Constants.MOD_ID +
+                ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+    }
+
     private void plantBlockWithItem(Supplier<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), models().cross(blockTexture(blockRegistryObject.get()).getPath(),blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
