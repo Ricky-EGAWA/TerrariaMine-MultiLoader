@@ -211,6 +211,28 @@ public class ModCreativeTabs {
 //                        output.accept(ModBlocks.PEARL_SAPLING.get());
                         //endregion
 
+                        //region 階段など
+                        output.accept(ModBlocks.EBON_STAIRS.get());
+                        output.accept(ModBlocks.EBON_SLAB.get());
+                        output.accept(ModBlocks.EBON_BUTTON.get());
+                        output.accept(ModBlocks.EBON_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.EBON_FENCE.get());
+                        output.accept(ModBlocks.EBON_FENCE_GATE.get());
+                        output.accept(ModBlocks.CRIM_STAIRS.get());
+                        output.accept(ModBlocks.CRIM_SLAB.get());
+                        output.accept(ModBlocks.CRIM_BUTTON.get());
+                        output.accept(ModBlocks.CRIM_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.CRIM_FENCE.get());
+                        output.accept(ModBlocks.CRIM_FENCE_GATE.get());
+                        output.accept(ModBlocks.PEARL_STAIRS.get());
+                        output.accept(ModBlocks.PEARL_SLAB.get());
+                        output.accept(ModBlocks.PEARL_BUTTON.get());
+                        output.accept(ModBlocks.PEARL_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.PEARL_FENCE.get());
+                        output.accept(ModBlocks.PEARL_FENCE_GATE.get());
+
+                        //endregion
+
                         // ICICLE 系
 //                        output.accept(ModBlocks.ICICLE.get());
                     })

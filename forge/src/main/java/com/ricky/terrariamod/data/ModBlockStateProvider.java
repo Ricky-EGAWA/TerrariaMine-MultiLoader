@@ -4,8 +4,7 @@ import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -20,7 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        // COBALT 系
+        //region 鉱石系
         blockWithItem(ModBlocks.COBALT_BLOCK);
         blockWithItem(ModBlocks.COBALT_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_COBALT_ORE);
@@ -38,7 +37,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // HELLSTONE 系
         blockWithItem(ModBlocks.HELLSTONE_BLOCK);
         blockWithItem(ModBlocks.HELLSTONE_ORE);
+        //endregion
 
+        //region バイオーム特有
         // EBON 系
         blockWithItem(ModBlocks.EBON_STONE);
         blockWithItem(ModBlocks.EBON_SAND);
@@ -56,6 +57,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.PEARL_SAND);
         registerCustomBlock(ModBlocks.PEARL_SANDSTONE);
         blockWithItem(ModBlocks.PEARL_ICE);
+        //endregion
 
         // 花系
         plantBlockWithItem(ModBlocks.DEATH_WEED);
@@ -123,12 +125,48 @@ public class ModBlockStateProvider extends BlockStateProvider {
 //        saplingBlock(ModBlocks.PEARL_SAPLING);
 
         //endregion
+
+        //region 階段など
+        stairsBlock(((StairBlock) ModBlocks.EBON_STAIRS.get()), blockTexture(ModBlocks.EBON_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.EBON_SLAB.get()), blockTexture(ModBlocks.EBON_PLANKS.get()), blockTexture(ModBlocks.EBON_PLANKS.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.EBON_BUTTON.get()), blockTexture(ModBlocks.EBON_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.EBON_PRESSURE_PLATE.get()), blockTexture(ModBlocks.EBON_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.EBON_FENCE.get()), blockTexture(ModBlocks.EBON_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.EBON_FENCE_GATE.get()), blockTexture(ModBlocks.EBON_PLANKS.get()));
+        blockItem(ModBlocks.EBON_STAIRS);
+        blockItem(ModBlocks.EBON_SLAB);
+        blockItem(ModBlocks.EBON_PRESSURE_PLATE);
+        blockItem(ModBlocks.EBON_FENCE_GATE);
+
+        stairsBlock(((StairBlock) ModBlocks.CRIM_STAIRS.get()), blockTexture(ModBlocks.CRIM_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.CRIM_SLAB.get()), blockTexture(ModBlocks.CRIM_PLANKS.get()), blockTexture(ModBlocks.CRIM_PLANKS.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.CRIM_BUTTON.get()), blockTexture(ModBlocks.CRIM_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.CRIM_PRESSURE_PLATE.get()), blockTexture(ModBlocks.CRIM_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.CRIM_FENCE.get()), blockTexture(ModBlocks.CRIM_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.CRIM_FENCE_GATE.get()), blockTexture(ModBlocks.CRIM_PLANKS.get()));
+        blockItem(ModBlocks.CRIM_STAIRS);
+        blockItem(ModBlocks.CRIM_SLAB);
+        blockItem(ModBlocks.CRIM_PRESSURE_PLATE);
+        blockItem(ModBlocks.CRIM_FENCE_GATE);
+
+        stairsBlock(((StairBlock) ModBlocks.PEARL_STAIRS.get()), blockTexture(ModBlocks.PEARL_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.PEARL_SLAB.get()), blockTexture(ModBlocks.PEARL_PLANKS.get()), blockTexture(ModBlocks.PEARL_PLANKS.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.PEARL_BUTTON.get()), blockTexture(ModBlocks.PEARL_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.PEARL_PRESSURE_PLATE.get()), blockTexture(ModBlocks.PEARL_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.PEARL_FENCE.get()), blockTexture(ModBlocks.PEARL_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.PEARL_FENCE_GATE.get()), blockTexture(ModBlocks.PEARL_PLANKS.get()));
+        blockItem(ModBlocks.PEARL_STAIRS);
+        blockItem(ModBlocks.PEARL_SLAB);
+        blockItem(ModBlocks.PEARL_PRESSURE_PLATE);
+        blockItem(ModBlocks.PEARL_FENCE_GATE);
+        //endregion
     }
 
 
     private void blockWithItem(Supplier<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
+
     private void leavesBlock(Supplier<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(),
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),

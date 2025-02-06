@@ -1,6 +1,7 @@
 package com.ricky.terrariamod.block;
 
 import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.block.custom.*;
 import com.ricky.terrariamod.registry.RegistryProvider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -9,6 +10,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Supplier;
@@ -137,6 +140,48 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).noOcclusion()));
 //    public static final Supplier<Block> PEARL_SAPLING = registerBlockWithItem("pearl_sapling",
 //            () -> new SaplingBlock(new PearlSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
+
+    //endregion
+
+    //region 階段など
+    public static final Supplier<Block> EBON_STAIRS = registerBlockWithItem("ebon_stairs",
+            () -> new ModStairBlock(ModBlocks.EBON_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+    public static final Supplier<Block> EBON_SLAB = registerBlockWithItem("ebon_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
+    public static final Supplier<Block> EBON_BUTTON = registerBlockWithItem("ebon_button",
+            () -> new ModButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.IRON, 10, true));
+    public static final Supplier<Block> EBON_PRESSURE_PLATE = registerBlockWithItem("ebon_pressure_plate",
+            () -> new ModPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.IRON));
+    public static final Supplier<Block> EBON_FENCE = registerBlockWithItem("ebon_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final Supplier<Block> EBON_FENCE_GATE = registerBlockWithItem("ebon_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), WoodType.ACACIA));
+
+    public static final Supplier<Block> CRIM_STAIRS = registerBlockWithItem("crim_stairs",
+            () -> new ModStairBlock(ModBlocks.CRIM_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+    public static final Supplier<Block> CRIM_SLAB = registerBlockWithItem("crim_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
+    public static final Supplier<Block> CRIM_BUTTON = registerBlockWithItem("crim_button",
+            () -> new ModButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.IRON, 10, true));
+    public static final Supplier<Block> CRIM_PRESSURE_PLATE = registerBlockWithItem("crim_pressure_plate",
+            () -> new ModPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.IRON));
+    public static final Supplier<Block> CRIM_FENCE = registerBlockWithItem("crim_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final Supplier<Block> CRIM_FENCE_GATE = registerBlockWithItem("crim_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), WoodType.ACACIA));
+
+    public static final Supplier<Block> PEARL_STAIRS = registerBlockWithItem("pearl_stairs",
+            () -> new ModStairBlock(ModBlocks.PEARL_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+    public static final Supplier<Block> PEARL_SLAB = registerBlockWithItem("pearl_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
+    public static final Supplier<Block> PEARL_BUTTON = registerBlockWithItem("pearl_button",
+            () -> new ModButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON), BlockSetType.IRON, 10, true));
+    public static final Supplier<Block> PEARL_PRESSURE_PLATE = registerBlockWithItem("pearl_pressure_plate",
+            () -> new ModPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE), BlockSetType.IRON));
+    public static final Supplier<Block> PEARL_FENCE = registerBlockWithItem("pearl_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final Supplier<Block> PEARL_FENCE_GATE = registerBlockWithItem("pearl_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE), WoodType.ACACIA));
 
     //endregion
 

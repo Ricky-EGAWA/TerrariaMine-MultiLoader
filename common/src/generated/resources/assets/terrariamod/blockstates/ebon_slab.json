@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "terrariamod:block/ebon_slab"
+    },
+    "type=double": {
+      "model": "terrariamod:block/ebon_planks"
+    },
+    "type=top": {
+      "model": "terrariamod:block/ebon_slab_top"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "terrariamod:block/crim_pressure_plate"
+    },
+    "powered=true": {
+      "model": "terrariamod:block/crim_pressure_plate_down"
+    }
+  }
+}

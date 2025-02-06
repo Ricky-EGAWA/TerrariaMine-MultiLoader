@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "terrariamod:block/crim_planks",
+    "side": "terrariamod:block/crim_planks",
+    "top": "terrariamod:block/crim_planks"
+  }
+}

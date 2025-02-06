@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "terrariamod:block/ebon_planks",
+    "side": "terrariamod:block/ebon_planks",
+    "top": "terrariamod:block/ebon_planks"
+  }
+}

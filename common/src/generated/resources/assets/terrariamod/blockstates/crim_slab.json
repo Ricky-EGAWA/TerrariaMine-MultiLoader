@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "terrariamod:block/crim_slab"
+    },
+    "type=double": {
+      "model": "terrariamod:block/crim_planks"
+    },
+    "type=top": {
+      "model": "terrariamod:block/crim_slab_top"
+    }
+  }
+}

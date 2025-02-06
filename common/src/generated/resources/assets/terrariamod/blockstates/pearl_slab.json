@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "terrariamod:block/pearl_slab"
+    },
+    "type=double": {
+      "model": "terrariamod:block/pearl_planks"
+    },
+    "type=top": {
+      "model": "terrariamod:block/pearl_slab_top"
+    }
+  }
+}
