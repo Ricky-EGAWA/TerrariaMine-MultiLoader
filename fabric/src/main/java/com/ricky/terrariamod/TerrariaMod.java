@@ -1,9 +1,12 @@
 package com.ricky.terrariamod;
 
 import com.ricky.terrariamod.block.ModBlocks;
+import com.ricky.terrariamod.entity.ModEntities;
+import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.item.ModCreativeTabs;
 import com.ricky.terrariamod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 
 public class TerrariaMod implements ModInitializer {
     
@@ -23,6 +26,11 @@ public class TerrariaMod implements ModInitializer {
         ModBlocks.register();
         //クリエイティブタブ
         ModCreativeTabs.register();
+        ModEntities.register();
+
+        //region エンティティ
+        FabricDefaultAttributeRegistry.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyEntity.createAttributes());
+        //endregion
 
     }
 }

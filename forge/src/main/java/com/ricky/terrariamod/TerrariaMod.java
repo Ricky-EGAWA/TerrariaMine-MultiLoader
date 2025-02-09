@@ -1,6 +1,7 @@
 package com.ricky.terrariamod;
 
 import com.ricky.terrariamod.block.ModBlocks;
+import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.item.ModCreativeTabs;
 import com.ricky.terrariamod.item.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -13,10 +14,10 @@ public class TerrariaMod {
         Constants.LOG.info("Hello Forge world!");
         CommonClass.init();
 
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         //アイテムの追加
         ModItems.register();
         ModBlocks.register();
         ModCreativeTabs.register();
+        ModEntities.register();
     }
 }
