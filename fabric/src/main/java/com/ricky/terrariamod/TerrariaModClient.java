@@ -2,7 +2,19 @@ package com.ricky.terrariamod;
 
 import com.ricky.terrariamod.block.ModBlocks;
 import com.ricky.terrariamod.entity.ModEntities;
+import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatRenderer;
+import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRenderer;
+import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatRenderer;
+import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeRenderer;
+import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeRenderer;
+import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeRenderer;
+import com.ricky.terrariamod.entity.monster.slime_type.ice_slime.IceSlimeRenderer;
+import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeRenderer;
+import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRenderer;
+import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
+import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
+import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -32,6 +44,21 @@ public class TerrariaModClient implements ClientModInitializer {
 //        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PEARL_SAPLING.get(), RenderType.cutout());
         //endregion
 
+
+        EntityRendererRegistry.register(ModEntities.MUMMY.get(), MummyRenderer::new);
+        EntityRendererRegistry.register(ModEntities.LIGHT_MUMMY.get(), LightMummyRenderer::new);
         EntityRendererRegistry.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyRenderer::new);
+        EntityRendererRegistry.register(ModEntities.DARK_MUMMY.get(), DarkMummyRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.ICE_SLIME.get(), IceSlimeRenderer::new);
+        EntityRendererRegistry.register(ModEntities.SAND_SLIME.get(), SandSlimeRenderer::new);
+        EntityRendererRegistry.register(ModEntities.JUNGLE_SLIME.get(), JungleSlimeRenderer::new);
+        EntityRendererRegistry.register(ModEntities.DUNGEON_SLIME.get(), DungeonSlimeRenderer::new);
+        EntityRendererRegistry.register(ModEntities.CORRUPT_SLIME.get(), CorruptSlimeRenderer::new);
+        EntityRendererRegistry.register(ModEntities.CRIM_SLIME.get(), CrimSlimeRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.LAVA_BAT.get(), LavaBatRenderer::new);
+        EntityRendererRegistry.register(ModEntities.ICE_BAT.get(), IceBatRenderer::new);
+        EntityRendererRegistry.register(ModEntities.JUNGLE_BAT.get(), JungleBatRenderer::new);
     }
 }

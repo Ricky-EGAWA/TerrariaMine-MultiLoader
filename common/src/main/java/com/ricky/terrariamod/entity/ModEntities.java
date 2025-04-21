@@ -1,7 +1,19 @@
 package com.ricky.terrariamod.entity;
 
 import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
+import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
+import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
+import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeEntity;
+import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeEntity;
+import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeEntity;
+import com.ricky.terrariamod.entity.monster.slime_type.ice_slime.IceSlimeEntity;
+import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeEntity;
+import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
+import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
+import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
+import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyEntity;
 import com.ricky.terrariamod.registry.RegistryObject;
 import com.ricky.terrariamod.registry.RegistryProvider;
 import net.minecraft.core.registries.Registries;
@@ -11,10 +23,51 @@ import net.minecraft.world.entity.MobCategory;
 public class ModEntities {
     public static final RegistryProvider<EntityType<?>> ENTITY_TYPES =
             RegistryProvider.get(Registries.ENTITY_TYPE, Constants.MOD_ID);
-
+    //region zombie type
+    public static final RegistryObject<EntityType<MummyEntity>> MUMMY =
+            ENTITY_TYPES.register("mummy", () -> EntityType.Builder.of(MummyEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.95f).build("mummy"));
     public static final RegistryObject<EntityType<BloodMummyEntity>> BLOOD_MUMMY =
             ENTITY_TYPES.register("blood_mummy", () -> EntityType.Builder.of(BloodMummyEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.95f).build("blood_mummy"));
+    public static final RegistryObject<EntityType<DarkMummyEntity>> DARK_MUMMY =
+            ENTITY_TYPES.register("dark_mummy", () -> EntityType.Builder.of(DarkMummyEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.95f).build("dark_mummy"));
+    public static final RegistryObject<EntityType<LightMummyEntity>> LIGHT_MUMMY =
+            ENTITY_TYPES.register("light_mummy", () -> EntityType.Builder.of(LightMummyEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.95f).build("light_mummy"));
+    //endregion
+    //region slime type
+    public static final RegistryObject<EntityType<IceSlimeEntity>> ICE_SLIME =
+            ENTITY_TYPES.register("ice_slime", () -> EntityType.Builder.of(IceSlimeEntity::new, MobCategory.MONSTER)
+                    .sized(1.02f, 1.02f).build("ice_slime"));
+    public static final RegistryObject<EntityType<SandSlimeEntity>> SAND_SLIME =
+            ENTITY_TYPES.register("sand_slime", () -> EntityType.Builder.of(SandSlimeEntity::new, MobCategory.MONSTER)
+                    .sized(1.02f, 1.02f).build("sand_slime"));
+    public static final RegistryObject<EntityType<JungleSlimeEntity>> JUNGLE_SLIME =
+            ENTITY_TYPES.register("jungle_slime", () -> EntityType.Builder.of(JungleSlimeEntity::new, MobCategory.MONSTER)
+                    .sized(1.02f, 1.02f).build("jungle_slime"));
+    public static final RegistryObject<EntityType<DungeonSlimeEntity>> DUNGEON_SLIME =
+            ENTITY_TYPES.register("dungeon_slime", () -> EntityType.Builder.of(DungeonSlimeEntity::new, MobCategory.MONSTER)
+                    .sized(1.02f, 1.02f).build("dungeon_slime"));
+    public static final RegistryObject<EntityType<CorruptSlimeEntity>> CORRUPT_SLIME =
+            ENTITY_TYPES.register("corrupt_slime", () -> EntityType.Builder.of(CorruptSlimeEntity::new, MobCategory.MONSTER)
+                    .sized(1.02f, 1.02f).build("corrupt_slime"));
+    public static final RegistryObject<EntityType<CrimSlimeEntity>> CRIM_SLIME =
+            ENTITY_TYPES.register("crim_slime", () -> EntityType.Builder.of(CrimSlimeEntity::new, MobCategory.MONSTER)
+                    .sized(1.02f, 1.02f).build("crim_slime"));
+    //endregion
+    //region bat type
+    public static final RegistryObject<EntityType<LavaBatEntity>> LAVA_BAT =
+            ENTITY_TYPES.register("lava_bat", () -> EntityType.Builder.of(LavaBatEntity::new, MobCategory.MONSTER)
+                    .sized(0.5f, 0.9f).build("lava_bat"));
+    public static final RegistryObject<EntityType<IceBatEntity>> ICE_BAT =
+            ENTITY_TYPES.register("ice_bat", () -> EntityType.Builder.of(IceBatEntity::new, MobCategory.MONSTER)
+                    .sized(0.5f, 0.9f).build("ice_bat"));
+    public static final RegistryObject<EntityType<JungleBatEntity>> JUNGLE_BAT =
+            ENTITY_TYPES.register("jungle_bat", () -> EntityType.Builder.of(JungleBatEntity::new, MobCategory.MONSTER)
+                    .sized(0.5f, 0.9f).build("jungle_bat"));
+    //endregion
 
     // 登録メソッド
     public static void register() {
