@@ -1,17 +1,26 @@
 package com.ricky.terrariamod.world.biome;
 
 import com.ricky.terrariamod.Constants;
-import com.ricky.terrariamod.registry.RegistryObject;
-import com.ricky.terrariamod.registry.RegistryProvider;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.*;
 
 public class ModBiomes {
-    public static final RegistryProvider<Biome> BIOMES =
-            RegistryProvider.get(Registries.BIOME, Constants.MOD_ID);
+    public static final ResourceKey<Biome> CRIM_DESERT_BIOME = createKey("crim_desert_biome");
+    public static final ResourceKey<Biome> EBON_DESERT_BIOME = createKey("ebon_desert_biome");
+    public static final ResourceKey<Biome> PEARL_DESERT_BIOME = createKey("pearl_desert_biome");
+    public static final ResourceKey<Biome> CRIM_BIOME = createKey("crim_biome");
+    public static final ResourceKey<Biome> EBON_BIOME = createKey("ebon_biome");
+    public static final ResourceKey<Biome> PEARL_BIOME = createKey("pearl_biome");
+    public static final ResourceKey<Biome> CRIM_ICE_BIOME = createKey("crim_ice_biome");
+    public static final ResourceKey<Biome> EBON_ICE_BIOME = createKey("ebon_ice_biome");
+    public static final ResourceKey<Biome> PEARL_ICE_BIOME = createKey("pearl_ice_biome");
+    //地下
+    public static final ResourceKey<Biome> GLOWING_MUSHROOM_BIOME = createKey("glowing_mushroom_biome");
 
-    public static final RegistryObject<Biome> CRIM_DESERT_BIOME =
-            BIOMES.register("crim_desert_biome", ModBiomes::createCrimDesert);
+    private static ResourceKey<Biome> createKey(String name) {
+        return ResourceKey.create(Registries.BIOME, Constants.locate(name));
+    }
 
     private static Biome createCrimDesert() {
         return new Biome.BiomeBuilder()

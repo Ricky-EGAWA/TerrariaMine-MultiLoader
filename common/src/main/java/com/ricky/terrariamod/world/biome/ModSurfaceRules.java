@@ -9,75 +9,86 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 
 public class ModSurfaceRules {
-//    private static final SurfaceRules.RuleSource SNOW = makeStateRule(Blocks.SNOW);
-//    private static final SurfaceRules.RuleSource GRAVEL =makeStateRule(Blocks.GRAVEL);
-//    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
-//    private static final SurfaceRules.RuleSource MYCELIUM = makeStateRule(Blocks.MYCELIUM);
-//    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
-//    private static final SurfaceRules.RuleSource EBON_SAND = makeStateRule(ModBlocks.EBON_SAND.get());
-//    private static final SurfaceRules.RuleSource EBON_SANDSTONE = makeStateRule(ModBlocks.EBON_SANDSTONE.get());
-//    private static final SurfaceRules.RuleSource EBON_STONE = makeStateRule(ModBlocks.EBON_STONE.get());
-//    private static final SurfaceRules.RuleSource EBON_ICE = makeStateRule(ModBlocks.EBON_ICE.get());
+    private static final SurfaceRules.RuleSource SNOW = makeStateRule(Blocks.SNOW);
+    private static final SurfaceRules.RuleSource GRAVEL =makeStateRule(Blocks.GRAVEL);
+    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource MYCELIUM = makeStateRule(Blocks.MYCELIUM);
+    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
+    private static final SurfaceRules.RuleSource EBON_SAND = makeStateRule(ModBlocks.EBON_SAND.get());
+    private static final SurfaceRules.RuleSource EBON_SANDSTONE = makeStateRule(ModBlocks.EBON_SANDSTONE.get());
+    private static final SurfaceRules.RuleSource EBON_STONE = makeStateRule(ModBlocks.EBON_STONE.get());
+    private static final SurfaceRules.RuleSource EBON_ICE = makeStateRule(ModBlocks.EBON_ICE.get());
     private static final SurfaceRules.RuleSource CRIM_SAND = makeStateRule(ModBlocks.CRIM_SAND.get());
     private static final SurfaceRules.RuleSource CRIM_SANDSTONE = makeStateRule(ModBlocks.CRIM_SANDSTONE.get());
     private static final SurfaceRules.RuleSource CRIM_STONE = makeStateRule(ModBlocks.CRIM_STONE.get());
-//    private static final SurfaceRules.RuleSource CRIM_ICE = makeStateRule(ModBlocks.CRIM_ICE.get());
-//    private static final SurfaceRules.RuleSource PEARL_SAND = makeStateRule(ModBlocks.PEARL_SAND.get());
-//    private static final SurfaceRules.RuleSource PEARL_SANDSTONE = makeStateRule(ModBlocks.PEARL_SANDSTONE.get());
-//    private static final SurfaceRules.RuleSource PEARL_STONE = makeStateRule(ModBlocks.PEARL_STONE.get());
-//    private static final SurfaceRules.RuleSource PEARL_ICE = makeStateRule(ModBlocks.PEARL_ICE.get());
-//    private static final SurfaceRules.RuleSource GLOWING_MOSS = makeStateRule(ModBlocks.GLOWING_MOSS.get());
+    private static final SurfaceRules.RuleSource CRIM_ICE = makeStateRule(ModBlocks.CRIM_ICE.get());
+    private static final SurfaceRules.RuleSource PEARL_SAND = makeStateRule(ModBlocks.PEARL_SAND.get());
+    private static final SurfaceRules.RuleSource PEARL_SANDSTONE = makeStateRule(ModBlocks.PEARL_SANDSTONE.get());
+    private static final SurfaceRules.RuleSource PEARL_STONE = makeStateRule(ModBlocks.PEARL_STONE.get());
+    private static final SurfaceRules.RuleSource PEARL_ICE = makeStateRule(ModBlocks.PEARL_ICE.get());
+    private static final SurfaceRules.RuleSource GLOWING_MOSS = makeStateRule(ModBlocks.GLOWING_MOSS.get());
 
     public static SurfaceRules.RuleSource makeCustomSurfaceRules() {
+        System.out.println("crim desert surface");
+        System.out.println(ModBiomes.CRIM_BIOME);
+        System.out.println(ModBiomes.CRIM_DESERT_BIOME);
+        System.out.println(ModBiomes.CRIM_ICE_BIOME);
+        System.out.println(ModBiomes.EBON_BIOME);
+        System.out.println(ModBiomes.EBON_DESERT_BIOME);
+        System.out.println(ModBiomes.EBON_ICE_BIOME);
+        System.out.println(ModBiomes.PEARL_BIOME);
+        System.out.println(ModBiomes.PEARL_DESERT_BIOME);
+        System.out.println(ModBiomes.PEARL_ICE_BIOME);
+        System.out.println(ModBiomes.GLOWING_MUSHROOM_BIOME);
         //biome判定
-        SurfaceRules.ConditionSource crimDesertBiomeCondition = SurfaceRules.isBiome(ModBiomes.CRIM_DESERT_BIOME.getResourceKey());
-//        SurfaceRules.ConditionSource ebonDesertBiomeCondition = SurfaceRules.isBiome(ModBiomes.EBON_DESERT_BIOME);
-//        SurfaceRules.ConditionSource pearlDesertBiomeCondition = SurfaceRules.isBiome(ModBiomes.PEARL_DESERT_BIOME);
-//        SurfaceRules.ConditionSource crimBiomeCondition = SurfaceRules.isBiome(ModBiomes.CRIM_BIOME);
-//        SurfaceRules.ConditionSource ebonBiomeCondition = SurfaceRules.isBiome(ModBiomes.EBON_BIOME);
-//        SurfaceRules.ConditionSource pearlBiomeCondition = SurfaceRules.isBiome(ModBiomes.PEARL_BIOME);
-//        SurfaceRules.ConditionSource crimIceBiomeCondition = SurfaceRules.isBiome(ModBiomes.CRIM_ICE_BIOME);
-//        SurfaceRules.ConditionSource ebonIceBiomeCondition = SurfaceRules.isBiome(ModBiomes.EBON_ICE_BIOME);
-//        SurfaceRules.ConditionSource pearlIceBiomeCondition = SurfaceRules.isBiome(ModBiomes.PEARL_ICE_BIOME);
-//        //地下
-//        SurfaceRules.ConditionSource glowingMushroomBiomeCondition = SurfaceRules.isBiome(ModBiomes.GLOWING_MUSHROOM_BIOME);
+        SurfaceRules.ConditionSource crimDesertBiomeCondition = SurfaceRules.isBiome(ModBiomes.CRIM_DESERT_BIOME);
+        SurfaceRules.ConditionSource ebonDesertBiomeCondition = SurfaceRules.isBiome(ModBiomes.EBON_DESERT_BIOME);
+        SurfaceRules.ConditionSource pearlDesertBiomeCondition = SurfaceRules.isBiome(ModBiomes.PEARL_DESERT_BIOME);
+        SurfaceRules.ConditionSource crimBiomeCondition = SurfaceRules.isBiome(ModBiomes.CRIM_BIOME);
+        SurfaceRules.ConditionSource ebonBiomeCondition = SurfaceRules.isBiome(ModBiomes.EBON_BIOME);
+        SurfaceRules.ConditionSource pearlBiomeCondition = SurfaceRules.isBiome(ModBiomes.PEARL_BIOME);
+        SurfaceRules.ConditionSource crimIceBiomeCondition = SurfaceRules.isBiome(ModBiomes.CRIM_ICE_BIOME);
+        SurfaceRules.ConditionSource ebonIceBiomeCondition = SurfaceRules.isBiome(ModBiomes.EBON_ICE_BIOME);
+        SurfaceRules.ConditionSource pearlIceBiomeCondition = SurfaceRules.isBiome(ModBiomes.PEARL_ICE_BIOME);
+        //地下
+        SurfaceRules.ConditionSource glowingMushroomBiomeCondition = SurfaceRules.isBiome(ModBiomes.GLOWING_MUSHROOM_BIOME);
 
         //第一ブロック、 表層（一層目　二層目）、　ベース、　水の下、　洞窟（天井　床）
         SurfaceRules.RuleSource surfaceRule_crim_desert = surfaceRuleMaker(CRIM_SAND, CRIM_SAND, CRIM_SANDSTONE, ModBlocks.CRIM_STONE.get().defaultBlockState(), CRIM_SAND, CRIM_STONE, CRIM_STONE);
-//        SurfaceRules.RuleSource surfaceRule_ebon_desert = surfaceRuleMaker(EBON_SAND, EBON_SAND, EBON_SANDSTONE, ModBlocks.EBON_STONE.get().defaultBlockState(), EBON_SAND, EBON_STONE, EBON_STONE);
-//        SurfaceRules.RuleSource surfaceRule_pearl_desert = surfaceRuleMaker(PEARL_SAND, PEARL_SAND, PEARL_SANDSTONE, ModBlocks.PEARL_STONE.get().defaultBlockState(), PEARL_SAND, PEARL_STONE, PEARL_STONE);
-//        SurfaceRules.RuleSource surfaceRule_crim = surfaceRuleMaker(GRASS_BLOCK, DIRT, CRIM_STONE, ModBlocks.CRIM_STONE.get().defaultBlockState(), GRAVEL, CRIM_STONE, CRIM_STONE);
-//        SurfaceRules.RuleSource surfaceRule_ebon = surfaceRuleMaker(GRASS_BLOCK, DIRT, EBON_STONE, ModBlocks.EBON_STONE.get().defaultBlockState(), GRAVEL, EBON_STONE, EBON_STONE);
-//        SurfaceRules.RuleSource surfaceRule_pearl = surfaceRuleMaker(GRASS_BLOCK, DIRT, PEARL_STONE, ModBlocks.PEARL_STONE.get().defaultBlockState(), GRAVEL, PEARL_STONE, PEARL_STONE);
-//        SurfaceRules.RuleSource surfaceRule_crim_ice = surfaceRuleMaker(SNOW, CRIM_ICE, CRIM_ICE, ModBlocks.CRIM_ICE.get().defaultBlockState(), CRIM_ICE, CRIM_STONE, CRIM_STONE);
-//        SurfaceRules.RuleSource surfaceRule_ebon_ice = surfaceRuleMaker(SNOW, EBON_ICE, EBON_ICE, ModBlocks.EBON_ICE.get().defaultBlockState(), EBON_ICE, EBON_STONE, EBON_STONE);
-//        SurfaceRules.RuleSource surfaceRule_pearl_ice = surfaceRuleMaker(SNOW, PEARL_ICE, PEARL_ICE, ModBlocks.PEARL_ICE.get().defaultBlockState(), PEARL_STONE, EBON_STONE, PEARL_STONE);
-//        //地下  天井と床
-//        SurfaceRules.RuleSource surfaceRule_glowing_mushroom = undergroundRule(GLOWING_MOSS,MYCELIUM);
+        SurfaceRules.RuleSource surfaceRule_ebon_desert = surfaceRuleMaker(EBON_SAND, EBON_SAND, EBON_SANDSTONE, ModBlocks.EBON_STONE.get().defaultBlockState(), EBON_SAND, EBON_STONE, EBON_STONE);
+        SurfaceRules.RuleSource surfaceRule_pearl_desert = surfaceRuleMaker(PEARL_SAND, PEARL_SAND, PEARL_SANDSTONE, ModBlocks.PEARL_STONE.get().defaultBlockState(), PEARL_SAND, PEARL_STONE, PEARL_STONE);
+        SurfaceRules.RuleSource surfaceRule_crim = surfaceRuleMaker(GRASS_BLOCK, DIRT, CRIM_STONE, ModBlocks.CRIM_STONE.get().defaultBlockState(), GRAVEL, CRIM_STONE, CRIM_STONE);
+        SurfaceRules.RuleSource surfaceRule_ebon = surfaceRuleMaker(GRASS_BLOCK, DIRT, EBON_STONE, ModBlocks.EBON_STONE.get().defaultBlockState(), GRAVEL, EBON_STONE, EBON_STONE);
+        SurfaceRules.RuleSource surfaceRule_pearl = surfaceRuleMaker(GRASS_BLOCK, DIRT, PEARL_STONE, ModBlocks.PEARL_STONE.get().defaultBlockState(), GRAVEL, PEARL_STONE, PEARL_STONE);
+        SurfaceRules.RuleSource surfaceRule_crim_ice = surfaceRuleMaker(SNOW, CRIM_ICE, CRIM_ICE, ModBlocks.CRIM_ICE.get().defaultBlockState(), CRIM_ICE, CRIM_STONE, CRIM_STONE);
+        SurfaceRules.RuleSource surfaceRule_ebon_ice = surfaceRuleMaker(SNOW, EBON_ICE, EBON_ICE, ModBlocks.EBON_ICE.get().defaultBlockState(), EBON_ICE, EBON_STONE, EBON_STONE);
+        SurfaceRules.RuleSource surfaceRule_pearl_ice = surfaceRuleMaker(SNOW, PEARL_ICE, PEARL_ICE, ModBlocks.PEARL_ICE.get().defaultBlockState(), PEARL_STONE, EBON_STONE, PEARL_STONE);
+        //地下  天井と床
+        SurfaceRules.RuleSource surfaceRule_glowing_mushroom = undergroundRule(GLOWING_MOSS,MYCELIUM);
 
         SurfaceRules.RuleSource crimDesertBiomeRule = SurfaceRules.ifTrue(crimDesertBiomeCondition, surfaceRule_crim_desert);
-//        SurfaceRules.RuleSource ebonDesertBiomeRule = SurfaceRules.ifTrue(ebonDesertBiomeCondition, surfaceRule_ebon_desert);
-//        SurfaceRules.RuleSource pearlDesertBiomeRule = SurfaceRules.ifTrue(pearlDesertBiomeCondition, surfaceRule_pearl_desert);
-//        SurfaceRules.RuleSource crimBiomeRule = SurfaceRules.ifTrue(crimBiomeCondition, surfaceRule_crim);
-//        SurfaceRules.RuleSource ebonBiomeRule = SurfaceRules.ifTrue(ebonBiomeCondition, surfaceRule_ebon);
-//        SurfaceRules.RuleSource pearlBiomeRule = SurfaceRules.ifTrue(pearlBiomeCondition, surfaceRule_pearl);
-//        SurfaceRules.RuleSource crimIceBiomeRule = SurfaceRules.ifTrue(crimIceBiomeCondition, surfaceRule_crim_ice);
-//        SurfaceRules.RuleSource ebonIceBiomeRule = SurfaceRules.ifTrue(ebonIceBiomeCondition, surfaceRule_ebon_ice);
-//        SurfaceRules.RuleSource pearlIceBiomeRule = SurfaceRules.ifTrue(pearlIceBiomeCondition, surfaceRule_pearl_ice);
-//        SurfaceRules.RuleSource glowingMushroomRule = SurfaceRules.ifTrue(glowingMushroomBiomeCondition, surfaceRule_glowing_mushroom);
+        SurfaceRules.RuleSource ebonDesertBiomeRule = SurfaceRules.ifTrue(ebonDesertBiomeCondition, surfaceRule_ebon_desert);
+        SurfaceRules.RuleSource pearlDesertBiomeRule = SurfaceRules.ifTrue(pearlDesertBiomeCondition, surfaceRule_pearl_desert);
+        SurfaceRules.RuleSource crimBiomeRule = SurfaceRules.ifTrue(crimBiomeCondition, surfaceRule_crim);
+        SurfaceRules.RuleSource ebonBiomeRule = SurfaceRules.ifTrue(ebonBiomeCondition, surfaceRule_ebon);
+        SurfaceRules.RuleSource pearlBiomeRule = SurfaceRules.ifTrue(pearlBiomeCondition, surfaceRule_pearl);
+        SurfaceRules.RuleSource crimIceBiomeRule = SurfaceRules.ifTrue(crimIceBiomeCondition, surfaceRule_crim_ice);
+        SurfaceRules.RuleSource ebonIceBiomeRule = SurfaceRules.ifTrue(ebonIceBiomeCondition, surfaceRule_ebon_ice);
+        SurfaceRules.RuleSource pearlIceBiomeRule = SurfaceRules.ifTrue(pearlIceBiomeCondition, surfaceRule_pearl_ice);
+        SurfaceRules.RuleSource glowingMushroomRule = SurfaceRules.ifTrue(glowingMushroomBiomeCondition, surfaceRule_glowing_mushroom);
 
         // ルールをシーケンスで組み合わせて返す
         return SurfaceRules.sequence(
-                crimDesertBiomeRule
-//                ebonDesertBiomeRule,
-//                pearlDesertBiomeRule,
-//                crimBiomeRule,
-//                ebonBiomeRule,
-//                pearlBiomeRule,
-//                crimIceBiomeRule,
-//                ebonIceBiomeRule,
-//                pearlIceBiomeRule,
-//                glowingMushroomRule
+                crimDesertBiomeRule,
+                ebonDesertBiomeRule,
+                pearlDesertBiomeRule,
+                crimBiomeRule,
+                ebonBiomeRule,
+                pearlBiomeRule,
+                crimIceBiomeRule,
+                ebonIceBiomeRule,
+                pearlIceBiomeRule,
+                glowingMushroomRule
         );
     }
 

@@ -22,6 +22,7 @@
         ]
     },
     "mixins": [
+        "terrariamod.mixins.json",
         "terrariamod.fabric.mixins.json"
     ],
     "depends": {
