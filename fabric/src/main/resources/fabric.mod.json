@@ -19,9 +19,6 @@
         ],
         "client": [
             "com.ricky.terrariamod.TerrariaModClient"
-        ],
-        "terrablender": [
-            "com.ricky.terrariamod.world.ModTerrablenderAPI"
         ]
     },
     "mixins": [

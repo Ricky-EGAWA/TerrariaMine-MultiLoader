@@ -21,5 +21,9 @@ public class TerrariaMod {
         ModBlocks.register();
         ModCreativeTabs.register();
         ModEntities.register();
+
+        ModWorldGeneration.generateModWorldGen();
+        final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ForgeWorldGen.init(modBus);
     }
 }
