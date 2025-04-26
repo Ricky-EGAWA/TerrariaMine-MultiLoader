@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#terrariamod:is_terraria_dimension",
+  "features": [
+    "terrariamod:cobalt_ore_placed",
+    "terrariamod:orichalcum_ore_placed",
+    "terrariamod:adamantite_ore_placed"
+  ],
+  "step": "underground_ores"
+}

@@ -1,0 +1,14 @@
+{
+  "values": [
+    "terrariamod:crim_desert_biome",
+    "terrariamod:ebon_desert_biome",
+    "terrariamod:pearl_desert_biome",
+    "terrariamod:crim_biome",
+    "terrariamod:ebon_biome",
+    "terrariamod:pearl_biome",
+    "terrariamod:crim_ice_biome",
+    "terrariamod:ebon_ice_biome",
+    "terrariamod:pearl_ice_biome",
+    "terrariamod:glowing_mushroom_biome"
+  ]
+}
