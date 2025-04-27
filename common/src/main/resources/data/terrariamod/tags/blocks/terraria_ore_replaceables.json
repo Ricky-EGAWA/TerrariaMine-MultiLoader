@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:stone",
+    "minecraft:granite",
+    "minecraft:diorite",
+    "minecraft:andesite",
+    "terrariamod:ebon_stone",
+    "terrariamod:crim_stone",
+    "terrariamod:pearl_stone",
+    "minecraft:deepslate",
+    "minecraft:tuff"
+  ]
+}

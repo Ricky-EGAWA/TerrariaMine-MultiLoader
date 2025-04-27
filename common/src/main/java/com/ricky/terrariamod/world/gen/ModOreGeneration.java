@@ -14,6 +14,7 @@ import java.util.ServiceLoader;
 public class ModOreGeneration {
     public static final IWorldGenHelper WORLD_GEN = load(IWorldGenHelper.class);
     public static void generateOres() {
+        System.out.println("generate ore");
         WORLD_GEN.addFeatureToBiomes(matchesTag(ModTagsBiomes.IS_TERRARIA_DIMENSION),
                 GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.COBALT_ORE_PLACED_KEY);
         WORLD_GEN.addFeatureToBiomes(matchesTag(ModTagsBiomes.IS_TERRARIA_DIMENSION),
