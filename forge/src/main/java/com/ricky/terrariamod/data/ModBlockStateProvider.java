@@ -73,6 +73,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.GLOWING_MOSS);
         blockWithItem(ModBlocks.GLOWING_MUSHROOM_BLOCK);
         blockWithItem(ModBlocks.GLOWING_MUSHROOM_STEM);
+        plantBlockWithItem(ModBlocks.GLOWING_MUSHROOM);
+        pottedPlantBlockWithItem(ModBlocks.POTTED_GLOWING_MUSHROOM, ModBlocks.GLOWING_MUSHROOM);
 
         // ICICLE 系
 //        blockWithItem(ModBlocks.ICICLE);
@@ -92,7 +94,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_EBON_WOOD);
         blockWithItem(ModBlocks.EBON_PLANKS);
         leavesBlock(ModBlocks.EBON_LEAVES);
-//        saplingBlock(ModBlocks.EBON_SAPLING);
+        plantBlockWithItem(ModBlocks.EBON_SAPLING);
+        pottedPlantBlockWithItem(ModBlocks.POTTED_EBON_SAPLING, ModBlocks.EBON_SAPLING);
 
         logBlock(((RotatedPillarBlock) ModBlocks.CRIM_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.CRIM_WOOD.get()), blockTexture(ModBlocks.CRIM_LOG.get()), blockTexture(ModBlocks.CRIM_LOG.get()));
@@ -107,7 +110,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_CRIM_WOOD);
         blockWithItem(ModBlocks.CRIM_PLANKS);
         leavesBlock(ModBlocks.CRIM_LEAVES);
-//        saplingBlock(ModBlocks.CRIM_SAPLING);
+        plantBlockWithItem(ModBlocks.CRIM_SAPLING);
+        pottedPlantBlockWithItem(ModBlocks.POTTED_CRIM_SAPLING, ModBlocks.CRIM_SAPLING);
 
         logBlock(((RotatedPillarBlock) ModBlocks.PEARL_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.PEARL_WOOD.get()), blockTexture(ModBlocks.PEARL_LOG.get()), blockTexture(ModBlocks.PEARL_LOG.get()));
@@ -122,7 +126,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_PEARL_WOOD);
         blockWithItem(ModBlocks.PEARL_PLANKS);
         leavesBlock(ModBlocks.PEARL_LEAVES);
-//        saplingBlock(ModBlocks.PEARL_SAPLING);
+        plantBlockWithItem(ModBlocks.PEARL_SAPLING);
+        pottedPlantBlockWithItem(ModBlocks.POTTED_PEARL_SAPLING, ModBlocks.PEARL_SAPLING);
 
         //endregion
 

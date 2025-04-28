@@ -1,0 +1,6 @@
+{
+   "type": "forge:add_features",
+   "biomes": "#terrariamod:is_ebon",
+   "features": "terrariamod:ebon_tree_placed",
+   "step": "vegetal_decoration"
+ }

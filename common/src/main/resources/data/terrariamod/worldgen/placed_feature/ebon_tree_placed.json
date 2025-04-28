@@ -26,10 +26,7 @@
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "OCEAN_FLOOR"
-    },
-    {
-      "type": "minecraft:biome"
+      "heightmap": "WORLD_SURFACE"
     },
     {
       "type": "minecraft:block_predicate_filter",

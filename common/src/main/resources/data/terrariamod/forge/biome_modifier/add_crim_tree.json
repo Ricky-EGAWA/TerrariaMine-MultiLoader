@@ -1,0 +1,6 @@
+{
+   "type": "forge:add_features",
+   "biomes": "#terrariamod:is_crim",
+   "features": "terrariamod:crim_tree_placed",
+   "step": "vegetal_decoration"
+ }

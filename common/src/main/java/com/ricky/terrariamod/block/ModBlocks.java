@@ -3,6 +3,10 @@ package com.ricky.terrariamod.block;
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.block.custom.*;
 import com.ricky.terrariamod.registry.RegistryProvider;
+import com.ricky.terrariamod.world.ModConfiguredFeatures;
+import com.ricky.terrariamod.world.tree.CrimSaplingGenerator;
+import com.ricky.terrariamod.world.tree.EbonSaplingGenerator;
+import com.ricky.terrariamod.world.tree.PearlSaplingGenerator;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -108,8 +112,10 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final Supplier<Block> EBON_LEAVES = registerBlockWithItem("ebon_leaves",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).noOcclusion()));
-//    public static final Supplier<Block> EBON_SAPLING = registerBlockWithItem("ebon_sapling",
-//            () -> new SaplingBlock(new EbonSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
+    public static final Supplier<Block> EBON_SAPLING = registerBlockWithItem("ebon_sapling",
+            () -> new ModSaplingBlock(new EbonSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
+    public static final Supplier<Block> POTTED_EBON_SAPLING = registerBlockWithItem("potted_ebon_sapling",
+            () -> new FlowerPotBlock(EBON_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 
     public static final Supplier<Block> CRIM_LOG = registerBlockWithItem("crim_log",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
@@ -123,8 +129,10 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final Supplier<Block> CRIM_LEAVES = registerBlockWithItem("crim_leaves",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).noOcclusion()));
-//    public static final Supplier<Block> CRIM_SAPLING = registerBlockWithItem("crim_sapling",
-//            () -> new SaplingBlock(new CrimSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
+    public static final Supplier<Block> CRIM_SAPLING = registerBlockWithItem("crim_sapling",
+            () -> new ModSaplingBlock(new CrimSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
+    public static final Supplier<Block> POTTED_CRIM_SAPLING = registerBlockWithItem("potted_crim_sapling",
+            () -> new FlowerPotBlock(CRIM_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 
     public static final Supplier<Block> PEARL_LOG = registerBlockWithItem("pearl_log",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
@@ -138,8 +146,10 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final Supplier<Block> PEARL_LEAVES = registerBlockWithItem("pearl_leaves",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).noOcclusion()));
-//    public static final Supplier<Block> PEARL_SAPLING = registerBlockWithItem("pearl_sapling",
-//            () -> new SaplingBlock(new PearlSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
+    public static final Supplier<Block> PEARL_SAPLING = registerBlockWithItem("pearl_sapling",
+            () -> new ModSaplingBlock(new PearlSaplingGenerator(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING).noOcclusion()));
+    public static final Supplier<Block> POTTED_PEARL_SAPLING = registerBlockWithItem("potted_pearl_sapling",
+            () -> new FlowerPotBlock(PEARL_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 
     //endregion
 
@@ -185,8 +195,10 @@ public class ModBlocks {
 
     //endregion
 
-//    public static final Supplier<Block> GLOWING_MUSHROOM = registerBlockWithItem("glowing_mushroom",
-//            () -> new MushroomBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM).lightLevel(state -> 6), ModConfiguredFeatures.HUGE_GLOWING_MUSHROOM));
+    public static final Supplier<Block> GLOWING_MUSHROOM = registerBlockWithItem("glowing_mushroom",
+            () -> new MushroomBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM).lightLevel(state -> 6), ModConfiguredFeatures.HUGE_GLOWING_MUSHROOM));
+    public static final Supplier<Block> POTTED_GLOWING_MUSHROOM = registerBlockWithItem("potted_glowing_mushroom",
+            () -> new FlowerPotBlock(GLOWING_MUSHROOM.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
     public static final Supplier<Block> GLOWING_MOSS = registerBlockWithItem("glowing_moss_block",
             () -> new MossBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_BLOCK).lightLevel(state -> 6).mapColor(MapColor.COLOR_BLUE)));
     public static final Supplier<Block> ICICLE = registerBlockWithItem("icicle",

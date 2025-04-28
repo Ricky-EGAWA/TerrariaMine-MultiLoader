@@ -1,0 +1,6 @@
+{
+   "type": "forge:add_features",
+   "biomes": "#terrariamod:is_corruption",
+   "features": "terrariamod:death_weed_placed",
+   "step": "vegetal_decoration"
+ }

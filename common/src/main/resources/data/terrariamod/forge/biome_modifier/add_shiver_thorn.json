@@ -1,0 +1,6 @@
+{
+   "type": "forge:add_features",
+   "biomes": "#terrariamod:is_ice",
+   "features": "terrariamod:shiver_thorn_placed",
+   "step": "vegetal_decoration"
+ }

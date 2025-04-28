@@ -1,0 +1,6 @@
+{
+   "type": "forge:add_features",
+   "biomes": "#terrariamod:is_glowing_mushroom",
+   "features": "terrariamod:glowing_mushroom_placed",
+   "step": "underground_decoration"
+ }

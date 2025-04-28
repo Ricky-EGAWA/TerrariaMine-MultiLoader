@@ -14,7 +14,7 @@ public class ModPlacedFeatures {
     public static final ResourceLocation CRIM_PLACED_KEY = new ResourceLocation(Constants.MOD_ID, "crim_tree_placed");
     public static final ResourceLocation PEARL_PLACED_KEY = new ResourceLocation(Constants.MOD_ID, "pearl_tree_placed");
     public static final ResourceLocation DEATH_WEED_PLACED_KEY = new ResourceLocation(Constants.MOD_ID, "death_weed_placed");
-    public static final ResourceLocation SHIVER_THORN_PLACED_KEY = new ResourceLocation(Constants.MOD_ID, "shiver_thorn");
-    public static final ResourceLocation GLOWING_MUSHROOM_PLACED_KEY = new ResourceLocation(Constants.MOD_ID, "glowing_mushroom");
+    public static final ResourceLocation SHIVER_THORN_PLACED_KEY = new ResourceLocation(Constants.MOD_ID, "shiver_thorn_placed");
+    public static final ResourceLocation GLOWING_MUSHROOM_PLACED_KEY = new ResourceLocation(Constants.MOD_ID, "glowing_mushroom_placed");
     public static final ResourceLocation GLOWING_HUGE_MUSHROOM_PLACED_KEY = new ResourceLocation(Constants.MOD_ID, "glowing_huge_mushroom_placed");
 }

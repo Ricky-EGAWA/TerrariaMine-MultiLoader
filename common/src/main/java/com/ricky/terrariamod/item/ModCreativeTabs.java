@@ -184,6 +184,7 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.GLOWING_MOSS.get());
                         output.accept(ModBlocks.GLOWING_MUSHROOM_BLOCK.get());
                         output.accept(ModBlocks.GLOWING_MUSHROOM_STEM.get());
+                        output.accept(ModBlocks.GLOWING_MUSHROOM.get());
 
                         //region 木材
                         output.accept(ModBlocks.EBON_LOG.get());
@@ -192,7 +193,7 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.STRIPPED_EBON_WOOD.get());
                         output.accept(ModBlocks.EBON_PLANKS.get());
                         output.accept(ModBlocks.EBON_LEAVES.get());
-//                        output.accept(ModBlocks.EBON_SAPLING.get());
+                        output.accept(ModBlocks.EBON_SAPLING.get());
 
                         output.accept(ModBlocks.CRIM_LOG.get());
                         output.accept(ModBlocks.CRIM_WOOD.get());
@@ -200,7 +201,7 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.STRIPPED_CRIM_WOOD.get());
                         output.accept(ModBlocks.CRIM_PLANKS.get());
                         output.accept(ModBlocks.CRIM_LEAVES.get());
-//                        output.accept(ModBlocks.CRIM_SAPLING.get());
+                        output.accept(ModBlocks.CRIM_SAPLING.get());
 
                         output.accept(ModBlocks.PEARL_LOG.get());
                         output.accept(ModBlocks.PEARL_WOOD.get());
@@ -208,7 +209,7 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.STRIPPED_PEARL_WOOD.get());
                         output.accept(ModBlocks.PEARL_PLANKS.get());
                         output.accept(ModBlocks.PEARL_LEAVES.get());
-//                        output.accept(ModBlocks.PEARL_SAPLING.get());
+                        output.accept(ModBlocks.PEARL_SAPLING.get());
                         //endregion
 
                         //region 階段など

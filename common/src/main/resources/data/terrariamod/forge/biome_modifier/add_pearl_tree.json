@@ -1,0 +1,6 @@
+{
+   "type": "forge:add_features",
+   "biomes": "#terrariamod:is_pearl",
+   "features": "terrariamod:pearl_tree_placed",
+   "step": "vegetal_decoration"
+ }
