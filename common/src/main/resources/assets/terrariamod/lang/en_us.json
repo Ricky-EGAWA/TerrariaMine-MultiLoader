@@ -157,10 +157,10 @@
   "block.terrariamod.pearl_fence_gate": "Pearl Fence Gate",
 
 
-  "itemgroup.cobalt": "Mod Items",
-  "itemgroup.special_item": "Mod Special Items",
-  "itemgroup.cobalt_chestplate": "Mod Armors",
-  "itemgroup.mod_blocks": "Mod Blocks",
+  "itemgroup.item_tab": "Mod Items",
+  "itemgroup.tool_tab": "Mod Tools/Weapons",
+  "itemgroup.armor_tab": "Mod Armors",
+  "itemgroup.block_tab": "Mod Blocks",
 
   "tooltip.terrariamod.metal_detector.tooltip": "Finds Valuables underground",
   "message.terrariamod.metal_detector.not_found": "No Valuables Nearby!",

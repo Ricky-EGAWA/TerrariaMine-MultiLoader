@@ -3,6 +3,9 @@ package com.ricky.terrariamod.item;
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.item.armor.ModArmorItem;
 import com.ricky.terrariamod.item.armor.ModArmorMaterials;
+import com.ricky.terrariamod.item.custom.InfiniteLavaBucketItem;
+import com.ricky.terrariamod.item.custom.InfiniteWaterBucketItem;
+import com.ricky.terrariamod.item.custom.MetalDetectorItem;
 import com.ricky.terrariamod.item.tool.ModAxeItem;
 import com.ricky.terrariamod.item.tool.ModPickaxeItem;
 import com.ricky.terrariamod.item.tool.ModToolMaterial;
@@ -15,6 +18,14 @@ public class ModItems {
     // RegistryProvider<Item> を使用してアイテムを登録
     public static final RegistryProvider<Item> ITEMS =
             RegistryProvider.get(Registries.ITEM, Constants.MOD_ID);
+    //region 特殊アイテム
+    public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
+            () -> new MetalDetectorItem(new Item.Properties()));
+    public static final RegistryObject<Item> INFINITE_LAVA_BUCKET = ITEMS.register("infinite_lava_bucket",
+            () -> new InfiniteLavaBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> INFINITE_WATER_BUCKET = ITEMS.register("infinite_water_bucket",
+            () -> new InfiniteWaterBucketItem(new Item.Properties()));
+    //endregion
 
     //region インゴット & 素材アイテム
     public static final RegistryObject<Item> SPIDER_FANG = ITEMS.register("spider_fang",

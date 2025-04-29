@@ -155,10 +155,10 @@
   "block.terrariamod.pearl_fence": "パールのフェンス",
   "block.terrariamod.pearl_fence_gate": "パールのフェンスゲート",
 
-  "itemgroup.cobalt": "モッドアイテム",
-  "itemgroup.special_item": "特殊アイテム",
-  "itemgroup.cobalt_chestplate": "武器と防具",
-  "itemgroup.mod_blocks": "モッドブロック",
+  "itemgroup.item_tab": "モッドアイテム",
+  "itemgroup.tool_tab": "ツール/武器",
+  "itemgroup.armor_tab": "防具",
+  "itemgroup.block_tab": "モッドブロック",
 
   "tooltip.terrariamod.metal_detector.tooltip": "近くの鉱石を探索",
   "message.terrariamod.metal_detector.not_found": "近くにレア鉱石はありません",

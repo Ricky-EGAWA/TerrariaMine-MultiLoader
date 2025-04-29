@@ -123,9 +123,9 @@ public class ModCreativeTabs {
                         output.accept(ModItems.ADAMANTITE_RAW.get());
                         output.accept(ModItems.HELLSTONE_RAW.get());
                         output.accept(ModItems.SPIDER_FANG.get());
-                        // 他のアイテムも追加することができます
-                        output.accept(ModItems.COBALT_SHOVEL.get());
-                        output.accept(ModItems.COBALT_PICKAXE.get());
+                        output.accept(ModItems.METAL_DETECTOR.get());
+                        output.accept(ModItems.INFINITE_LAVA_BUCKET.get());
+                        output.accept(ModItems.INFINITE_WATER_BUCKET.get());
                     })
                     .build()
     );

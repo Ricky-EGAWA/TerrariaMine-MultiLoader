@@ -156,10 +156,10 @@
   "block.terrariamod.pearl_fence": "Clôture de Perle",
   "block.terrariamod.pearl_fence_gate": "Porte de clôture de Perle",
 
-  "itemgroup.cobalt": "Objets du Mod",
-  "itemgroup.special_item": "Objets Spéciaux du Mod",
-  "itemgroup.cobalt_chestplate": "Armures du Mod",
-  "itemgroup.mod_blocks": "Blocs du Mod",
+  "itemgroup.item_tab": "Objets du Mod",
+  "itemgroup.tool_tab": "Outils/Armes de Mod",
+  "itemgroup.armor_tab": "Armures du Mod",
+  "itemgroup.block_tab": "Blocs du Mod",
 
   "tooltip.terrariamod.metal_detector.tooltip": "Détecte les trésors souterrains",
   "message.terrariamod.metal_detector.not_found": "Aucun trésor trouvé à proximité !",
