@@ -15,8 +15,12 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRe
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyRenderer;
+import com.ricky.terrariamod.platform.services.FabricKeyBindHelper;
+import com.ricky.terrariamod.util.KeyBindings;
+import com.ricky.terrariamod.util.KeyInputHandler;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.renderer.RenderType;
 
@@ -44,7 +48,7 @@ public class TerrariaModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PEARL_SAPLING.get(), RenderType.cutout());
         //endregion
 
-
+        //region エンティティ
         EntityRendererRegistry.register(ModEntities.MUMMY.get(), MummyRenderer::new);
         EntityRendererRegistry.register(ModEntities.LIGHT_MUMMY.get(), LightMummyRenderer::new);
         EntityRendererRegistry.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyRenderer::new);
@@ -60,5 +64,9 @@ public class TerrariaModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.LAVA_BAT.get(), LavaBatRenderer::new);
         EntityRendererRegistry.register(ModEntities.ICE_BAT.get(), IceBatRenderer::new);
         EntityRendererRegistry.register(ModEntities.JUNGLE_BAT.get(), JungleBatRenderer::new);
+        //endregion
+
+        KeyBindings.init(new FabricKeyBindHelper());
+        ClientTickEvents.END_CLIENT_TICK.register(client -> KeyInputHandler.onClientTick());
     }
 }

@@ -1,6 +1,7 @@
-package com.ricky.terrariamod.entity;
+package com.ricky.terrariamod.event;
 
 import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatRenderer;
@@ -14,14 +15,17 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRe
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyRenderer;
+import com.ricky.terrariamod.platform.services.ForgeKeyBindHelper;
+import com.ricky.terrariamod.util.KeyBindings;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = Constants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ClientModEvents {
+public class ClientModLifecycleEvents  {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(ModEntities.MUMMY.get(), MummyRenderer::new);
@@ -39,5 +43,10 @@ public class ClientModEvents {
         EntityRenderers.register(ModEntities.LAVA_BAT.get(), LavaBatRenderer::new);
         EntityRenderers.register(ModEntities.ICE_BAT.get(), IceBatRenderer::new);
         EntityRenderers.register(ModEntities.JUNGLE_BAT.get(), JungleBatRenderer::new);
+    }
+    @SubscribeEvent
+    public static void registerKeys(RegisterKeyMappingsEvent event) {
+        KeyBindings.init(new ForgeKeyBindHelper());
+        event.register(KeyBindings.RELOAD_KEY);
     }
 }

@@ -1,6 +1,7 @@
-package com.ricky.terrariamod.entity;
+package com.ricky.terrariamod.event;
 
 import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
