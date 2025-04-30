@@ -19,11 +19,6 @@ public abstract class PlayerManaMixin {
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo info) {
         Player player = (Player) (Object) this;
-        if(player.level().isClientSide){
-            System.out.println("client : "+((IEntityDataSaver)player).getPersistentData().getInt("mana"));
-        }else{
-            System.out.println("server : "+((IEntityDataSaver)player).getPersistentData().getInt("mana"));
-        }
 
         MinecraftServer server = player.getServer();
         if (server == null) return;

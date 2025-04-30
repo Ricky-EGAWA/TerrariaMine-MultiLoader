@@ -1,6 +1,7 @@
 package com.ricky.terrariamod;
 
 import com.ricky.terrariamod.block.ModBlocks;
+import com.ricky.terrariamod.client.render.ManaHudOverlay;
 import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRenderer;
@@ -24,6 +25,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.renderer.RenderType;
 
 public class TerrariaModClient implements ClientModInitializer {
@@ -74,5 +76,7 @@ public class TerrariaModClient implements ClientModInitializer {
         ModPackets.registerS2CPackets();
         ModPackets.registerC2SPackets();
         FabricNetworkHelper.initializeClientHandlers();
+
+        HudRenderCallback.EVENT.register((drawContext, tickDelta) -> ManaHudOverlay.render(drawContext));
     }
 }
