@@ -126,6 +126,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.METAL_DETECTOR.get());
                         output.accept(ModItems.INFINITE_LAVA_BUCKET.get());
                         output.accept(ModItems.INFINITE_WATER_BUCKET.get());
+                        output.accept(ModItems.MAGIC_MIRROR.get());
                     })
                     .build()
     );

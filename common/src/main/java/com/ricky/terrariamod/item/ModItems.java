@@ -5,6 +5,7 @@ import com.ricky.terrariamod.item.armor.ModArmorItem;
 import com.ricky.terrariamod.item.armor.ModArmorMaterials;
 import com.ricky.terrariamod.item.custom.InfiniteLavaBucketItem;
 import com.ricky.terrariamod.item.custom.InfiniteWaterBucketItem;
+import com.ricky.terrariamod.item.custom.MagicMirrorItem;
 import com.ricky.terrariamod.item.custom.MetalDetectorItem;
 import com.ricky.terrariamod.item.tool.ModAxeItem;
 import com.ricky.terrariamod.item.tool.ModPickaxeItem;
@@ -25,6 +26,8 @@ public class ModItems {
             () -> new InfiniteLavaBucketItem(new Item.Properties()));
     public static final RegistryObject<Item> INFINITE_WATER_BUCKET = ITEMS.register("infinite_water_bucket",
             () -> new InfiniteWaterBucketItem(new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror",
+            () -> new MagicMirrorItem(new Item.Properties()));
     //endregion
 
     //region インゴット & 素材アイテム

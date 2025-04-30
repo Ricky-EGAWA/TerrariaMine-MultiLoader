@@ -30,6 +30,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.INFINITE_LAVA_BUCKET);
         simpleItem(ModItems.INFINITE_WATER_BUCKET);
+        simpleItem(ModItems.MAGIC_MIRROR);
         // 他のアイテムを追加することができます
 
         handheldItem(ModItems.COBALT_PICKAXE);
