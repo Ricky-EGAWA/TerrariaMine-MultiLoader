@@ -17,6 +17,7 @@ import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEn
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyEntity;
 import com.ricky.terrariamod.item.ModCreativeTabs;
 import com.ricky.terrariamod.item.ModItems;
+import com.ricky.terrariamod.networking.ModPackets;
 import com.ricky.terrariamod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -61,5 +62,7 @@ public class TerrariaMod implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.JUNGLE_BAT.get(), JungleBatEntity.createAttributes());
         //endregion
 
+        ModPackets.registerC2SPackets();
+        ModPackets.registerS2CPackets();
     }
 }

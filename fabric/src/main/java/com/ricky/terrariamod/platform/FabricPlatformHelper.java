@@ -1,7 +1,9 @@
 package com.ricky.terrariamod.platform;
 
 import com.ricky.terrariamod.platform.services.IPlatformHelper;
+import com.ricky.terrariamod.platform.services.IManaComponent;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.world.entity.player.Player;
 
 public class FabricPlatformHelper implements IPlatformHelper {
 

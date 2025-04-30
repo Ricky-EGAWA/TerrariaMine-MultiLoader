@@ -15,7 +15,9 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRe
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyRenderer;
+import com.ricky.terrariamod.networking.ModPackets;
 import com.ricky.terrariamod.platform.services.FabricKeyBindHelper;
+import com.ricky.terrariamod.platform.services.FabricNetworkHelper;
 import com.ricky.terrariamod.util.KeyBindings;
 import com.ricky.terrariamod.util.KeyInputHandler;
 import net.fabricmc.api.ClientModInitializer;
@@ -68,5 +70,9 @@ public class TerrariaModClient implements ClientModInitializer {
 
         KeyBindings.init(new FabricKeyBindHelper());
         ClientTickEvents.END_CLIENT_TICK.register(client -> KeyInputHandler.onClientTick());
+
+        ModPackets.registerS2CPackets();
+        ModPackets.registerC2SPackets();
+        FabricNetworkHelper.initializeClientHandlers();
     }
 }

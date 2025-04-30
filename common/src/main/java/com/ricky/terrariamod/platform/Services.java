@@ -1,8 +1,10 @@
 package com.ricky.terrariamod.platform;
 
 import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.platform.services.INetworkHelper;
 import com.ricky.terrariamod.platform.services.IPlatformHelper;
 import com.ricky.terrariamod.platform.services.IRegistryFactory;
+import com.ricky.terrariamod.platform.services.IWorldGenHelper;
 
 import java.util.ServiceLoader;
 
@@ -16,6 +18,9 @@ public class Services {
     // mod is loaded.
     public static final IRegistryFactory REGISTRY_FACTORY = load(IRegistryFactory.class);
     public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
+    public static final INetworkHelper NETWORK = load(INetworkHelper.class);
+    public static final IWorldGenHelper WORLD_GEN = load(IWorldGenHelper.class);
+
 
     // This code is used to load a service for the current environment. Your implementation of the service must be defined
     // manually by including a text file in META-INF/services named with the fully qualified class name of the service.
