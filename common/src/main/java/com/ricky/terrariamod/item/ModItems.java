@@ -11,6 +11,9 @@ import com.ricky.terrariamod.item.tool.ModAxeItem;
 import com.ricky.terrariamod.item.tool.ModPickaxeItem;
 import com.ricky.terrariamod.item.tool.ModToolMaterial;
 import com.ricky.terrariamod.item.weapon.magic.AmethystStaffItem;
+import com.ricky.terrariamod.item.weapon.magic.DiamondStaffItem;
+import com.ricky.terrariamod.item.weapon.magic.EmeraldStaffItem;
+import com.ricky.terrariamod.item.weapon.magic.WaterBoltItem;
 import com.ricky.terrariamod.registry.RegistryObject;
 import com.ricky.terrariamod.registry.RegistryProvider;
 import net.minecraft.world.item.*;
@@ -91,6 +94,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> AMETHYST_STAFF = ITEMS.register("amethyst_staff",
             () -> new AmethystStaffItem(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_STAFF = ITEMS.register("diamond_staff",
+            () -> new DiamondStaffItem(new Item.Properties()));
+    public static final RegistryObject<Item> EMERALD_STAFF = ITEMS.register("emerald_staff",
+            () -> new EmeraldStaffItem(new Item.Properties()));
+    public static final RegistryObject<Item> WATER_BOLT = ITEMS.register("water_bolt",
+            () -> new WaterBoltItem(new Item.Properties()));
     //endregion
 
     //region 防具

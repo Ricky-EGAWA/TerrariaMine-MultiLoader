@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-01T19:27:19.7307649	Item Models: terrariamod
+// 1.20.1	2025-05-01T20:52:04.4307788	Item Models: terrariamod
 17578860ad108ffdc27ea50fd2759bc2efefe7b5 assets/terrariamod/models/item/adamantite_axe.json
 c55d632b619ccca32f15aeff1b6a537af6275268 assets/terrariamod/models/item/adamantite_boots.json
 9571e16ebd804011a82b355805106db7090501c2 assets/terrariamod/models/item/adamantite_chestplate.json
@@ -28,6 +28,8 @@ cbfccbfdd029322f9ab745579f2876a642dc5dbd assets/terrariamod/models/item/cobalt_r
 a4dfdcff72273c0af15b577b09c5e6cc7210701a assets/terrariamod/models/item/copper_chestplate.json
 bbebd77df4bcf7a8633280f1816d1c60f796c387 assets/terrariamod/models/item/copper_helmet.json
 b6bc029cb6158481cb2b7b6e31765f11706cd3a5 assets/terrariamod/models/item/copper_leggings.json
+56701d58d40a945f75ea307225bdd119a9cf3ed7 assets/terrariamod/models/item/diamond_staff.json
+4e41b8bf656f30b48397a488d1c2cb687060258e assets/terrariamod/models/item/emerald_staff.json
 2f5f83c625ea66021e6fe5312d92f1d0c7d50ec4 assets/terrariamod/models/item/glass_helmet.json
 0bf206bd66c6493fd97db4d5542d4076e5147ed3 assets/terrariamod/models/item/hellstone_axe.json
 d3139476b09462cdf08653f36cdbb052d00352e8 assets/terrariamod/models/item/hellstone_boots.json
@@ -67,3 +69,4 @@ c18c70ff8b753202289f1c02a614728b25f57e91 assets/terrariamod/models/item/pumpkin_
 5da8341ad1ea31cddb112a32ae10eb4e415c78b7 assets/terrariamod/models/item/pumpkin_helmet.json
 872d3224e2269ec93a07b258bc16d9f9633bf0df assets/terrariamod/models/item/pumpkin_leggings.json
 d87beed1819602d6de68d4eed2f371d1ed7258e6 assets/terrariamod/models/item/spider_fang.json
+5939c9c8fd2316f1f798dcd3418ce40ed4474a74 assets/terrariamod/models/item/water_bolt.json

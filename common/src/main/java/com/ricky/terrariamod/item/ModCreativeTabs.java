@@ -103,6 +103,9 @@ public class ModCreativeTabs {
                         output.accept(ModItems.HELLSTONE_AXE.get());
                         output.accept(ModItems.HELLSTONE_SHOVEL.get());
                         output.accept(ModItems.AMETHYST_STAFF.get());
+                        output.accept(ModItems.DIAMOND_STAFF.get());
+                        output.accept(ModItems.EMERALD_STAFF.get());
+                        output.accept(ModItems.WATER_BOLT.get());
                         // 必要なアイテムをさらに追加
                     })
                     .build()
