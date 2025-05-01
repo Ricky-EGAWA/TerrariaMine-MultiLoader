@@ -5,6 +5,8 @@ import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatRenderer;
+import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeModel;
+import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeRenderer;
@@ -19,6 +21,7 @@ import com.ricky.terrariamod.platform.services.ForgeKeyBindHelper;
 import com.ricky.terrariamod.util.KeyBindings;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -43,6 +46,13 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.LAVA_BAT.get(), LavaBatRenderer::new);
         EntityRenderers.register(ModEntities.ICE_BAT.get(), IceBatRenderer::new);
         EntityRenderers.register(ModEntities.JUNGLE_BAT.get(), JungleBatRenderer::new);
+
+        EntityRenderers.register(ModEntities.DEMON_EYE.get(), DemonEyeRenderer::new);
+    }
+    // モデルレイヤーの登録（Forge）
+    @SubscribeEvent
+    public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(DemonEyeModel.LAYER_LOCATION, DemonEyeModel::createBodyLayer);
     }
     @SubscribeEvent
     public static void registerKeys(RegisterKeyMappingsEvent event) {
