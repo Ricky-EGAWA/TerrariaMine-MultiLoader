@@ -5,7 +5,9 @@ import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeEntity;
@@ -63,6 +65,8 @@ public class TerrariaMod implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.JUNGLE_BAT.get(), JungleBatEntity.createAttributes());
 
         FabricDefaultAttributeRegistry.register(ModEntities.DEMON_EYE.get(), DemonEyeEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.CRIMERA.get(), CrimeraEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulEntity.createAttributes());
         //endregion
 
         ModPackets.registerC2SPackets();

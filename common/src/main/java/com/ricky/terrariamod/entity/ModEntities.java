@@ -4,7 +4,9 @@ import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeEntity;
@@ -73,6 +75,12 @@ public class ModEntities {
     public static final RegistryObject<EntityType<DemonEyeEntity>> DEMON_EYE =
             ENTITY_TYPES.register("demon_eye", () -> EntityType.Builder.of(DemonEyeEntity::new, MobCategory.MONSTER)
                     .sized(0.7f, 0.7f).build("demon_eye"));
+    public static final RegistryObject<EntityType<CrimeraEntity>> CRIMERA =
+            ENTITY_TYPES.register("crimera", () -> EntityType.Builder.of(CrimeraEntity::new, MobCategory.MONSTER)
+                    .sized(1f, 0.5f).build("crimera"));
+    public static final RegistryObject<EntityType<EaterOfSoulEntity>> EATER_OU_SOUL =
+            ENTITY_TYPES.register("eater_of_soul", () -> EntityType.Builder.of(EaterOfSoulEntity::new, MobCategory.MONSTER)
+                    .sized(1f, 0.5f).build("eater_of_soul"));
     //endregion
 
     // 登録メソッド

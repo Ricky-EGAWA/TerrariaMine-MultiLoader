@@ -6,8 +6,12 @@ import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatRenderer;
+import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraModel;
+import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeModel;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeRenderer;
+import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulModel;
+import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeRenderer;
@@ -74,6 +78,10 @@ public class TerrariaModClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.DEMON_EYE.get(), DemonEyeRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(DemonEyeModel.LAYER_LOCATION, DemonEyeModel::createBodyLayer);
+        EntityRendererRegistry.register(ModEntities.CRIMERA.get(), CrimeraRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(CrimeraModel.LAYER_LOCATION, CrimeraModel::createBodyLayer);
+        EntityRendererRegistry.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(EaterOfSoulModel.LAYER_LOCATION, EaterOfSoulModel::createBodyLayer);
         //endregion
 
         KeyBindings.init(new FabricKeyBindHelper());

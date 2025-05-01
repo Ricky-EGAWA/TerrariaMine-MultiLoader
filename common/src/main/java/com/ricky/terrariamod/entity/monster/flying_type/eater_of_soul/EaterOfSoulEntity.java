@@ -1,15 +1,17 @@
-package com.ricky.terrariamod.entity.monster.flying_type.demon_eye;
+package com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul;
 
 import com.ricky.terrariamod.entity.monster.flying_type.FlyMoveControl;
 import com.ricky.terrariamod.entity.monster.flying_type.FlyRandomlyGoal;
 import com.ricky.terrariamod.entity.monster.flying_type.TrackPlayerGoal;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.FlyingMob;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.Level;
 
-public class DemonEyeEntity extends FlyingMob {
-    public DemonEyeEntity(EntityType<? extends FlyingMob> type, Level level) {
+public class EaterOfSoulEntity extends FlyingMob {
+    public EaterOfSoulEntity(EntityType<? extends FlyingMob> type, Level level) {
         super(type, level);
         this.moveControl = new FlyMoveControl(this);
     }
