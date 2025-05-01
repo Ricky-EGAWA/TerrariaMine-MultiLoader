@@ -102,6 +102,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.HELLSTONE_PICKAXE.get());
                         output.accept(ModItems.HELLSTONE_AXE.get());
                         output.accept(ModItems.HELLSTONE_SHOVEL.get());
+                        output.accept(ModItems.AMETHYST_STAFF.get());
                         // 必要なアイテムをさらに追加
                     })
                     .build()

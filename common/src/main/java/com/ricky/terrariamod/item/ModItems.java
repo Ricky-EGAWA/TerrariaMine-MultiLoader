@@ -10,6 +10,7 @@ import com.ricky.terrariamod.item.custom.MetalDetectorItem;
 import com.ricky.terrariamod.item.tool.ModAxeItem;
 import com.ricky.terrariamod.item.tool.ModPickaxeItem;
 import com.ricky.terrariamod.item.tool.ModToolMaterial;
+import com.ricky.terrariamod.item.weapon.magic.AmethystStaffItem;
 import com.ricky.terrariamod.registry.RegistryObject;
 import com.ricky.terrariamod.registry.RegistryProvider;
 import net.minecraft.world.item.*;
@@ -87,6 +88,9 @@ public class ModItems {
             () -> new ShovelItem(ModToolMaterial.HELLSTONE_INGOT, 1, -3f, new Item.Properties()));
     public static final RegistryObject<Item> HELLSTONE_SWORD = ITEMS.register("hellstone_sword",
             () -> new SwordItem(ModToolMaterial.HELLSTONE_INGOT, 5, -2.4f, new Item.Properties()));
+
+    public static final RegistryObject<Item> AMETHYST_STAFF = ITEMS.register("amethyst_staff",
+            () -> new AmethystStaffItem(new Item.Properties()));
     //endregion
 
     //region 防具

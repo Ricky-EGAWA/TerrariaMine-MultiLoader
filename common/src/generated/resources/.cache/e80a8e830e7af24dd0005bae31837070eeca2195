@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-30T17:30:31.7671074	Item Models: terrariamod
+// 1.20.1	2025-05-01T19:27:19.7307649	Item Models: terrariamod
 17578860ad108ffdc27ea50fd2759bc2efefe7b5 assets/terrariamod/models/item/adamantite_axe.json
 c55d632b619ccca32f15aeff1b6a537af6275268 assets/terrariamod/models/item/adamantite_boots.json
 9571e16ebd804011a82b355805106db7090501c2 assets/terrariamod/models/item/adamantite_chestplate.json
@@ -9,6 +9,7 @@ a20efd3c993c343eb4324acd69912212e87dd9fe assets/terrariamod/models/item/adamanti
 af7a6876460677ddad59384be75f47c3934a26f6 assets/terrariamod/models/item/adamantite_raw.json
 de13621fe39b7ef021293d60010a6ac24ab35604 assets/terrariamod/models/item/adamantite_shovel.json
 040f94bf1f0200bdb66b800ffb399949167d3244 assets/terrariamod/models/item/adamantite_sword.json
+d455abcc0b0e9831f8e21c949b8015a76338ef91 assets/terrariamod/models/item/amethyst_staff.json
 f072554eaf169eaf8c0a0f624c5f6886126a6cf4 assets/terrariamod/models/item/cactus_boots.json
 7dac1737d5f360a7103cbe03db4b66705b381c9d assets/terrariamod/models/item/cactus_chestplate.json
 b86a56f5b0fb1ad9ddd70c6bb22639d6bea2c916 assets/terrariamod/models/item/cactus_helmet.json

@@ -22,6 +22,8 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRe
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyRenderer;
+import com.ricky.terrariamod.entity.projectile.magic.MagicBallModel;
+import com.ricky.terrariamod.entity.projectile.magic.MagicBallRenderer;
 import com.ricky.terrariamod.networking.ModPackets;
 import com.ricky.terrariamod.platform.services.FabricKeyBindHelper;
 import com.ricky.terrariamod.platform.services.FabricNetworkHelper;
@@ -82,6 +84,9 @@ public class TerrariaModClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(CrimeraModel.LAYER_LOCATION, CrimeraModel::createBodyLayer);
         EntityRendererRegistry.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(EaterOfSoulModel.LAYER_LOCATION, EaterOfSoulModel::createBodyLayer);
+
+        EntityRendererRegistry.register(ModEntities.MAGIC_BALL.get(), MagicBallRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(MagicBallModel.LAYER_LOCATION, MagicBallModel::createBodyLayer);
         //endregion
 
         KeyBindings.init(new FabricKeyBindHelper());

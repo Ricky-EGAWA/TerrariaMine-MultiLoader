@@ -17,6 +17,7 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEn
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyEntity;
+import com.ricky.terrariamod.entity.projectile.magic.MagicBallEntity;
 import com.ricky.terrariamod.registry.RegistryObject;
 import com.ricky.terrariamod.registry.RegistryProvider;
 import net.minecraft.core.registries.Registries;
@@ -81,6 +82,16 @@ public class ModEntities {
     public static final RegistryObject<EntityType<EaterOfSoulEntity>> EATER_OU_SOUL =
             ENTITY_TYPES.register("eater_of_soul", () -> EntityType.Builder.of(EaterOfSoulEntity::new, MobCategory.MONSTER)
                     .sized(1f, 0.5f).build("eater_of_soul"));
+    //endregion
+    //region projectile
+    public static final RegistryObject<EntityType<MagicBallEntity>> MAGIC_BALL =
+            ENTITY_TYPES.register("magic_ball", () ->
+                    EntityType.Builder.<MagicBallEntity>of(MagicBallEntity::new, MobCategory.MISC)
+                            .sized(0.3f, 0.3f)
+                            .clientTrackingRange(80)
+                            .updateInterval(10)
+                            .build("magic_ball")
+            );
     //endregion
 
     // 登録メソッド

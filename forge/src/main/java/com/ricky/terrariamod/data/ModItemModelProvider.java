@@ -49,6 +49,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.HELLSTONE_AXE);
         handheldItem(ModItems.HELLSTONE_SHOVEL);
         handheldItem(ModItems.HELLSTONE_SWORD);
+        handheldItem(ModItems.AMETHYST_STAFF);
 
         //region 防具
         simpleItem(ModItems.OAK_HELMET);

@@ -21,6 +21,8 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRe
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyRenderer;
+import com.ricky.terrariamod.entity.projectile.magic.MagicBallModel;
+import com.ricky.terrariamod.entity.projectile.magic.MagicBallRenderer;
 import com.ricky.terrariamod.platform.services.ForgeKeyBindHelper;
 import com.ricky.terrariamod.util.KeyBindings;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -54,6 +56,7 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.DEMON_EYE.get(), DemonEyeRenderer::new);
         EntityRenderers.register(ModEntities.CRIMERA.get(), CrimeraRenderer::new);
         EntityRenderers.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulRenderer::new);
+        EntityRenderers.register(ModEntities.MAGIC_BALL.get(), MagicBallRenderer::new);
     }
     // モデルレイヤーの登録（Forge）
     @SubscribeEvent
@@ -61,6 +64,7 @@ public class ClientModLifecycleEvents  {
         event.registerLayerDefinition(DemonEyeModel.LAYER_LOCATION, DemonEyeModel::createBodyLayer);
         event.registerLayerDefinition(CrimeraModel.LAYER_LOCATION, CrimeraModel::createBodyLayer);
         event.registerLayerDefinition(EaterOfSoulModel.LAYER_LOCATION, EaterOfSoulModel::createBodyLayer);
+        event.registerLayerDefinition(MagicBallModel.LAYER_LOCATION, MagicBallModel::createBodyLayer);
     }
     @SubscribeEvent
     public static void registerKeys(RegisterKeyMappingsEvent event) {
