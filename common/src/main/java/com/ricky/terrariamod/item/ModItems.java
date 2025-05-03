@@ -12,6 +12,8 @@ import com.ricky.terrariamod.item.tool.ModAxeItem;
 import com.ricky.terrariamod.item.tool.ModPickaxeItem;
 import com.ricky.terrariamod.item.tool.ModToolMaterial;
 import com.ricky.terrariamod.item.weapon.gun.HandGunItem;
+import com.ricky.terrariamod.item.weapon.gun.PhoenixBlasterItem;
+import com.ricky.terrariamod.item.weapon.gun.RocketLauncherItem;
 import com.ricky.terrariamod.item.weapon.magic.AmethystStaffItem;
 import com.ricky.terrariamod.item.weapon.magic.DiamondStaffItem;
 import com.ricky.terrariamod.item.weapon.magic.EmeraldStaffItem;
@@ -104,11 +106,17 @@ public class ModItems {
             () -> new WaterBoltItem(new Item.Properties()));
     public static final RegistryObject<Item> HANDGUN = ITEMS.register("handgun",
             () -> new HandGunItem(new Item.Properties()));
+    public static final RegistryObject<Item> PHOENIX_BLASTER = ITEMS.register("phoenix_blaster",
+            () -> new PhoenixBlasterItem(new Item.Properties()));
+    public static final RegistryObject<Item> ROCKET_LAUNCHER = ITEMS.register("rocket_launcher",
+            () -> new RocketLauncherItem(new Item.Properties(), 3, 2));
     //endregion
 
     //region 弾丸
     public static final RegistryObject<Item> MUSKET_BALL = ITEMS.register("musket_ball",
             () -> new MusketBallItem(new Item.Properties()));
+    public static final RegistryObject<Item> ROCKET = ITEMS.register("rocket",
+            () -> new Item(new Item.Properties()));
     //endregion
 
     //region 防具

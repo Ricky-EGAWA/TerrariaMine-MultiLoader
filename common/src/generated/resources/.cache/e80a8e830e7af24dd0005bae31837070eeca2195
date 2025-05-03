@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-03T17:18:19.1747464	Item Models: terrariamod
+// 1.20.1	2025-05-03T17:55:45.1728138	Item Models: terrariamod
 17578860ad108ffdc27ea50fd2759bc2efefe7b5 assets/terrariamod/models/item/adamantite_axe.json
 c55d632b619ccca32f15aeff1b6a537af6275268 assets/terrariamod/models/item/adamantite_boots.json
 9571e16ebd804011a82b355805106db7090501c2 assets/terrariamod/models/item/adamantite_chestplate.json
@@ -66,6 +66,7 @@ bc14a16dfc4c879824fa48d1aebe3284a041bff9 assets/terrariamod/models/item/orichalc
 16653cfcb7f11904d3e50006fc964d7465d1f8ab assets/terrariamod/models/item/orichalcum_raw.json
 41d4f106a38be7c8c1d05b486b54757f9e037adc assets/terrariamod/models/item/orichalcum_shovel.json
 ba73e56e651ddddba4af6711a224110c22108009 assets/terrariamod/models/item/orichalcum_sword.json
+9abbd8dc58e8ffd490b83e99d5fdceb23e8c8f6f assets/terrariamod/models/item/phoenix_blaster.json
 c18c70ff8b753202289f1c02a614728b25f57e91 assets/terrariamod/models/item/pumpkin_boots.json
 353d4039d903b47f4b139bcb3dd5b7662d4d9b49 assets/terrariamod/models/item/pumpkin_chestplate.json
 5da8341ad1ea31cddb112a32ae10eb4e415c78b7 assets/terrariamod/models/item/pumpkin_helmet.json

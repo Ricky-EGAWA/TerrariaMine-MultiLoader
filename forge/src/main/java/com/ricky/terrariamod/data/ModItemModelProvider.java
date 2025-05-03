@@ -54,7 +54,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.EMERALD_STAFF);
         handheldItem(ModItems.WATER_BOLT);
         simpleItem(ModItems.MUSKET_BALL);
+        simpleItem(ModItems.ROCKET);
         handheldItem(ModItems.HANDGUN);
+        handheldItem(ModItems.PHOENIX_BLASTER);
 
         //region 防具
         simpleItem(ModItems.OAK_HELMET);

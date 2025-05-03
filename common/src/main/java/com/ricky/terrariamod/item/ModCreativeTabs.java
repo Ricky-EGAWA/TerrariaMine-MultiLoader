@@ -108,6 +108,9 @@ public class ModCreativeTabs {
                         output.accept(ModItems.WATER_BOLT.get());
                         output.accept(ModItems.MUSKET_BALL.get());
                         output.accept(ModItems.HANDGUN.get());
+                        output.accept(ModItems.ROCKET.get());
+                        output.accept(ModItems.PHOENIX_BLASTER.get());
+                        output.accept(ModItems.ROCKET_LAUNCHER.get());
                         // 必要なアイテムをさらに追加
                     })
                     .build()
