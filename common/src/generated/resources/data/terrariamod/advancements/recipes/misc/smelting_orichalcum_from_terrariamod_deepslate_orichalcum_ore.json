@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_orichalcum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "terrariamod:deepslate_orichalcum_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "terrariamod:smelting_orichalcum_from_terrariamod_deepslate_orichalcum_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_orichalcum",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "terrariamod:smelting_orichalcum_from_terrariamod_deepslate_orichalcum_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

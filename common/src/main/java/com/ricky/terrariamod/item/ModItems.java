@@ -209,6 +209,104 @@ public class ModItems {
 //    public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
 //            () -> new MetalDetectorItem(new Item.Properties().durability(64)));
 
+    // 各ツールを取得するメソッド
+    public static Item getPickaxe(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "cobalt" -> COBALT_PICKAXE.get();
+            case "orichalcum" -> ORICHALCUM_PICKAXE.get();
+            case "adamantite" -> ADAMANTITE_PICKAXE.get();
+            case "hellstone" -> HELLSTONE_PICKAXE.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+
+    public static Item getAxe(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "cobalt" -> COBALT_AXE.get();
+            case "orichalcum" -> ORICHALCUM_AXE.get();
+            case "adamantite" -> ADAMANTITE_AXE.get();
+            case "hellstone" -> HELLSTONE_AXE.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+
+    public static Item getSword(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "cobalt" -> COBALT_SWORD.get();
+            case "orichalcum" -> ORICHALCUM_SWORD.get();
+            case "adamantite" -> ADAMANTITE_SWORD.get();
+            case "hellstone" -> HELLSTONE_SWORD.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+
+    public static Item getShovel(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "cobalt" -> COBALT_SHOVEL.get();
+            case "orichalcum" -> ORICHALCUM_SHOVEL.get();
+            case "adamantite" -> ADAMANTITE_SHOVEL.get();
+            case "hellstone" -> HELLSTONE_SHOVEL.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+
+    public static Item getHelmet(String materialName) {
+        return switch (materialName) {
+            case "cobalt" -> COBALT_HELMET.get();
+            case "orichalcum" -> ORICHALCUM_HELMET.get();
+            case "adamantite" -> ADAMANTITE_HELMET.get();
+            case "hellstone" -> HELLSTONE_HELMET.get();
+            case "cactus" -> CACTUS_HELMET.get();
+            case "pumpkin" -> PUMPKIN_HELMET.get();
+            case "oak" -> OAK_HELMET.get();
+            case "obsidian" -> OBSIDIAN_HELMET.get();
+            case "glass" -> GLASS_HELMET.get();
+            case "night" -> NIGHT_HELMET.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+
+    public static Item getChestplate(String materialName) {
+        return switch (materialName) {
+            case "cobalt" -> COBALT_CHESTPLATE.get();
+            case "orichalcum" -> ORICHALCUM_CHESTPLATE.get();
+            case "adamantite" -> ADAMANTITE_CHESTPLATE.get();
+            case "hellstone" -> HELLSTONE_CHESTPLATE.get();
+            case "cactus" -> CACTUS_CHESTPLATE.get();
+            case "pumpkin" -> PUMPKIN_CHESTPLATE.get();
+            case "oak" -> OAK_CHESTPLATE.get();
+            case "obsidian" -> OBSIDIAN_CHESTPLATE.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+
+    public static Item getLeggings(String materialName) {
+        return switch (materialName) {
+            case "cobalt" -> COBALT_LEGGINGS.get();
+            case "orichalcum" -> ORICHALCUM_LEGGINGS.get();
+            case "adamantite" -> ADAMANTITE_LEGGINGS.get();
+            case "hellstone" -> HELLSTONE_LEGGINGS.get();
+            case "cactus" -> CACTUS_LEGGINGS.get();
+            case "pumpkin" -> PUMPKIN_LEGGINGS.get();
+            case "oak" -> OAK_LEGGINGS.get();
+            case "obsidian" -> OBSIDIAN_LEGGINGS.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+
+    public static Item getBoots(String materialName) {
+        return switch (materialName) {
+            case "cobalt" -> COBALT_BOOTS.get();
+            case "orichalcum" -> ORICHALCUM_BOOTS.get();
+            case "adamantite" -> ADAMANTITE_BOOTS.get();
+            case "hellstone" -> HELLSTONE_BOOTS.get();
+            case "cactus" -> CACTUS_BOOTS.get();
+            case "pumpkin" -> PUMPKIN_BOOTS.get();
+            case "oak" -> OAK_BOOTS.get();
+            case "obsidian" -> OBSIDIAN_BOOTS.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
     // 登録メソッド
     public static void register() {
     }

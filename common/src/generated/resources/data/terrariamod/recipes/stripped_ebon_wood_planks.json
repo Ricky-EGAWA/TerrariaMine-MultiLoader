@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": {
+      "item": "terrariamod:stripped_ebon_log"
+    }
+  },
+  "pattern": [
+    "   ",
+    " I ",
+    "   "
+  ],
+  "result": {
+    "count": 4,
+    "item": "terrariamod:ebon_planks"
+  },
+  "show_notification": true
+}

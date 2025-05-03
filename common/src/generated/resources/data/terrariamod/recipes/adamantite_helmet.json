@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "terrariamod:adamantite_ingot"
+    }
+  },
+  "pattern": [
+    "III",
+    "I I",
+    "   "
+  ],
+  "result": {
+    "item": "terrariamod:adamantite_helmet"
+  },
+  "show_notification": true
+}

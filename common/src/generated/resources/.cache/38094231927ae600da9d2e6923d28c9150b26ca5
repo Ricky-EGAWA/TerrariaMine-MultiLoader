@@ -1,0 +1,12 @@
+// 1.20.1	2025-05-03T19:08:47.7111834	Tags for minecraft:block mod id terrariamod
+2baca8e27ac79a64173477fc3806f98f11be3a29 data/forge/tags/blocks/needs_tool_level_4.json
+a8d7b55a68d5dc5a8e8c835896b330f6825fa34c data/forge/tags/blocks/needs_tool_level_5.json
+f6d0d6f51bf689faf7fb68ebe270ced7eb626c1d data/forge/tags/blocks/needs_tool_level_6.json
+c54e1503d8399fc427ae7db34661f1e4bca40291 data/minecraft/tags/blocks/fences.json
+0a7a3fcc123ac6383d951b3af506a8a5689da216 data/minecraft/tags/blocks/fence_gates.json
+6241b3867df37f66ff28620207ab1c5b202818b5 data/minecraft/tags/blocks/logs_that_burn.json
+598b2d8a42198c42adfa0dcb06631b68de5437c6 data/minecraft/tags/blocks/mineable/pickaxe.json
+da709dd0e0d2df1b4bfadab8428a2c3d686a8337 data/minecraft/tags/blocks/needs_diamond_tool.json
+78b6506e9817689c663e15e497188c6da793e325 data/minecraft/tags/blocks/needs_iron_tool.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_stone_tool.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/walls.json

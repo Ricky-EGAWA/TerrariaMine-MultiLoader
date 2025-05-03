@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-03T17:55:45.1728138	Item Models: terrariamod
+// 1.20.1	2025-05-03T19:08:47.7070294	Item Models: terrariamod
 17578860ad108ffdc27ea50fd2759bc2efefe7b5 assets/terrariamod/models/item/adamantite_axe.json
 c55d632b619ccca32f15aeff1b6a537af6275268 assets/terrariamod/models/item/adamantite_boots.json
 9571e16ebd804011a82b355805106db7090501c2 assets/terrariamod/models/item/adamantite_chestplate.json
@@ -71,5 +71,6 @@ c18c70ff8b753202289f1c02a614728b25f57e91 assets/terrariamod/models/item/pumpkin_
 353d4039d903b47f4b139bcb3dd5b7662d4d9b49 assets/terrariamod/models/item/pumpkin_chestplate.json
 5da8341ad1ea31cddb112a32ae10eb4e415c78b7 assets/terrariamod/models/item/pumpkin_helmet.json
 872d3224e2269ec93a07b258bc16d9f9633bf0df assets/terrariamod/models/item/pumpkin_leggings.json
+808e16022b10e58eabfcfdf9c703360f7bc0f97e assets/terrariamod/models/item/rocket.json
 d87beed1819602d6de68d4eed2f371d1ed7258e6 assets/terrariamod/models/item/spider_fang.json
 5939c9c8fd2316f1f798dcd3418ce40ed4474a74 assets/terrariamod/models/item/water_bolt.json

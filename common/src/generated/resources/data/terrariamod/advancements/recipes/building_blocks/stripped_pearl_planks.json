@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_terrariamod_stripped_pearl_wood": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "terrariamod:stripped_pearl_wood"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "terrariamod:stripped_pearl_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_terrariamod_stripped_pearl_wood",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "terrariamod:stripped_pearl_planks"
+    ]
+  },
+  "sends_telemetry_event": false
+}

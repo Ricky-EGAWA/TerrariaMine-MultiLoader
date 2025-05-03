@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": {
+      "item": "terrariamod:crim_wood"
+    }
+  },
+  "pattern": [
+    "   ",
+    " I ",
+    "   "
+  ],
+  "result": {
+    "count": 4,
+    "item": "terrariamod:crim_planks"
+  },
+  "show_notification": true
+}

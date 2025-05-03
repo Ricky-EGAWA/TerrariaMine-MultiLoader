@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "ingredient": {
+    "item": "terrariamod:deepslate_cobalt_ore"
+  },
+  "result": "terrariamod:cobalt_ingot"
+}

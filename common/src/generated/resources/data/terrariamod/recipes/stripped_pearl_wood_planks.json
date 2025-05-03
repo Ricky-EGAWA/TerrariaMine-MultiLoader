@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": {
+      "item": "terrariamod:stripped_pearl_log"
+    }
+  },
+  "pattern": [
+    "   ",
+    " I ",
+    "   "
+  ],
+  "result": {
+    "count": 4,
+    "item": "terrariamod:pearl_planks"
+  },
+  "show_notification": true
+}

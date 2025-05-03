@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": {
+      "item": "terrariamod:ebon_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "   ",
+    "SIS",
+    "SIS"
+  ],
+  "result": {
+    "item": "terrariamod:ebon_fence_gate"
+  },
+  "show_notification": true
+}

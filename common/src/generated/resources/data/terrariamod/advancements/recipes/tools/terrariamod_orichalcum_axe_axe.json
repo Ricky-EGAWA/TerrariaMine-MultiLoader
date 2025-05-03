@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_terrariamod_orichalcum_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "terrariamod:orichalcum_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "terrariamod:terrariamod_orichalcum_axe_axe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_terrariamod_orichalcum_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "terrariamod:terrariamod_orichalcum_axe_axe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

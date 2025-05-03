@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "terrariamod:hellstone_ingot"
+    },
+    "B": {
+      "item": "terrariamod:handgun"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "item": "terrariamod:phoenix_blaster"
+  },
+  "show_notification": true
+}

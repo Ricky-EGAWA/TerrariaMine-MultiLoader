@@ -208,6 +208,74 @@ public class ModBlocks {
     public static final Supplier<Block> GLOWING_MUSHROOM_STEM = registerBlockWithItem("glowing_mushroom_stem",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM).lightLevel(state -> 6)));
 
+    public static Block getSlab(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "ebon" -> EBON_SLAB.get();
+            case "crim" -> CRIM_SLAB.get();
+            case "pearl" -> PEARL_SLAB.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+    public static Block getStairs(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "ebon" -> EBON_STAIRS.get();
+            case "crim" -> CRIM_STAIRS.get();
+            case "pearl" -> PEARL_STAIRS.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+    public static Block getFence(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "ebon" -> EBON_FENCE.get();
+            case "crim" -> CRIM_FENCE.get();
+            case "pearl" -> PEARL_FENCE.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+    public static Block getFenceGate(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "ebon" -> EBON_FENCE_GATE.get();
+            case "crim" -> CRIM_FENCE_GATE.get();
+            case "pearl" -> PEARL_FENCE_GATE.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+    public static Block getButton(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "ebon" -> EBON_BUTTON.get();
+            case "crim" -> CRIM_BUTTON.get();
+            case "pearl" -> PEARL_BUTTON.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+    public static Block getPressurePlate(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "ebon" -> EBON_PRESSURE_PLATE.get();
+            case "crim" -> CRIM_PRESSURE_PLATE.get();
+            case "pearl" -> PEARL_PRESSURE_PLATE.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+    public static Block getWood(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "ebon" -> EBON_WOOD.get();
+            case "crim" -> CRIM_WOOD.get();
+            case "pearl" -> PEARL_WOOD.get();
+            case "stripped_ebon" -> STRIPPED_EBON_WOOD.get();
+            case "stripped_crim" -> STRIPPED_CRIM_WOOD.get();
+            case "stripped_pearl" -> STRIPPED_PEARL_WOOD.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+    public static Block getPlanks(String materialName) {
+        return switch (materialName.toLowerCase()) {
+            case "ebon", "ebon_wood", "stripped_ebon", "stripped_ebon_wood" -> EBON_PLANKS.get();
+            case "crim", "crim_wood", "stripped_crim", "stripped_crim_wood" -> CRIM_PLANKS.get();
+            case "pearl", "pearl_wood", "stripped_pearl", "stripped_pearl_wood" -> PEARL_PLANKS.get();
+            default -> throw new IllegalArgumentException("Unknown material: " + materialName);
+        };
+    }
+
 
     private static Supplier<Block> registerBlockWithItem(String name, Supplier<Block> blockSupplier) {
         Supplier<Block> block = BLOCKS.register(name, blockSupplier);

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_terrariamod_ebon_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "terrariamod:ebon_log"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "terrariamod:ebon_wood_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_terrariamod_ebon_log",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "terrariamod:ebon_wood_planks"
+    ]
+  },
+  "sends_telemetry_event": false
+}
