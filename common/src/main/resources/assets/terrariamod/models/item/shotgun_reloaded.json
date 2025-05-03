@@ -1,0 +1,6 @@
+{
+  "parent": "terrariamod:item/shotgun",
+  "textures": {
+    "layer0": "terrariamod:item/shotgun_reloaded"
+  }
+}

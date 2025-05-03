@@ -28,7 +28,7 @@ public class DiamondStaffItem extends SwordItem implements AttackableItem {
                 ball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 0F);
 
                 if (player.getAbilities().instabuild) {
-                    ball.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
+                    ball.pickup = AbstractArrow.Pickup.DISALLOWED;
                 }
 
                 level.addFreshEntity(ball);

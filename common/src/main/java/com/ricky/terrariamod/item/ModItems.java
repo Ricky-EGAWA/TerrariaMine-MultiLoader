@@ -7,9 +7,11 @@ import com.ricky.terrariamod.item.custom.InfiniteLavaBucketItem;
 import com.ricky.terrariamod.item.custom.InfiniteWaterBucketItem;
 import com.ricky.terrariamod.item.custom.MagicMirrorItem;
 import com.ricky.terrariamod.item.custom.MetalDetectorItem;
+import com.ricky.terrariamod.item.projectile.MusketBallItem;
 import com.ricky.terrariamod.item.tool.ModAxeItem;
 import com.ricky.terrariamod.item.tool.ModPickaxeItem;
 import com.ricky.terrariamod.item.tool.ModToolMaterial;
+import com.ricky.terrariamod.item.weapon.gun.HandGunItem;
 import com.ricky.terrariamod.item.weapon.magic.AmethystStaffItem;
 import com.ricky.terrariamod.item.weapon.magic.DiamondStaffItem;
 import com.ricky.terrariamod.item.weapon.magic.EmeraldStaffItem;
@@ -100,6 +102,13 @@ public class ModItems {
             () -> new EmeraldStaffItem(new Item.Properties()));
     public static final RegistryObject<Item> WATER_BOLT = ITEMS.register("water_bolt",
             () -> new WaterBoltItem(new Item.Properties()));
+    public static final RegistryObject<Item> HANDGUN = ITEMS.register("handgun",
+            () -> new HandGunItem(new Item.Properties()));
+    //endregion
+
+    //region 弾丸
+    public static final RegistryObject<Item> MUSKET_BALL = ITEMS.register("musket_ball",
+            () -> new MusketBallItem(new Item.Properties()));
     //endregion
 
     //region 防具

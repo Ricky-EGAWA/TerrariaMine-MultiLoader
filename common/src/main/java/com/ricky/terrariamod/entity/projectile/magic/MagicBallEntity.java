@@ -1,7 +1,6 @@
 package com.ricky.terrariamod.entity.projectile.magic;
 
 import com.ricky.terrariamod.entity.ModEntities;
-import com.ricky.terrariamod.item.ModItems;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -34,7 +33,7 @@ public class MagicBallEntity extends AbstractArrow {
 
     public MagicBallEntity(EntityType<? extends MagicBallEntity> type, Level level) {
         super(type, level);
-        this.staffStack = new ItemStack(ModItems.COBALT_RAW.get());//TODO 要変更
+        this.staffStack = ItemStack.EMPTY;
         this.setNoGravity(true);
     }
 

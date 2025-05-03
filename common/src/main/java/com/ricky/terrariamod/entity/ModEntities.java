@@ -17,6 +17,8 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEn
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyEntity;
+import com.ricky.terrariamod.entity.projectile.ammo.musket_ball.MusketBallEntity;
+import com.ricky.terrariamod.entity.projectile.ammo.rocket.RocketEntity;
 import com.ricky.terrariamod.entity.projectile.magic.MagicBallEntity;
 import com.ricky.terrariamod.registry.RegistryObject;
 import com.ricky.terrariamod.registry.RegistryProvider;
@@ -91,6 +93,22 @@ public class ModEntities {
                             .clientTrackingRange(80)
                             .updateInterval(10)
                             .build("magic_ball")
+            );
+    public static final RegistryObject<EntityType<RocketEntity>> ROCKET =
+            ENTITY_TYPES.register("rocket", () ->
+                    EntityType.Builder.<RocketEntity>of(RocketEntity::new, MobCategory.MISC)
+                            .sized(0.5f, 0.5f)
+                            .clientTrackingRange(80)
+                            .updateInterval(10)
+                            .build("rocket")
+            );
+    public static final RegistryObject<EntityType<MusketBallEntity>> MUSKET_BALL =
+            ENTITY_TYPES.register("musket_ball", () ->
+                    EntityType.Builder.<MusketBallEntity>of(MusketBallEntity::new, MobCategory.MISC)
+                            .sized(0.05f, 0.05f)
+                            .clientTrackingRange(80)
+                            .updateInterval(10)
+                            .build("musket_ball")
             );
     //endregion
 

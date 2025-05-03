@@ -106,6 +106,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.DIAMOND_STAFF.get());
                         output.accept(ModItems.EMERALD_STAFF.get());
                         output.accept(ModItems.WATER_BOLT.get());
+                        output.accept(ModItems.MUSKET_BALL.get());
+                        output.accept(ModItems.HANDGUN.get());
                         // 必要なアイテムをさらに追加
                     })
                     .build()

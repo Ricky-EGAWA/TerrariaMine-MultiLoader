@@ -22,6 +22,8 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRe
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyRenderer;
+import com.ricky.terrariamod.entity.projectile.ammo.musket_ball.MusketBallRenderer;
+import com.ricky.terrariamod.entity.projectile.ammo.rocket.RocketRenderer;
 import com.ricky.terrariamod.entity.projectile.magic.MagicBallModel;
 import com.ricky.terrariamod.entity.projectile.magic.MagicBallRenderer;
 import com.ricky.terrariamod.networking.ModPackets;
@@ -87,6 +89,9 @@ public class TerrariaModClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.MAGIC_BALL.get(), MagicBallRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(MagicBallModel.LAYER_LOCATION, MagicBallModel::createBodyLayer);
+
+        EntityRendererRegistry.register(ModEntities.ROCKET.get(), RocketRenderer::new);
+        EntityRendererRegistry.register(ModEntities.MUSKET_BALL.get(), MusketBallRenderer::new);
         //endregion
 
         KeyBindings.init(new FabricKeyBindHelper());

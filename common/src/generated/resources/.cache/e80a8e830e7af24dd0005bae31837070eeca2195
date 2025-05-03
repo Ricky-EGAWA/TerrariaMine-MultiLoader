@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-01T20:52:04.4307788	Item Models: terrariamod
+// 1.20.1	2025-05-03T17:18:19.1747464	Item Models: terrariamod
 17578860ad108ffdc27ea50fd2759bc2efefe7b5 assets/terrariamod/models/item/adamantite_axe.json
 c55d632b619ccca32f15aeff1b6a537af6275268 assets/terrariamod/models/item/adamantite_boots.json
 9571e16ebd804011a82b355805106db7090501c2 assets/terrariamod/models/item/adamantite_chestplate.json
@@ -31,6 +31,7 @@ b6bc029cb6158481cb2b7b6e31765f11706cd3a5 assets/terrariamod/models/item/copper_l
 56701d58d40a945f75ea307225bdd119a9cf3ed7 assets/terrariamod/models/item/diamond_staff.json
 4e41b8bf656f30b48397a488d1c2cb687060258e assets/terrariamod/models/item/emerald_staff.json
 2f5f83c625ea66021e6fe5312d92f1d0c7d50ec4 assets/terrariamod/models/item/glass_helmet.json
+de450e19ccd87355df9bd1902062f572a1ab20f6 assets/terrariamod/models/item/handgun.json
 0bf206bd66c6493fd97db4d5542d4076e5147ed3 assets/terrariamod/models/item/hellstone_axe.json
 d3139476b09462cdf08653f36cdbb052d00352e8 assets/terrariamod/models/item/hellstone_boots.json
 301f22be2a098764175617a1de6cbc6ea7312c2e assets/terrariamod/models/item/hellstone_chestplate.json
@@ -45,6 +46,7 @@ f92cb93a1fc27b3e8bd5f9570a6cc640ad830049 assets/terrariamod/models/item/hellston
 94e8ca484c6439033d090ef6b5e8861231c80d86 assets/terrariamod/models/item/infinite_water_bucket.json
 b47e20b9bee5abc278eb3099ea41af82b2aae4dc assets/terrariamod/models/item/magic_mirror.json
 4403c24435bc160141bec33c2310b08456b740b4 assets/terrariamod/models/item/metal_detector.json
+a351a0d8e8b789eced5e73f5b2b02888043e63bf assets/terrariamod/models/item/musket_ball.json
 7ac72955aa17207388e86c3630ef066fed126bc2 assets/terrariamod/models/item/night_helmet.json
 819ad58cd4743e5ddca716bae8ebbeb2e1e1fa94 assets/terrariamod/models/item/oak_boots.json
 e8321ad181ef88334090ec8694810cf5ad054793 assets/terrariamod/models/item/oak_chestplate.json

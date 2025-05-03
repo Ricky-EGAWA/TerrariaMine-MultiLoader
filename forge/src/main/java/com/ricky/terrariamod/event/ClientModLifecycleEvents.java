@@ -21,6 +21,8 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRe
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyRenderer;
+import com.ricky.terrariamod.entity.projectile.ammo.musket_ball.MusketBallRenderer;
+import com.ricky.terrariamod.entity.projectile.ammo.rocket.RocketRenderer;
 import com.ricky.terrariamod.entity.projectile.magic.MagicBallModel;
 import com.ricky.terrariamod.entity.projectile.magic.MagicBallRenderer;
 import com.ricky.terrariamod.platform.services.ForgeKeyBindHelper;
@@ -56,7 +58,10 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.DEMON_EYE.get(), DemonEyeRenderer::new);
         EntityRenderers.register(ModEntities.CRIMERA.get(), CrimeraRenderer::new);
         EntityRenderers.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulRenderer::new);
+
         EntityRenderers.register(ModEntities.MAGIC_BALL.get(), MagicBallRenderer::new);
+        EntityRenderers.register(ModEntities.ROCKET.get(), RocketRenderer::new);
+        EntityRenderers.register(ModEntities.MUSKET_BALL.get(), MusketBallRenderer::new);
     }
     // モデルレイヤーの登録（Forge）
     @SubscribeEvent
