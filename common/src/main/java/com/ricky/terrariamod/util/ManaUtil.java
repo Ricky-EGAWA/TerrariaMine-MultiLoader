@@ -38,7 +38,7 @@ public class ManaUtil {
         }
         IEntityDataSaver player = (IEntityDataSaver) playerEntity;
         int confuseMana = player.getPersistentData().getInt("mana");
-        //マナが足りない場合
+
         if (confuseMana < currentMana) {
             return false;
         }

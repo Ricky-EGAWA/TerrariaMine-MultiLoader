@@ -24,10 +24,9 @@ import net.minecraft.world.item.*;
 import net.minecraft.core.registries.Registries;
 
 public class ModItems {
-    // RegistryProvider<Item> を使用してアイテムを登録
     public static final RegistryProvider<Item> ITEMS =
             RegistryProvider.get(Registries.ITEM, Constants.MOD_ID);
-    //region 特殊アイテム
+    //region special item
     public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
             () -> new MetalDetectorItem(new Item.Properties()));
     public static final RegistryObject<Item> INFINITE_LAVA_BUCKET = ITEMS.register("infinite_lava_bucket",
@@ -38,7 +37,7 @@ public class ModItems {
             () -> new MagicMirrorItem(new Item.Properties()));
     //endregion
 
-    //region インゴット & 素材アイテム
+    //region ingot
     public static final RegistryObject<Item> SPIDER_FANG = ITEMS.register("spider_fang",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> COBALT_INGOT = ITEMS.register("cobalt_ingot",
@@ -59,7 +58,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     //endregion
 
-    //region ツール & 武器
+    //region tool & weapon
     public static final RegistryObject<Item> COBALT_PICKAXE = ITEMS.register("cobalt_pickaxe",
             () -> new ModPickaxeItem(ModToolMaterial.COBALT_INGOT, 2, -3f, new Item.Properties()));
     public static final RegistryObject<Item> COBALT_AXE = ITEMS.register("cobalt_axe",
@@ -209,7 +208,6 @@ public class ModItems {
 //    public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
 //            () -> new MetalDetectorItem(new Item.Properties().durability(64)));
 
-    // 各ツールを取得するメソッド
     public static Item getPickaxe(String materialName) {
         return switch (materialName.toLowerCase()) {
             case "cobalt" -> COBALT_PICKAXE.get();
@@ -307,7 +305,6 @@ public class ModItems {
             default -> throw new IllegalArgumentException("Unknown material: " + materialName);
         };
     }
-    // 登録メソッド
     public static void register() {
     }
 }

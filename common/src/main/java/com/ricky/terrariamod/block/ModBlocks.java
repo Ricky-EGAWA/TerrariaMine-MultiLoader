@@ -27,8 +27,7 @@ public class ModBlocks {
             RegistryProvider.get(Registries.ITEM, Constants.MOD_ID);
 
 
-    // ブロック登録
-    //region 鉱石
+    //region
     public static final Supplier<Block> COBALT_BLOCK = registerBlockWithItem("cobalt_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final Supplier<Block> COBALT_ORE = registerBlockWithItem("cobalt_ore",
@@ -53,7 +52,7 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).strength(50f, 1200f), UniformInt.of(2, 5)));
     //endregion
 
-    //region バイオーム特有
+    //region
     public static final Supplier<Block> EBON_STONE = registerBlockWithItem("ebon_stone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final Supplier<Block> EBON_SAND = registerBlockWithItem("ebon_sand",

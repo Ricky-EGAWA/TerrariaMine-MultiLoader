@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 public class IceSlimeEntity extends Slime {
     public IceSlimeEntity(EntityType<? extends Slime> entityType, Level world) {
         super(entityType, world);
-        this.setSize(2, true); // サイズを2に固定
+        this.setSize(2, true);
         this.refreshDimensions();
     }
 
@@ -28,15 +28,13 @@ public class IceSlimeEntity extends Slime {
     }
     @Override
     public void remove(Entity.RemovalReason reason) {
-        // スライムが死亡したときの分裂を防ぐためにサイズを1に固定
-        this.setSize(1, true); // サイズを1に固定
-        super.remove(reason);  // 通常の死亡処理を呼び出す
+        this.setSize(1, true);
+        super.remove(reason);
     }
     @Override
     public void setSize(int size, boolean resetHealth) {
         super.setSize(2, resetHealth);
         this.refreshDimensions();
-        // 体力の設定
         this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(24);
         this.setHealth(24);
         this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(6.0);
@@ -46,7 +44,6 @@ public class IceSlimeEntity extends Slime {
     protected void dealDamage(LivingEntity target) {
         super.dealDamage(target);
 
-        // Slowness 効果を付与
         if (target != null) {
             target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 140, 0), this);
         }

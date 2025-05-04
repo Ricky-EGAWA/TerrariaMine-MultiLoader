@@ -63,7 +63,6 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.ROCKET.get(), RocketRenderer::new);
         EntityRenderers.register(ModEntities.MUSKET_BALL.get(), MusketBallRenderer::new);
     }
-    // モデルレイヤーの登録（Forge）
     @SubscribeEvent
     public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(DemonEyeModel.LAYER_LOCATION, DemonEyeModel::createBodyLayer);

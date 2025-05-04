@@ -25,7 +25,6 @@ public class FlyRandomlyGoal extends Goal {
         RandomSource random = this.fly_mob.getRandom();
         double x, y, z;
 
-        // 最大10回までランダム位置を試す
         for (int i = 0; i < 10; i++) {
             y = this.fly_mob.getY() + (random.nextDouble() * 2 - 1) * 2;
             x = this.fly_mob.getX() + (random.nextDouble() * 32 - 16);
@@ -33,11 +32,9 @@ public class FlyRandomlyGoal extends Goal {
 
             y = Mth.clamp(y, this.fly_mob.level().getMinBuildHeight() + 5, this.fly_mob.level().getMaxBuildHeight() - 5);
 
-            // 移動先のAABB（BoundingBox）で衝突判定
             if (this.fly_mob.level().noCollision(this.fly_mob, this.fly_mob.getBoundingBox().move(x - this.fly_mob.getX(), y - this.fly_mob.getY(), z - this.fly_mob.getZ()))) {
                 this.fly_mob.getMoveControl().setWantedPosition(x, y, z, 1.0);
 
-                // 向きを設定
                 double dx = x - this.fly_mob.getX();
                 double dy = y - this.fly_mob.getY();
                 double dz = z - this.fly_mob.getZ();

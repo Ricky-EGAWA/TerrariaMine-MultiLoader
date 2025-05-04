@@ -40,7 +40,7 @@ public class ModSurfaceRules {
         System.out.println(ModBiomes.PEARL_DESERT_BIOME);
         System.out.println(ModBiomes.PEARL_ICE_BIOME);
         System.out.println(ModBiomes.GLOWING_MUSHROOM_BIOME);
-        //biome判定
+
         SurfaceRules.ConditionSource crimDesertBiomeCondition = SurfaceRules.isBiome(ModBiomes.CRIM_DESERT_BIOME);
         SurfaceRules.ConditionSource ebonDesertBiomeCondition = SurfaceRules.isBiome(ModBiomes.EBON_DESERT_BIOME);
         SurfaceRules.ConditionSource pearlDesertBiomeCondition = SurfaceRules.isBiome(ModBiomes.PEARL_DESERT_BIOME);
@@ -50,10 +50,9 @@ public class ModSurfaceRules {
         SurfaceRules.ConditionSource crimIceBiomeCondition = SurfaceRules.isBiome(ModBiomes.CRIM_ICE_BIOME);
         SurfaceRules.ConditionSource ebonIceBiomeCondition = SurfaceRules.isBiome(ModBiomes.EBON_ICE_BIOME);
         SurfaceRules.ConditionSource pearlIceBiomeCondition = SurfaceRules.isBiome(ModBiomes.PEARL_ICE_BIOME);
-        //地下
+        //underground
         SurfaceRules.ConditionSource glowingMushroomBiomeCondition = SurfaceRules.isBiome(ModBiomes.GLOWING_MUSHROOM_BIOME);
 
-        //第一ブロック、 表層（一層目　二層目）、　ベース、　水の下、　洞窟（天井　床）
         SurfaceRules.RuleSource surfaceRule_crim_desert = surfaceRuleMaker(CRIM_SAND, CRIM_SAND, CRIM_SANDSTONE, ModBlocks.CRIM_STONE.get().defaultBlockState(), CRIM_SAND, CRIM_STONE, CRIM_STONE);
         SurfaceRules.RuleSource surfaceRule_ebon_desert = surfaceRuleMaker(EBON_SAND, EBON_SAND, EBON_SANDSTONE, ModBlocks.EBON_STONE.get().defaultBlockState(), EBON_SAND, EBON_STONE, EBON_STONE);
         SurfaceRules.RuleSource surfaceRule_pearl_desert = surfaceRuleMaker(PEARL_SAND, PEARL_SAND, PEARL_SANDSTONE, ModBlocks.PEARL_STONE.get().defaultBlockState(), PEARL_SAND, PEARL_STONE, PEARL_STONE);
@@ -63,7 +62,7 @@ public class ModSurfaceRules {
         SurfaceRules.RuleSource surfaceRule_crim_ice = surfaceRuleMaker(SNOW, CRIM_ICE, CRIM_ICE, ModBlocks.CRIM_ICE.get().defaultBlockState(), CRIM_ICE, CRIM_STONE, CRIM_STONE);
         SurfaceRules.RuleSource surfaceRule_ebon_ice = surfaceRuleMaker(SNOW, EBON_ICE, EBON_ICE, ModBlocks.EBON_ICE.get().defaultBlockState(), EBON_ICE, EBON_STONE, EBON_STONE);
         SurfaceRules.RuleSource surfaceRule_pearl_ice = surfaceRuleMaker(SNOW, PEARL_ICE, PEARL_ICE, ModBlocks.PEARL_ICE.get().defaultBlockState(), PEARL_STONE, EBON_STONE, PEARL_STONE);
-        //地下  天井と床
+
         SurfaceRules.RuleSource surfaceRule_glowing_mushroom = undergroundRule(GLOWING_MOSS,MYCELIUM);
 
         SurfaceRules.RuleSource crimDesertBiomeRule = SurfaceRules.ifTrue(crimDesertBiomeCondition, surfaceRule_crim_desert);
@@ -77,7 +76,6 @@ public class ModSurfaceRules {
         SurfaceRules.RuleSource pearlIceBiomeRule = SurfaceRules.ifTrue(pearlIceBiomeCondition, surfaceRule_pearl_ice);
         SurfaceRules.RuleSource glowingMushroomRule = SurfaceRules.ifTrue(glowingMushroomBiomeCondition, surfaceRule_glowing_mushroom);
 
-        // ルールをシーケンスで組み合わせて返す
         return SurfaceRules.sequence(
                 crimDesertBiomeRule,
                 ebonDesertBiomeRule,
@@ -92,13 +90,10 @@ public class ModSurfaceRules {
         );
     }
 
-    // MaterialRule の作成
     private static SurfaceRules.RuleSource makeStateRule(Block block) {
         return SurfaceRules.state(block.defaultBlockState());
     }
-    //表層（一層目　二層目）、　ベース、　水の下、　洞窟（天井　床）
     private static SurfaceRules.RuleSource surfaceRuleMaker(SurfaceRules.RuleSource surface, SurfaceRules.RuleSource first, SurfaceRules.RuleSource second, BlockState base, SurfaceRules.RuleSource underwater, SurfaceRules.RuleSource ceiling, SurfaceRules.RuleSource floor){
-        // 地表部分に適用するための条件
         SurfaceRules.ConditionSource isSurface = SurfaceRules.abovePreliminarySurface();
         SurfaceRules.ConditionSource subSurfaceLayer_floor = SurfaceRules.stoneDepthCheck(3, true, CaveSurface.FLOOR);
         SurfaceRules.ConditionSource subSurfaceLayer_ceiling = SurfaceRules.stoneDepthCheck(3, true, CaveSurface.CEILING);
@@ -120,7 +115,6 @@ public class ModSurfaceRules {
                 SurfaceRules.ifTrue(subSurfaceLayer,second)
         );
     }
-    //天井と床
     public static SurfaceRules.RuleSource undergroundRule(SurfaceRules.RuleSource ceiling, SurfaceRules.RuleSource floor){
         SurfaceRules.ConditionSource ceilingLayer = SurfaceRules.stoneDepthCheck(2,true,CaveSurface.CEILING);
         SurfaceRules.ConditionSource floorLayer = SurfaceRules.stoneDepthCheck(1,true,CaveSurface.FLOOR);

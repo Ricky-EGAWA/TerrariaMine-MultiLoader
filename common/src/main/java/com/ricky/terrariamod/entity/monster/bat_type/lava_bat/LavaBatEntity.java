@@ -36,7 +36,7 @@ public class LavaBatEntity extends Bat {
     public boolean doHurtTarget(Entity target) {
         boolean success = super.doHurtTarget(target);
         if (success && target instanceof LivingEntity) {
-            target.setSecondsOnFire(5); // 3秒間炎上
+            target.setSecondsOnFire(5);
         }
         return success;
     }

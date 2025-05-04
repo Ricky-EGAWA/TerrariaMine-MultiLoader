@@ -25,7 +25,6 @@ public class MagicBallRenderer extends EntityRenderer<MagicBallEntity> {
     public void render(@NotNull MagicBallEntity entity, float entityYaw, float partialTicks, @NotNull PoseStack poseStack, @NotNull MultiBufferSource buffer, int packedLight) {
         poseStack.pushPose();
 
-        // モデルの回転などの処理（必要に応じて調整）
         poseStack.translate(0.0D, 0.0D, 0.0D);
         poseStack.mulPose(this.entityRenderDispatcher.cameraOrientation());
         poseStack.scale(-1.0F, -1.0F, 1.0F);

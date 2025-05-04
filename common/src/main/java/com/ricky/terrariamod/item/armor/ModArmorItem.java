@@ -42,7 +42,6 @@ public class ModArmorItem extends ArmorItem {
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
         if (!level.isClientSide) {
             if (entity instanceof Player player) {
-                // Glass素材またはNight素材のヘルメットが装備されているか、またはフル装備の場合に効果を評価
                 if (isWearingGlassHelmet(player) || isWearingNightHelmet(player) || hasFullSuitOfArmorOn(player)) {
                     evaluateArmorEffects(player);
                 }
@@ -69,13 +68,11 @@ public class ModArmorItem extends ArmorItem {
         }
     }
 
-    // Glassのヘルメットを装備しているか確認
     private boolean isWearingGlassHelmet(Player player) {
         ItemStack helmet = player.getInventory().armor.get(3);
         return !helmet.isEmpty() && ((ArmorItem) helmet.getItem()).getMaterial() == ModArmorMaterials.GLASS;
     }
 
-    // Nightのヘルメットを装備しているか確認
     private boolean isWearingNightHelmet(Player player) {
         ItemStack helmet = player.getInventory().armor.get(3);
         return !helmet.isEmpty() && ((ArmorItem) helmet.getItem()).getMaterial() == ModArmorMaterials.NIGHT;
@@ -92,7 +89,6 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private boolean hasCorrectArmorOn(ArmorMaterial material, Player player) {
-        // GlassおよびNight素材であれば各ヘルメットのみのチェックを行う
         if (material == ModArmorMaterials.GLASS) {
             return isWearingGlassHelmet(player);
         }

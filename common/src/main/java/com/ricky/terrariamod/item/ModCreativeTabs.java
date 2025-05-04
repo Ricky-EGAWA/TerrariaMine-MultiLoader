@@ -111,7 +111,6 @@ public class ModCreativeTabs {
                         output.accept(ModItems.ROCKET.get());
                         output.accept(ModItems.PHOENIX_BLASTER.get());
                         output.accept(ModItems.ROCKET_LAUNCHER.get());
-                        // 必要なアイテムをさらに追加
                     })
                     .build()
     );
@@ -122,7 +121,6 @@ public class ModCreativeTabs {
                     .title(Component.translatable("itemgroup.item_tab"))
                     .icon(() -> new ItemStack(ModItems.COBALT_INGOT.get()))
                     .displayItems((parameters, output) -> {
-                        // 既存のアイテムを追加
                         output.accept(ModItems.COBALT_INGOT.get());
                         output.accept(ModItems.ORICHALCUM_INGOT.get());
                         output.accept(ModItems.ADAMANTITE_INGOT.get());
@@ -145,58 +143,58 @@ public class ModCreativeTabs {
                     .title(Component.translatable("itemgroup.block_tab"))
                     .icon(() -> new ItemStack(ModBlocks.COBALT_BLOCK.get()))
                     .displayItems((parameters, output) -> {
-                        //region 鉱石系
+                        //region
                         output.accept(ModBlocks.COBALT_BLOCK.get());
                         output.accept(ModBlocks.COBALT_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_COBALT_ORE.get());
 
-                        // ORICHALCUM 系
+                        // ORICHALCUM
                         output.accept(ModBlocks.ORICHALCUM_BLOCK.get());
                         output.accept(ModBlocks.ORICHALCUM_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_ORICHALCUM_ORE.get());
 
-                        // ADAMANTITE 系
+                        // ADAMANTITE
                         output.accept(ModBlocks.ADAMANTITE_BLOCK.get());
                         output.accept(ModBlocks.ADAMANTITE_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_ADAMANTITE_ORE.get());
 
-                        // HELLSTONE 系
+                        // HELLSTONE
                         output.accept(ModBlocks.HELLSTONE_BLOCK.get());
                         output.accept(ModBlocks.HELLSTONE_ORE.get());
                         //endregion
 
-                        //region バイオーム構成
+                        //region
                         output.accept(ModBlocks.EBON_STONE.get());
                         output.accept(ModBlocks.EBON_SAND.get());
                         output.accept(ModBlocks.EBON_SANDSTONE.get());
                         output.accept(ModBlocks.EBON_ICE.get());
 
-                        // CRIM 系
+                        // CRIM
                         output.accept(ModBlocks.CRIM_STONE.get());
                         output.accept(ModBlocks.CRIM_SAND.get());
                         output.accept(ModBlocks.CRIM_SANDSTONE.get());
                         output.accept(ModBlocks.CRIM_ICE.get());
 
-                        // PEARL 系
+                        // PEARL
                         output.accept(ModBlocks.PEARL_STONE.get());
                         output.accept(ModBlocks.PEARL_SAND.get());
                         output.accept(ModBlocks.PEARL_SANDSTONE.get());
                         output.accept(ModBlocks.PEARL_ICE.get());
                         //endregion
 
-                        // 花系
+                        // flower
                         output.accept(ModBlocks.DEATH_WEED.get());
                         output.accept(ModBlocks.SHIVER_THORN.get());
                         output.accept(ModBlocks.VILE_MUSHROOM.get());
                         output.accept(ModBlocks.VICIOUS_MUSHROOM.get());
 
-                        // GLOWING 系
+                        // GLOWING
                         output.accept(ModBlocks.GLOWING_MOSS.get());
                         output.accept(ModBlocks.GLOWING_MUSHROOM_BLOCK.get());
                         output.accept(ModBlocks.GLOWING_MUSHROOM_STEM.get());
                         output.accept(ModBlocks.GLOWING_MUSHROOM.get());
 
-                        //region 木材
+                        //region wood
                         output.accept(ModBlocks.EBON_LOG.get());
                         output.accept(ModBlocks.EBON_WOOD.get());
                         output.accept(ModBlocks.STRIPPED_EBON_LOG.get());
@@ -222,7 +220,7 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.PEARL_SAPLING.get());
                         //endregion
 
-                        //region 階段など
+                        //region stairs
                         output.accept(ModBlocks.EBON_STAIRS.get());
                         output.accept(ModBlocks.EBON_SLAB.get());
                         output.accept(ModBlocks.EBON_BUTTON.get());
@@ -244,7 +242,7 @@ public class ModCreativeTabs {
 
                         //endregion
 
-                        // ICICLE 系
+                        // ICICLE
 //                        output.accept(ModBlocks.ICICLE.get());
                     })
                     .build()

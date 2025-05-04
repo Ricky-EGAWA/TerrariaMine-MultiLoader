@@ -19,7 +19,7 @@ public class ModBiomes {
     public static final ResourceKey<Biome> CRIM_ICE_BIOME = createKey("crim_ice_biome");
     public static final ResourceKey<Biome> EBON_ICE_BIOME = createKey("ebon_ice_biome");
     public static final ResourceKey<Biome> PEARL_ICE_BIOME = createKey("pearl_ice_biome");
-    //地下
+
     public static final ResourceKey<Biome> GLOWING_MUSHROOM_BIOME = createKey("glowing_mushroom_biome");
 
     private static ResourceKey<Biome> createKey(String name) {
@@ -64,11 +64,9 @@ public class ModBiomes {
                 .build();
     }
     public static Biome ebonDesertBiome(BootstapContext<Biome> context) {
-        // モブのスポーン設定
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.DARK_MUMMY.get(), 100, 3, 5));
 
-        // 地形の生成設定
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),
@@ -78,9 +76,8 @@ public class ModBiomes {
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder); // addDefaultVegetationに相当
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        // Biomeの作成
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.4f)
@@ -99,11 +96,9 @@ public class ModBiomes {
                 .build();
     }
     public static Biome pearlDesertBiome(BootstapContext<Biome> context) {
-        // モブのスポーン設定
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.LIGHT_MUMMY.get(), 100, 3, 5));
 
-        // 地形の生成設定
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),
@@ -115,7 +110,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        // バイオームの作成
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.4f)
@@ -134,13 +128,11 @@ public class ModBiomes {
                 .build();
     }
     public static Biome crimBiome(BootstapContext<Biome> context) {
-        // モブのスポーン設定
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.PORCUPINE.get(), 2, 3, 5));
 
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
 
-        // 地形の生成設定
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),
@@ -154,7 +146,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        // バイオームの作成
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.4f)
@@ -173,14 +164,12 @@ public class ModBiomes {
                 .build();
     }
     public static Biome ebonBiome(BootstapContext<Biome> context) {
-        // モブのスポーン設定
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.JUNGLE_BAT.get(), 100, 3, 5));
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
 
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
 
-        // 地形生成設定
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),
@@ -193,7 +182,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        // バイオームの構築
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.4f)
@@ -212,14 +200,12 @@ public class ModBiomes {
                 .build();
     }
     public static Biome pearlBiome(BootstapContext<Biome> context) {
-        // モブのスポーン設定
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.JUNGLE_BAT.get(), 100, 3, 5));
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
 
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
 
-        // 地形生成設定
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),
@@ -232,7 +218,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        // バイオーム構築
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.4f)
@@ -251,7 +236,6 @@ public class ModBiomes {
                 .build();
     }
     public static Biome crimIceBiome(BootstapContext<Biome> context) {
-        // モブのスポーン設定
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.PORCUPINE.get(), 2, 3, 5));
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
@@ -259,7 +243,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
-        // 地形生成設定
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),
@@ -272,7 +255,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        // バイオーム構築
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.4f)
@@ -291,7 +273,6 @@ public class ModBiomes {
                 .build();
     }
     public static Biome ebonIceBiome(BootstapContext<Biome> context) {
-        // モブのスポーン設定
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.JUNGLE_BAT.get(), 100, 3, 5));
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
@@ -299,7 +280,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
-        // 地形生成設定
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),
@@ -312,7 +292,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        // バイオーム構築
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.4f)
@@ -331,7 +310,6 @@ public class ModBiomes {
                 .build();
     }
     public static Biome pearlIceBiome(BootstapContext<Biome> context) {
-        // モブのスポーン設定
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.JUNGLE_BAT.get(), 100, 3, 5));
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
@@ -339,7 +317,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
-        // 地形生成設定
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),
@@ -352,7 +329,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        // バイオーム構築
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.4f)
@@ -371,9 +347,7 @@ public class ModBiomes {
                 .build();
     }
     public static Biome glowingMushroomBiome(BootstapContext<Biome> context) {
-        // モブのスポーン設定
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-        // 地形生成設定
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),
@@ -385,7 +359,6 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        // バイオーム構築
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
                 .downfall(0.4f)
@@ -404,7 +377,6 @@ public class ModBiomes {
                 .build();
     }
 
-    // 登録メソッド
     public static void register() {
     }
     public static void boostrap(BootstapContext<Biome> context) {

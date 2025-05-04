@@ -112,7 +112,6 @@ public class ModEntities {
             );
     //endregion
 
-    // 登録メソッド
     public static void register() {
     }
 }

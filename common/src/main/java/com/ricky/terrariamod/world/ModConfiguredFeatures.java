@@ -19,14 +19,11 @@ public class ModConfiguredFeatures {
 
     // ResourceKey for our cobalt ore feature
     public static final ResourceKey<ConfiguredFeature<?, ?>> COBALT_ORE = createKey("cobalt_ore");
-
-    // 他の鉱石も同様にキーを定義
     public static final ResourceKey<ConfiguredFeature<?, ?>> EBON_TREE = createKey("ebon_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CRIM_TREE = createKey("crim_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PEARL_TREE = createKey("pearl_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_GLOWING_MUSHROOM = createKey("huge_glowing_mushroom");
 
-    // 登録処理で参照するためのキーを生成
     private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, Constants.locate(name));
     }

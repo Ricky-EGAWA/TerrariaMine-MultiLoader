@@ -20,7 +20,6 @@ public class TerrariaMod {
         Constants.LOG.info("Hello Forge world!");
         CommonClass.init();
 
-        //アイテムの追加
         ModItems.register();
         ModBlocks.register();
         ModCreativeTabs.register();
@@ -33,8 +32,8 @@ public class TerrariaMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            ModPackets.registerS2CPackets(); // クライアント向けパケット登録
-            ModPackets.registerC2SPackets(); // サーバー向けパケット登録
+            ModPackets.registerS2CPackets();
+            ModPackets.registerC2SPackets();
             ((ForgeNetworkHelper) Services.NETWORK).registerClientHandlers();
         }
     }

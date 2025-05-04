@@ -46,7 +46,6 @@ public class MagicMirrorItem extends Item {
             MinecraftServer server = serverPlayer.server;
             BlockPos finalRespawnPos = respawnPos.immutable();
 
-            // 非同期ではなく、Tickスケジューラが使えるなら Forge/Fabricの方式に切替も可能
             ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
             scheduler.schedule(() -> server.execute(() -> {
                 if (serverPlayer.isAlive()) {
@@ -63,8 +62,8 @@ public class MagicMirrorItem extends Item {
                     );
                     serverPlayer.fallDistance = 0;
                 }
-            }), 2, TimeUnit.SECONDS); // 2秒後に実行
-            //TODO 待機時間中のエフェクトなど追加
+            }), 2, TimeUnit.SECONDS);
+            //TODO add effect
 
             return InteractionResultHolder.success(player.getItemInHand(hand));
         }

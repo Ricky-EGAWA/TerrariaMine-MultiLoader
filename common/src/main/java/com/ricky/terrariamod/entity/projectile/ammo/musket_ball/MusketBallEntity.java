@@ -46,7 +46,6 @@ public class MusketBallEntity extends AbstractArrow {
     @Override
     public void addAdditionalSaveData(@NotNull CompoundTag tag) {
         super.addAdditionalSaveData(tag);
-        // 必要ならカラーやダメージも保存
     }
 
     @Override

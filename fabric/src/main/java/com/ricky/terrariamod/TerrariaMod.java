@@ -42,10 +42,8 @@ public class TerrariaMod implements ModInitializer {
         Constants.LOG.info("Hello Fabric world!");
         CommonClass.init();
 
-        //アイテムの追加
         ModItems.register();
         ModBlocks.register();
-        //クリエイティブタブ
         ModCreativeTabs.register();
         ModEntities.register();
 
@@ -61,7 +59,7 @@ public class TerrariaMod implements ModInitializer {
         });
         ModWorldGeneration.generateModWorldGen();
 
-        //region エンティティ
+        //region entity
         FabricDefaultAttributeRegistry.register(ModEntities.MUMMY.get(), MummyEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_MUMMY.get(), DarkMummyEntity.createAttributes());

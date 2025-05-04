@@ -32,7 +32,6 @@ public class MetalDetectorItem extends Item {
 
             int range = 10;
 
-            // 中心座標から±10の範囲をチェック（立方体）
             for (BlockPos pos : BlockPos.betweenClosed(
                     center.offset(-range, -range, -range),
                     center.offset(range, range, range))) {

@@ -15,7 +15,6 @@ public class MusketBallItem extends Item {
 
     public Projectile createMusketBall(Level level, ItemStack stack, LivingEntity shooter) {
         MusketBallEntity entity = new MusketBallEntity(level, shooter);
-        // 必要に応じて初期設定を追加（例：ダメージ量や色など）
         return entity;
     }
 }

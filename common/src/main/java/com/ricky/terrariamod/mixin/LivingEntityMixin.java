@@ -16,13 +16,11 @@ public abstract class LivingEntityMixin {
     private void onHandleInputEvents(CallbackInfo ci) {
         LivingEntity entity = (LivingEntity) (Object) this;
 
-        // entity が PlayerEntity のインスタンスか確認
         if (entity instanceof Player player) {
             ItemStack mainHandItem = player.getMainHandItem();
-            // アイテムが AttackableItem を実装している場合
             if (mainHandItem.getItem() instanceof AttackableItem attackableItem) {
                 attackableItem.attack(player.level(), player, InteractionHand.MAIN_HAND);
-                ci.cancel(); // 通常の手を振る動作をキャンセル
+                ci.cancel();
             }
         }
     }

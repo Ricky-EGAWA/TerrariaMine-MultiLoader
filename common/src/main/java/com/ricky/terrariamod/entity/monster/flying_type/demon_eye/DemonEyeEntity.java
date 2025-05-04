@@ -14,7 +14,6 @@ public class DemonEyeEntity extends FlyingMob {
         this.moveControl = new FlyMoveControl(this);
     }
 
-    // 属性の定義
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 15)

@@ -43,7 +43,7 @@ public class TerrariaModClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        //region 半透明ブロック
+        //region trans block
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DEATH_WEED.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_DEATH_WEED.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SHIVER_THORN.get(), RenderType.cutout());
@@ -63,7 +63,7 @@ public class TerrariaModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PEARL_SAPLING.get(), RenderType.cutout());
         //endregion
 
-        //region エンティティ
+        //region entity
         EntityRendererRegistry.register(ModEntities.MUMMY.get(), MummyRenderer::new);
         EntityRendererRegistry.register(ModEntities.LIGHT_MUMMY.get(), LightMummyRenderer::new);
         EntityRendererRegistry.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyRenderer::new);

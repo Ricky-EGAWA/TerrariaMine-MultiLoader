@@ -24,8 +24,7 @@ public class ManaSyncDataS2CPacket {
 
     public void handle(Player player) {
         if (player.level().isClientSide) {
-            // クライアント側で同期データを受信した処理
-            ((IEntityDataSaver)player).getPersistentData().putInt("mana", mana); // 任意の実装に合わせてください
+            ((IEntityDataSaver)player).getPersistentData().putInt("mana", mana);
         }
     }
 

@@ -15,7 +15,7 @@ public class ModTreeGeneration {
     public static void generateTrees() {
         System.out.println("generate trees");
         
-        // Terraria次元に生やす木
+        // Terraria
         Services.WORLD_GEN.addFeatureToBiomes(matchesTag(ModTagsBiomes.IS_EBON),
                 GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.EBON_PLACED_KEY);
         Services.WORLD_GEN.addFeatureToBiomes(matchesTag(ModTagsBiomes.IS_CRIM),
@@ -33,11 +33,9 @@ public class ModTreeGeneration {
                 GenerationStep.Decoration.UNDERGROUND_DECORATION, ModPlacedFeatures.GLOWING_HUGE_MUSHROOM_PLACED_KEY);
 
 
-        // ネザーに生やす木 (もし必要なら)
         // WORLD_GEN.addFeatureToBiomes(matchesTag(BiomeTags.IS_NETHER),
         //        GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.NETHER_TREE_PLACED_KEY);
 
-        // エンドに生やす木 (もし必要なら)
         // WORLD_GEN.addFeatureToBiomes(matchesTag(BiomeTags.IS_END),
         //        GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.END_TREE_PLACED_KEY);
     }

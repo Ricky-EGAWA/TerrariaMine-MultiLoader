@@ -32,17 +32,14 @@ public class BloodMummyEntity extends Zombie {
 
     @Override
     public boolean doHurtTarget(Entity target) {
-        // 攻撃する対象がLivingEntity（生物）であることを確認
         if (target instanceof LivingEntity livingTarget) {
-            // 攻撃を試みる
-            boolean success = super.doHurtTarget(target); // ZombieEntityのtryAttackを呼び出す
+            boolean success = super.doHurtTarget(target);
 
             if (success) {
-                // 攻撃成功時の処理
                 livingTarget.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 140), this);
             }
             return success;
         }
-        return false; // ターゲットが生物でなければ攻撃をしない
+        return false;
     }
 }

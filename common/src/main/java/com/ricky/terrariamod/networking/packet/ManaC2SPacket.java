@@ -23,9 +23,8 @@ public class ManaC2SPacket {
     }
 
     public void handle(Player player) {
-        if (!player.level().isClientSide) {//サーバーサイドの場合実行
-            // サーバー側でマナを受信した処理
-            ((IEntityDataSaver)player).getPersistentData().putInt("mana", mana); // 任意の実装に合わせてください
+        if (!player.level().isClientSide) {
+            ((IEntityDataSaver)player).getPersistentData().putInt("mana", mana);
         }
     }
 

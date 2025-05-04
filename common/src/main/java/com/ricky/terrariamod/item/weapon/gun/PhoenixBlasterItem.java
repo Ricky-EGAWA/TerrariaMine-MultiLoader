@@ -50,7 +50,6 @@ public class PhoenixBlasterItem extends SwordItem implements AttackableItem {
         if (shooter instanceof ServerPlayer player) {
             ItemStack gun = player.getItemInHand(hand);
 
-            // 耐久値を1減らす
             gun.hurt(1, player.getRandom(), player);
         }
 

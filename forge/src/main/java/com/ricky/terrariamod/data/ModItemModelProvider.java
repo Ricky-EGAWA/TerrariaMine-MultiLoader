@@ -17,7 +17,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        // アイテムモデルの登録
         simpleItem(ModItems.COBALT_INGOT);
         simpleItem(ModItems.ORICHALCUM_INGOT);
         simpleItem(ModItems.ADAMANTITE_INGOT);
@@ -31,7 +30,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.INFINITE_LAVA_BUCKET);
         simpleItem(ModItems.INFINITE_WATER_BUCKET);
         simpleItem(ModItems.MAGIC_MIRROR);
-        // 他のアイテムを追加することができます
 
         handheldItem(ModItems.COBALT_PICKAXE);
         handheldItem(ModItems.COBALT_AXE);

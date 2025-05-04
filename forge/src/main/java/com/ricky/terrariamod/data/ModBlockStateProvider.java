@@ -19,47 +19,47 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        //region 鉱石系
+        //region
         blockWithItem(ModBlocks.COBALT_BLOCK);
         blockWithItem(ModBlocks.COBALT_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_COBALT_ORE);
 
-        // ORICHALCUM 系
+        // ORICHALCUM 
         blockWithItem(ModBlocks.ORICHALCUM_BLOCK);
         blockWithItem(ModBlocks.ORICHALCUM_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_ORICHALCUM_ORE);
 
-        // ADAMANTITE 系
+        // ADAMANTITE 
         blockWithItem(ModBlocks.ADAMANTITE_BLOCK);
         blockWithItem(ModBlocks.ADAMANTITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_ADAMANTITE_ORE);
 
-        // HELLSTONE 系
+        // HELLSTONE 
         blockWithItem(ModBlocks.HELLSTONE_BLOCK);
         blockWithItem(ModBlocks.HELLSTONE_ORE);
         //endregion
 
-        //region バイオーム特有
-        // EBON 系
+        //region 
+        // EBON 
         blockWithItem(ModBlocks.EBON_STONE);
         blockWithItem(ModBlocks.EBON_SAND);
         registerCustomBlock(ModBlocks.EBON_SANDSTONE);
         blockWithItem(ModBlocks.EBON_ICE);
 
-        // CRIM 系
+        // CRIM 
         blockWithItem(ModBlocks.CRIM_STONE);
         blockWithItem(ModBlocks.CRIM_SAND);
         registerCustomBlock(ModBlocks.CRIM_SANDSTONE);
         blockWithItem(ModBlocks.CRIM_ICE);
 
-        // PEARL 系
+        // PEARL 
         blockWithItem(ModBlocks.PEARL_STONE);
         blockWithItem(ModBlocks.PEARL_SAND);
         registerCustomBlock(ModBlocks.PEARL_SANDSTONE);
         blockWithItem(ModBlocks.PEARL_ICE);
         //endregion
 
-        // 花系
+        // 花
         plantBlockWithItem(ModBlocks.DEATH_WEED);
         pottedPlantBlockWithItem(ModBlocks.POTTED_DEATH_WEED, ModBlocks.DEATH_WEED);
         plantBlockWithItem(ModBlocks.SHIVER_THORN);
@@ -69,17 +69,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         plantBlockWithItem(ModBlocks.VICIOUS_MUSHROOM);
         pottedPlantBlockWithItem(ModBlocks.POTTED_VICIOUS_MUSHROOM, ModBlocks.VICIOUS_MUSHROOM);
 
-        // GLOWING 系
+        // GLOWING 
         blockWithItem(ModBlocks.GLOWING_MOSS);
         blockWithItem(ModBlocks.GLOWING_MUSHROOM_BLOCK);
         blockWithItem(ModBlocks.GLOWING_MUSHROOM_STEM);
         plantBlockWithItem(ModBlocks.GLOWING_MUSHROOM);
         pottedPlantBlockWithItem(ModBlocks.POTTED_GLOWING_MUSHROOM, ModBlocks.GLOWING_MUSHROOM);
 
-        // ICICLE 系
+        // ICICLE 
 //        blockWithItem(ModBlocks.ICICLE);
 
-        //region 木材
+        //region wood
         logBlock(((RotatedPillarBlock) ModBlocks.EBON_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.EBON_WOOD.get()), blockTexture(ModBlocks.EBON_LOG.get()), blockTexture(ModBlocks.EBON_LOG.get()));
 
@@ -131,7 +131,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         //endregion
 
-        //region 階段など
+        //region stairs etc
         stairsBlock(((StairBlock) ModBlocks.EBON_STAIRS.get()), blockTexture(ModBlocks.EBON_PLANKS.get()));
         slabBlock(((SlabBlock) ModBlocks.EBON_SLAB.get()), blockTexture(ModBlocks.EBON_PLANKS.get()), blockTexture(ModBlocks.EBON_PLANKS.get()));
         buttonBlock(((ButtonBlock) ModBlocks.EBON_BUTTON.get()), blockTexture(ModBlocks.EBON_PLANKS.get()));
@@ -195,18 +195,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(blockRegistryObject.get(), models().singleTexture(blockName, new ResourceLocation("flower_pot_cross"), "plant",blockTexture(plantRegistryObject.get())).renderType("cutout"));
     }
     private void registerCustomBlock(Supplier<Block> blockRegistryObject) {
-        // ブロックの登録名（ID）を取得
         String descriptionId = blockRegistryObject.get().getDescriptionId();
         String blockName = descriptionId.substring(descriptionId.lastIndexOf('.') + 1);
 
-        // モデルの作成
         ModelFile model = models().getBuilder(blockName)
                 .parent(models().getExistingFile(new ResourceLocation("minecraft", "block/cube_bottom_top")))
                 .texture("top", modLoc("block/" + blockName + "_top"))
                 .texture("side", modLoc("block/" + blockName + "_side"))
                 .texture("bottom", modLoc("block/" + blockName + "_bottom"));
 
-        // モデルを登録
         simpleBlockWithItem(blockRegistryObject.get(), model);
     }
 }

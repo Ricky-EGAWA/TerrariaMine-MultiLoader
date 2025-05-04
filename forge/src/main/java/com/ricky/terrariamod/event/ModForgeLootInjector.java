@@ -14,8 +14,6 @@ public class ModForgeLootInjector {
     @SubscribeEvent
     public static void onLootTableLoad(LootTableLoadEvent event) {
         ResourceLocation id = event.getName();
-
-        // 共通の LootPool を取得
         LootPool customPool = ModLootTableInjector.getLootPoolFor(id);
         if (customPool != null) {
             event.getTable().addPool(customPool);
