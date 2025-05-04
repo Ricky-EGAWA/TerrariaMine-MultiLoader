@@ -21,6 +21,7 @@ import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyEntity;
 import com.ricky.terrariamod.item.ModCreativeTabs;
 import com.ricky.terrariamod.item.ModItems;
 import com.ricky.terrariamod.networking.ModPackets;
+import com.ricky.terrariamod.util.ModFabricTrades;
 import com.ricky.terrariamod.util.ModLootTableInjector;
 import com.ricky.terrariamod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -47,6 +48,8 @@ public class TerrariaMod implements ModInitializer {
         //クリエイティブタブ
         ModCreativeTabs.register();
         ModEntities.register();
+
+        ModFabricTrades.registerTrades();
 
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, builder, source) -> {
             if (source.isBuiltin()) {
