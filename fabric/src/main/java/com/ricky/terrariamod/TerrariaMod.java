@@ -21,9 +21,12 @@ import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyEntity;
 import com.ricky.terrariamod.item.ModCreativeTabs;
 import com.ricky.terrariamod.item.ModItems;
 import com.ricky.terrariamod.networking.ModPackets;
+import com.ricky.terrariamod.util.ModLootTableInjector;
 import com.ricky.terrariamod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.world.level.storage.loot.LootPool;
 
 public class TerrariaMod implements ModInitializer {
     
@@ -45,6 +48,14 @@ public class TerrariaMod implements ModInitializer {
         ModCreativeTabs.register();
         ModEntities.register();
 
+        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, builder, source) -> {
+            if (source.isBuiltin()) {
+                LootPool pool = ModLootTableInjector.getLootPoolFor(id);
+                if (pool != null) {
+                    builder.pool(pool);
+                }
+            }
+        });
         ModWorldGeneration.generateModWorldGen();
 
         //region エンティティ
