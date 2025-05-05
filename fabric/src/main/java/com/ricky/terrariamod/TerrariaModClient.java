@@ -31,6 +31,7 @@ import com.ricky.terrariamod.platform.services.FabricKeyBindHelper;
 import com.ricky.terrariamod.platform.services.FabricNetworkHelper;
 import com.ricky.terrariamod.util.KeyBindings;
 import com.ricky.terrariamod.util.KeyInputHandler;
+import com.ricky.terrariamod.world.poi.ModPoiTypes;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -102,5 +103,7 @@ public class TerrariaModClient implements ClientModInitializer {
         FabricNetworkHelper.initializeClientHandlers();
 
         HudRenderCallback.EVENT.register((drawContext, tickDelta) -> ManaHudOverlay.render(drawContext));
+
+        ModPoiTypes.register();
     }
 }

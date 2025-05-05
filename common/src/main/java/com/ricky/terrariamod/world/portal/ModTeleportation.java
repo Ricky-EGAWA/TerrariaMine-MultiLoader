@@ -1,12 +1,17 @@
 package com.ricky.terrariamod.world.portal;
 
+import net.minecraft.BlockUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.border.WorldBorder;
+
+import java.util.Optional;
 
 public class ModTeleportation {
     public static final ResourceKey<Level> TERRARIA_DIMENSION = ResourceKey.create(Registries.DIMENSION,
@@ -18,10 +23,36 @@ public class ModTeleportation {
                 ? player.server.getLevel(TERRARIA_DIMENSION)
                 : player.server.getLevel(Level.OVERWORLD);
 
-        if (targetLevel != null && targetLevel != currentLevel) {
-            BlockPos targetPos = findSpawnPos(targetLevel);
-            player.teleportTo(targetLevel, targetPos.getX() + 0.5, targetPos.getY(), targetPos.getZ() + 0.5, player.getYRot(), player.getXRot());
+        if (targetLevel == null || targetLevel == currentLevel) return;
+
+        BlockPos playerPos = player.blockPosition();
+        CustomPortalForcer forcer = new CustomPortalForcer(targetLevel);
+        WorldBorder worldBorder = targetLevel.getWorldBorder();
+
+        // 近くのポータルを探す
+        Optional<BlockUtil.FoundRectangle> portal = forcer.findPortalAround(playerPos, false, worldBorder);
+
+        if (portal.isEmpty()) {
+            // ポータルがなければ作成（東西方向が基本）
+            portal = forcer.createPortal(playerPos, Direction.Axis.X);
         }
+        System.out.println("portal");
+        portal.ifPresent(rectangle -> {
+            BlockPos min = rectangle.minCorner; // getMinCorner() を使う場合
+            int width = rectangle.axis1Size;   // getAxis1Size() を使う場合
+            int height = rectangle.axis2Size;  // getAxis2Size() を使う場合
+
+            BlockPos targetPos = min.offset(width, 0, height);
+            System.out.println("teleport");
+            player.teleportTo(targetLevel,
+                    targetPos.getX() + 0.5,
+                    targetPos.getY(),
+                    targetPos.getZ() + 0.5,
+                    player.getYRot(),
+                    player.getXRot()
+            );
+        });
+
     }
 
     private static BlockPos findSpawnPos(ServerLevel level) {

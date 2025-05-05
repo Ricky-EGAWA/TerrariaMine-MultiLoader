@@ -7,6 +7,7 @@ import com.ricky.terrariamod.item.ModItems;
 import com.ricky.terrariamod.networking.ModPackets;
 import com.ricky.terrariamod.platform.Services;
 import com.ricky.terrariamod.platform.services.ForgeNetworkHelper;
+import com.ricky.terrariamod.world.poi.ModPoiTypes;
 import com.ricky.terrariamod.worldgen.ForgeWorldGen;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,6 +28,7 @@ public class TerrariaMod {
 
         final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         ForgeWorldGen.init(modBus);
+        ModPoiTypes.register();
     }
     @Mod.EventBusSubscriber(modid = Constants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {

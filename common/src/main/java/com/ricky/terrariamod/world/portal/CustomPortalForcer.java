@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Optional;
 
 import com.ricky.terrariamod.block.ModBlocks;
+import com.ricky.terrariamod.world.poi.ModPoiTypes;
 import net.minecraft.BlockUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -51,7 +52,7 @@ public class CustomPortalForcer {
         // getInSquare()の戻り値を明示的にキャスト
         Optional<PoiRecord> portalRecord = poiManager.getInSquare(poi -> {
                     // PoiTypes をカスタムポータルに変更
-                    return poi.is(PoiTypes.NETHER_PORTAL);  // ここをカスタムポータルに変更
+                    return poi.is(ModPoiTypes.PORTAL_POI_KEY);  // ここをカスタムポータルに変更
                 }, pos, searchRadius, PoiManager.Occupancy.ANY)
                 .filter(record -> worldBorder.isWithinBounds(record.getPos()))
                 .sorted(Comparator.comparingDouble((PoiRecord record) -> record.getPos().distSqr(pos))  // 明示的にPoiRecordを指定
