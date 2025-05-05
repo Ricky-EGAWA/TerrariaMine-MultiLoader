@@ -4,6 +4,7 @@ import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.block.custom.*;
 import com.ricky.terrariamod.registry.RegistryProvider;
 import com.ricky.terrariamod.world.ModConfiguredFeatures;
+import com.ricky.terrariamod.world.portal.ModPortalBlock;
 import com.ricky.terrariamod.world.tree.CrimSaplingGenerator;
 import com.ricky.terrariamod.world.tree.EbonSaplingGenerator;
 import com.ricky.terrariamod.world.tree.PearlSaplingGenerator;
@@ -206,6 +207,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM_BLOCK).lightLevel(state -> 6)));
     public static final Supplier<Block> GLOWING_MUSHROOM_STEM = registerBlockWithItem("glowing_mushroom_stem",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM).lightLevel(state -> 6)));
+
+    public static final Supplier<Block> PORTAL_BLOCK = registerBlockWithItem("portal_block",
+            () -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_PORTAL)));
 
     public static Block getSlab(String materialName) {
         return switch (materialName.toLowerCase()) {

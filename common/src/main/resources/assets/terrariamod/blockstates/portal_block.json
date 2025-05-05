@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "terrariamod:block/portal_block_ns"
+    },
+    "axis=z": {
+      "model": "terrariamod:block/portal_block_ew"
+    }
+  }
+}
