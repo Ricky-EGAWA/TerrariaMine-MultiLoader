@@ -31,13 +31,13 @@ import com.ricky.terrariamod.platform.services.FabricKeyBindHelper;
 import com.ricky.terrariamod.platform.services.FabricNetworkHelper;
 import com.ricky.terrariamod.util.KeyBindings;
 import com.ricky.terrariamod.util.KeyInputHandler;
-import com.ricky.terrariamod.world.poi.ModPoiTypes;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.client.renderer.RenderType;
 
 public class TerrariaModClient implements ClientModInitializer {
@@ -104,6 +104,5 @@ public class TerrariaModClient implements ClientModInitializer {
 
         HudRenderCallback.EVENT.register((drawContext, tickDelta) -> ManaHudOverlay.render(drawContext));
 
-        ModPoiTypes.register();
     }
 }

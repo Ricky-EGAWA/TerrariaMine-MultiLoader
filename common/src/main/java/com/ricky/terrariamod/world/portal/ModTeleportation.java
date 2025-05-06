@@ -8,6 +8,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.TicketType;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.border.WorldBorder;
 
@@ -32,11 +34,16 @@ public class ModTeleportation {
         // 近くのポータルを探す
         Optional<BlockUtil.FoundRectangle> portal = forcer.findPortalAround(playerPos, false, worldBorder);
 
+        System.out.println(portal);
+        // テレポート前に強制的にチャンクをロード
+        targetLevel.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(playerPos), 3, playerPos);
+
+
         if (portal.isEmpty()) {
             // ポータルがなければ作成（東西方向が基本）
+            System.out.println("create portal");
             portal = forcer.createPortal(playerPos, Direction.Axis.X);
         }
-        System.out.println("portal");
         portal.ifPresent(rectangle -> {
             BlockPos min = rectangle.minCorner; // getMinCorner() を使う場合
             int width = rectangle.axis1Size;   // getAxis1Size() を使う場合
