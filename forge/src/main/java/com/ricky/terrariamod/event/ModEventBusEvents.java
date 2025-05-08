@@ -2,6 +2,7 @@ package com.ricky.terrariamod.event;
 
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.entity.ModEntities;
+import com.ricky.terrariamod.entity.boss.EyeOfCthulhuEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
@@ -44,5 +45,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.DEMON_EYE.get(), DemonEyeEntity.createAttributes().build());
         event.put(ModEntities.CRIMERA.get(), CrimeraEntity.createAttributes().build());
         event.put(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulEntity.createAttributes().build());
+
+        event.put(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuEntity.createAttributes().build());
     }
 }

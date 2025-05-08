@@ -3,6 +3,9 @@ package com.ricky.terrariamod;
 import com.ricky.terrariamod.block.ModBlocks;
 import com.ricky.terrariamod.client.render.ManaHudOverlay;
 import com.ricky.terrariamod.entity.ModEntities;
+import com.ricky.terrariamod.entity.boss.EyeOfCthulhuModelOne;
+import com.ricky.terrariamod.entity.boss.EyeOfCthulhuModelTwo;
+import com.ricky.terrariamod.entity.boss.EyeOfCthulhuRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatRenderer;
@@ -37,7 +40,6 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.client.renderer.RenderType;
 
 public class TerrariaModClient implements ClientModInitializer {
@@ -87,6 +89,10 @@ public class TerrariaModClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(CrimeraModel.LAYER_LOCATION, CrimeraModel::createBodyLayer);
         EntityRendererRegistry.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(EaterOfSoulModel.LAYER_LOCATION, EaterOfSoulModel::createBodyLayer);
+
+        EntityRendererRegistry.register(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(EyeOfCthulhuModelOne.LAYER_LOCATION, EyeOfCthulhuModelOne::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(EyeOfCthulhuModelTwo.LAYER_LOCATION, EyeOfCthulhuModelTwo::createBodyLayer);
 
         EntityRendererRegistry.register(ModEntities.MAGIC_BALL.get(), MagicBallRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(MagicBallModel.LAYER_LOCATION, MagicBallModel::createBodyLayer);

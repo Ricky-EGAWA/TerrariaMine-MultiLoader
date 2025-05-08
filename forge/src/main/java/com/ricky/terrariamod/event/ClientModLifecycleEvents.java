@@ -2,6 +2,9 @@ package com.ricky.terrariamod.event;
 
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.entity.ModEntities;
+import com.ricky.terrariamod.entity.boss.EyeOfCthulhuModelOne;
+import com.ricky.terrariamod.entity.boss.EyeOfCthulhuModelTwo;
+import com.ricky.terrariamod.entity.boss.EyeOfCthulhuRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatRenderer;
@@ -59,6 +62,8 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.CRIMERA.get(), CrimeraRenderer::new);
         EntityRenderers.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulRenderer::new);
 
+        EntityRenderers.register(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuRenderer::new);
+
         EntityRenderers.register(ModEntities.MAGIC_BALL.get(), MagicBallRenderer::new);
         EntityRenderers.register(ModEntities.ROCKET.get(), RocketRenderer::new);
         EntityRenderers.register(ModEntities.MUSKET_BALL.get(), MusketBallRenderer::new);
@@ -68,6 +73,9 @@ public class ClientModLifecycleEvents  {
         event.registerLayerDefinition(DemonEyeModel.LAYER_LOCATION, DemonEyeModel::createBodyLayer);
         event.registerLayerDefinition(CrimeraModel.LAYER_LOCATION, CrimeraModel::createBodyLayer);
         event.registerLayerDefinition(EaterOfSoulModel.LAYER_LOCATION, EaterOfSoulModel::createBodyLayer);
+        event.registerLayerDefinition(EyeOfCthulhuModelOne.LAYER_LOCATION, EyeOfCthulhuModelOne::createBodyLayer);
+        event.registerLayerDefinition(EyeOfCthulhuModelTwo.LAYER_LOCATION, EyeOfCthulhuModelTwo::createBodyLayer);
+
         event.registerLayerDefinition(MagicBallModel.LAYER_LOCATION, MagicBallModel::createBodyLayer);
     }
     @SubscribeEvent

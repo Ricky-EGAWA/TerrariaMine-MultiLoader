@@ -1,6 +1,7 @@
 package com.ricky.terrariamod.entity;
 
 import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.entity.boss.EyeOfCthulhuEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
@@ -84,6 +85,11 @@ public class ModEntities {
     public static final RegistryObject<EntityType<EaterOfSoulEntity>> EATER_OU_SOUL =
             ENTITY_TYPES.register("eater_of_soul", () -> EntityType.Builder.of(EaterOfSoulEntity::new, MobCategory.MONSTER)
                     .sized(1f, 0.5f).build("eater_of_soul"));
+    //endregion
+    //region boss
+    public static final RegistryObject<EntityType<EyeOfCthulhuEntity>> EYE_OF_CTHULHU =
+            ENTITY_TYPES.register("eye_of_cthulhu", ()-> EntityType.Builder.of(EyeOfCthulhuEntity::new, MobCategory.MONSTER)
+                    .sized(3f, 3f).build("eye_of_cthulhu"));
     //endregion
     //region projectile
     public static final RegistryObject<EntityType<MagicBallEntity>> MAGIC_BALL =

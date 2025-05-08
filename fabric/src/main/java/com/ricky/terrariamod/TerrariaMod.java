@@ -2,6 +2,7 @@ package com.ricky.terrariamod;
 
 import com.ricky.terrariamod.block.ModBlocks;
 import com.ricky.terrariamod.entity.ModEntities;
+import com.ricky.terrariamod.entity.boss.EyeOfCthulhuEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
@@ -79,6 +80,7 @@ public class TerrariaMod implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.DEMON_EYE.get(), DemonEyeEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.CRIMERA.get(), CrimeraEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuEntity.createAttributes());
         //endregion
 
         ModPackets.registerC2SPackets();
