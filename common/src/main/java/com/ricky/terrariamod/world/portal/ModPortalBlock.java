@@ -15,9 +15,8 @@ public class ModPortalBlock extends NetherPortalBlock {
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if (!level.isClientSide && entity instanceof ServerPlayer player) {
-            // プレイヤーがディメンション間でクールダウン中でなければ
             if (!player.isPassenger() && !player.isVehicle() && player.canChangeDimensions()) {
-                player.setPortalCooldown(); // クールダウンを設定
+                player.setPortalCooldown();
                 ModTeleportation.teleportPlayer(player);
             }
         }

@@ -31,23 +31,20 @@ public class ModTeleportation {
         CustomPortalForcer forcer = new CustomPortalForcer(targetLevel);
         WorldBorder worldBorder = targetLevel.getWorldBorder();
 
-        // 近くのポータルを探す
         Optional<BlockUtil.FoundRectangle> portal = forcer.findPortalAround(playerPos, false, worldBorder);
 
         System.out.println(portal);
-        // テレポート前に強制的にチャンクをロード
         targetLevel.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(playerPos), 3, playerPos);
 
 
         if (portal.isEmpty()) {
-            // ポータルがなければ作成（東西方向が基本）
             System.out.println("create portal");
             portal = forcer.createPortal(playerPos, Direction.Axis.X);
         }
         portal.ifPresent(rectangle -> {
-            BlockPos min = rectangle.minCorner; // getMinCorner() を使う場合
-            int width = rectangle.axis1Size;   // getAxis1Size() を使う場合
-            int height = rectangle.axis2Size;  // getAxis2Size() を使う場合
+            BlockPos min = rectangle.minCorner;
+            int width = rectangle.axis1Size;
+            int height = rectangle.axis2Size;
 
             BlockPos targetPos = min.offset(width, 0, height);
             System.out.println("teleport");
@@ -60,10 +57,5 @@ public class ModTeleportation {
             );
         });
 
-    }
-
-    private static BlockPos findSpawnPos(ServerLevel level) {
-        // 必要ならポータル生成ロジックと連携
-        return level.getSharedSpawnPos();
     }
 }

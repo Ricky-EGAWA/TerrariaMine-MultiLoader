@@ -1,6 +1,5 @@
 package com.ricky.terrariamod.world.portal;
 
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Optional;
 
@@ -20,26 +19,12 @@ import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.levelgen.Heightmap.Types;
 
 public class CustomPortalForcer {
-    private static final int TICKET_RADIUS = 3;
-    private static final int SEARCH_RADIUS = 128;
-    private static final int CREATE_RADIUS = 16;
-    private static final int FRAME_HEIGHT = 5;
-    private static final int FRAME_WIDTH = 4;
-    private static final int FRAME_BOX = 3;
-    private static final int FRAME_HEIGHT_START = -1;
-    private static final int FRAME_HEIGHT_END = 4;
-    private static final int FRAME_WIDTH_START = -1;
-    private static final int FRAME_WIDTH_END = 3;
-    private static final int FRAME_BOX_START = -1;
-    private static final int FRAME_BOX_END = 2;
-    private static final int NOTHING_FOUND = -1;
     private final ServerLevel level;
 
     public CustomPortalForcer(ServerLevel level) {
         this.level = level;
     }
 
-    // カスタムポータル周辺を探す
     public Optional<BlockUtil.FoundRectangle> findPortalAround(BlockPos pos, boolean isLarge, WorldBorder worldBorder) {
         int searchRadius = isLarge ? 16 : 128;
         BlockState targetPortalState = ModBlocks.PORTAL_BLOCK.get().defaultBlockState();
@@ -70,7 +55,7 @@ public class CustomPortalForcer {
         if (closestPortal != null) {
             this.level.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(closestPortal), 3, closestPortal);
             BlockState portalState = this.level.getBlockState(closestPortal);
-            Direction.Axis axis = portalState.getValue(ModPortalBlock.AXIS); // カスタムポータルブロックが AXIS を持っている前提
+            Direction.Axis axis = portalState.getValue(ModPortalBlock.AXIS);
             return Optional.ofNullable(BlockUtil.getLargestRectangleAround(closestPortal, axis, 21, Axis.Y, 21, blockPos ->
                     this.level.getBlockState(blockPos).is(portalState.getBlock())));
         }
@@ -78,9 +63,6 @@ public class CustomPortalForcer {
         return Optional.empty();
     }
 
-
-
-    // カスタムポータルを作成
     public Optional<BlockUtil.FoundRectangle> createPortal(BlockPos pos, Direction.Axis axis) {
         System.out.println("createPortal called");
 

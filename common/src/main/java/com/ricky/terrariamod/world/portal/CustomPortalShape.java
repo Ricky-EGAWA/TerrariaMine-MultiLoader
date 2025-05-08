@@ -15,7 +15,6 @@ public class CustomPortalShape {
     private static final int MAX_HEIGHT = 21;
 
     private final Level level;
-    private final BlockPos origin;
     private BlockPos bottomLeft;
     private Direction.Axis axis;
     private Direction rightDir;
@@ -24,7 +23,6 @@ public class CustomPortalShape {
 
     public CustomPortalShape(Level level, BlockPos pos, Direction.Axis axis) {
         this.level = level;
-        this.origin = pos;
         this.axis = axis;
         this.rightDir = axis == Direction.Axis.X ? Direction.WEST : Direction.NORTH;
         this.bottomLeft = calculateBottomLeft(pos);
@@ -72,19 +70,16 @@ public class CustomPortalShape {
 
     private int getDistanceUntilTop(BlockPos.MutableBlockPos pos) {
         for (int h = 0; h < MAX_HEIGHT; h++) {
-            // 左のフレーム
             pos.set(bottomLeft).move(Direction.UP, h).move(rightDir, -1);
             if (!isEndFrame(level.getBlockState(pos))) {
                 return h;
             }
 
-            // 右のフレーム
             pos.set(bottomLeft).move(Direction.UP, h).move(rightDir, width);
             if (!isEndFrame(level.getBlockState(pos))) {
                 return h;
             }
 
-            // 中身が空かポータルか
             for (int w = 0; w < width; w++) {
                 pos.set(bottomLeft).move(Direction.UP, h).move(rightDir, w);
                 BlockState state = level.getBlockState(pos);
@@ -123,6 +118,6 @@ public class CustomPortalShape {
     }
 
     private boolean isEndFrame(BlockState state) {
-        return state.is(Blocks.END_STONE); // ← フレームに使いたいブロックに置き換え
+        return state.is(Blocks.END_STONE);
     }
 }
