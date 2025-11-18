@@ -11,6 +11,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.TicketType;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.border.WorldBorder;
 
 import java.util.Optional;
@@ -43,7 +44,10 @@ public class ModTeleportation {
         }
         portal.ifPresent(rectangle -> {
             BlockPos min = rectangle.minCorner;
-            Direction.Axis axis = rectangle.axis;
+
+            // ポータルブロックの状態から軸情報を取得
+            BlockState portalState = targetLevel.getBlockState(min);
+            Direction.Axis axis = portalState.getValue(ModPortalBlock.AXIS);
 
             // ポータルの中心座標を計算（2x3のポータル）
             BlockPos centerPos;
