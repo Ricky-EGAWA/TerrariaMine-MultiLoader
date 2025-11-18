@@ -29,27 +29,34 @@ public class CustomPortalForcer {
         int searchRadius = isLarge ? 16 : 128;
         BlockState targetPortalState = ModBlocks.PORTAL_BLOCK.get().defaultBlockState();
 
-        BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
+        // スパイラル探索で効率化（水平方向）
+        Iterator<BlockPos.MutableBlockPos> spiralIterator = BlockPos.spiralAround(pos, searchRadius, Direction.EAST, Direction.SOUTH).iterator();
         BlockPos closestPortal = null;
         double closestDistance = Double.MAX_VALUE;
 
-        for (int dx = -searchRadius; dx <= searchRadius; dx++) {
-            for (int dy = -searchRadius; dy <= searchRadius; dy++) {
-                for (int dz = -searchRadius; dz <= searchRadius; dz++) {
-                    mutablePos.set(pos.getX() + dx, pos.getY() + dy, pos.getZ() + dz);
+        while (spiralIterator.hasNext()) {
+            BlockPos.MutableBlockPos horizontalPos = spiralIterator.next();
 
-                    if (!worldBorder.isWithinBounds(mutablePos)) continue;
+            if (!worldBorder.isWithinBounds(horizontalPos)) continue;
 
-                    BlockState state = this.level.getBlockState(mutablePos);
-                    if (state.is(targetPortalState.getBlock())) {
-                        double distance = pos.distSqr(mutablePos);
-                        if (distance < closestDistance) {
-                            closestPortal = mutablePos.immutable();
-                            closestDistance = distance;
-                        }
+            // 垂直方向は近い範囲のみ探索（±16ブロック）
+            for (int dy = -16; dy <= 16; dy++) {
+                BlockPos checkPos = horizontalPos.offset(0, dy, 0);
+
+                if (checkPos.getY() < level.getMinBuildHeight() || checkPos.getY() > level.getMaxBuildHeight()) continue;
+
+                BlockState state = this.level.getBlockState(checkPos);
+                if (state.is(targetPortalState.getBlock())) {
+                    double distance = pos.distSqr(checkPos);
+                    if (distance < closestDistance) {
+                        closestPortal = checkPos.immutable();
+                        closestDistance = distance;
                     }
                 }
             }
+
+            // 早期終了：十分近いポータルが見つかった場合
+            if (closestDistance < 100.0) break; // 10ブロック以内
         }
 
         if (closestPortal != null) {

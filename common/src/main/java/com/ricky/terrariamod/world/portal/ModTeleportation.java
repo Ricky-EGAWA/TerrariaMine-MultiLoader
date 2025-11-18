@@ -43,15 +43,23 @@ public class ModTeleportation {
         }
         portal.ifPresent(rectangle -> {
             BlockPos min = rectangle.minCorner;
-            int width = rectangle.axis1Size;
-            int height = rectangle.axis2Size;
+            Direction.Axis axis = rectangle.axis;
 
-            BlockPos targetPos = min.offset(width, 0, height);
-            System.out.println("teleport");
+            // ポータルの中心座標を計算（2x3のポータル）
+            BlockPos centerPos;
+            if (axis == Direction.Axis.X) {
+                // X軸方向のポータル: X方向に2ブロック
+                centerPos = min.offset(1, 0, 0);
+            } else {
+                // Z軸方向のポータル: Z方向に2ブロック
+                centerPos = min.offset(0, 0, 1);
+            }
+
+            System.out.println("teleport to center: " + centerPos);
             player.teleportTo(targetLevel,
-                    targetPos.getX() + 0.5,
-                    targetPos.getY(),
-                    targetPos.getZ() + 0.5,
+                    centerPos.getX() + 0.5,
+                    centerPos.getY(),
+                    centerPos.getZ() + 0.5,
                     player.getYRot(),
                     player.getXRot()
             );
