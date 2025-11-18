@@ -3,10 +3,7 @@ package com.ricky.terrariamod.item;
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.item.armor.ModArmorItem;
 import com.ricky.terrariamod.item.armor.ModArmorMaterials;
-import com.ricky.terrariamod.item.custom.InfiniteLavaBucketItem;
-import com.ricky.terrariamod.item.custom.InfiniteWaterBucketItem;
-import com.ricky.terrariamod.item.custom.MagicMirrorItem;
-import com.ricky.terrariamod.item.custom.MetalDetectorItem;
+import com.ricky.terrariamod.item.custom.*;
 import com.ricky.terrariamod.item.projectile.MusketBallItem;
 import com.ricky.terrariamod.item.tool.ModAxeItem;
 import com.ricky.terrariamod.item.tool.ModPickaxeItem;
@@ -35,6 +32,10 @@ public class ModItems {
             () -> new InfiniteWaterBucketItem(new Item.Properties()));
     public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror",
             () -> new MagicMirrorItem(new Item.Properties()));
+    public static final RegistryObject<Item> SUSPICIOUS_LOOKING_EYE = ITEMS.register("suspicious_looking_eye",
+            () -> new SuspiciousLookingEyeItem(new Item.Properties()));
+    public static final RegistryObject<Item> LENS = ITEMS.register("lens",
+            () -> new Item(new Item.Properties()));
     //endregion
 
     //region ingot

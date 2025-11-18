@@ -4,6 +4,7 @@ import com.ricky.terrariamod.block.ModBlocks;
 import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.boss.EyeOfCthulhuEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
+import com.ricky.terrariamod.entity.monster.bat_type.illuminant_bat.IlluminantBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
@@ -19,6 +20,7 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEn
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyEntity;
+import com.ricky.terrariamod.entity.monster.zombie_type.spore_zombie.SporeZombieEntity;
 import com.ricky.terrariamod.item.ModCreativeTabs;
 import com.ricky.terrariamod.item.ModItems;
 import com.ricky.terrariamod.networking.ModPackets;
@@ -65,6 +67,7 @@ public class TerrariaMod implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_MUMMY.get(), DarkMummyEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.LIGHT_MUMMY.get(), LightMummyEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.SPORE_ZOMBIE.get(), SporeZombieEntity.createAttributes());
 
         FabricDefaultAttributeRegistry.register(ModEntities.ICE_SLIME.get(), IceSlimeEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.SAND_SLIME.get(), SandSlimeEntity.createAttributes());
@@ -76,6 +79,7 @@ public class TerrariaMod implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.LAVA_BAT.get(), LavaBatEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.ICE_BAT.get(), IceBatEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.JUNGLE_BAT.get(), JungleBatEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.ILLUMINANT_BAT.get(), IlluminantBatEntity.createAttributes());
 
         FabricDefaultAttributeRegistry.register(ModEntities.DEMON_EYE.get(), DemonEyeEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.CRIMERA.get(), CrimeraEntity.createAttributes());

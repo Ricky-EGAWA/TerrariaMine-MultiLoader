@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_adamantite_block": {
+    "has_terrariamod_lens": {
       "conditions": {
         "items": [
           {
             "items": [
-              "terrariamod:adamantite_block"
+              "terrariamod:lens"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "terrariamod:adamantite_ingots_from_block"
+        "recipe": "terrariamod:suspicious_looking_eye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_adamantite_block",
+      "has_terrariamod_lens",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "terrariamod:adamantite_ingots_from_block"
+      "terrariamod:suspicious_looking_eye"
     ]
   },
   "sends_telemetry_event": false

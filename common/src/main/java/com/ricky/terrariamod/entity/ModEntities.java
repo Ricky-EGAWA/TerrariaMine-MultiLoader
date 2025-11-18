@@ -3,6 +3,7 @@ package com.ricky.terrariamod.entity;
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.entity.boss.EyeOfCthulhuEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
+import com.ricky.terrariamod.entity.monster.bat_type.illuminant_bat.IlluminantBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
@@ -12,12 +13,14 @@ import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlim
 import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.ice_slime.IceSlimeEntity;
+import com.ricky.terrariamod.entity.monster.slime_type.illuminantslime.IlluminantSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyEntity;
+import com.ricky.terrariamod.entity.monster.zombie_type.spore_zombie.SporeZombieEntity;
 import com.ricky.terrariamod.entity.projectile.ammo.musket_ball.MusketBallEntity;
 import com.ricky.terrariamod.entity.projectile.ammo.rocket.RocketEntity;
 import com.ricky.terrariamod.entity.projectile.magic.MagicBallEntity;
@@ -43,6 +46,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<LightMummyEntity>> LIGHT_MUMMY =
             ENTITY_TYPES.register("light_mummy", () -> EntityType.Builder.of(LightMummyEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.95f).build("light_mummy"));
+    public static final RegistryObject<EntityType<SporeZombieEntity>> SPORE_ZOMBIE =
+            ENTITY_TYPES.register("spore_zombie", () -> EntityType.Builder.of(SporeZombieEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.95f).build("spore_zombie"));
     //endregion
     //region slime type
     public static final RegistryObject<EntityType<IceSlimeEntity>> ICE_SLIME =
@@ -63,6 +69,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<CrimSlimeEntity>> CRIM_SLIME =
             ENTITY_TYPES.register("crim_slime", () -> EntityType.Builder.of(CrimSlimeEntity::new, MobCategory.MONSTER)
                     .sized(1.02f, 1.02f).build("crim_slime"));
+    public static final RegistryObject<EntityType<IlluminantSlimeEntity>> ILLUMINANT_SLIME =
+            ENTITY_TYPES.register("illuminant_slime", () -> EntityType.Builder.of(IlluminantSlimeEntity::new, MobCategory.MONSTER)
+                    .sized(1.02f, 1.02f).build("illuminant_slime"));
     //endregion
     //region bat type
     public static final RegistryObject<EntityType<LavaBatEntity>> LAVA_BAT =
@@ -74,6 +83,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<JungleBatEntity>> JUNGLE_BAT =
             ENTITY_TYPES.register("jungle_bat", () -> EntityType.Builder.of(JungleBatEntity::new, MobCategory.MONSTER)
                     .sized(0.5f, 0.9f).build("jungle_bat"));
+    public static final RegistryObject<EntityType<IlluminantBatEntity>> ILLUMINANT_BAT =
+            ENTITY_TYPES.register("illuminant_bat", () -> EntityType.Builder.of(IlluminantBatEntity::new, MobCategory.MONSTER)
+                    .sized(0.5f, 0.9f).build("illuminant_bat"));
     //endregion
     //region flying type
     public static final RegistryObject<EntityType<DemonEyeEntity>> DEMON_EYE =

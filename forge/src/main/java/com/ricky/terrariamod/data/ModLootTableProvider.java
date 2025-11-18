@@ -105,6 +105,8 @@ public class ModLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PEARL_FENCE.get());
         dropSelf(ModBlocks.PEARL_FENCE_GATE.get());
 
+        add(ModBlocks.PORTAL_BLOCK.get(), noDrop());
+
 //        dropSelf(ModBlocks.DUNGEON_TILE_GREEN.get());
 //        dropSelf(ModBlocks.DUNGEON_TILE_GREEN_SLAB.get());
 //        dropSelf(ModBlocks.DUNGEON_TILE_GREEN_STAIRS.get());

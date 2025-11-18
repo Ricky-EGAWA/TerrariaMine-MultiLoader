@@ -121,6 +121,18 @@
     "misc": [],
     "monster": [
       {
+        "type": "terrariamod:ice_slime",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 2
+      },
+      {
+        "type": "terrariamod:ice_bat",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 1
+      },
+      {
         "type": "minecraft:spider",
         "maxCount": 4,
         "minCount": 4,

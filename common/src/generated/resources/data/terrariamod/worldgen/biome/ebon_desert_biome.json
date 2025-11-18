@@ -91,7 +91,13 @@
         "type": "terrariamod:dark_mummy",
         "maxCount": 5,
         "minCount": 3,
-        "weight": 100
+        "weight": 3
+      },
+      {
+        "type": "terrariamod:sand_slime",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 1
       }
     ],
     "underground_water_creature": [],

@@ -30,6 +30,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.INFINITE_LAVA_BUCKET);
         simpleItem(ModItems.INFINITE_WATER_BUCKET);
         simpleItem(ModItems.MAGIC_MIRROR);
+        simpleItem(ModItems.SUSPICIOUS_LOOKING_EYE);
+        simpleItem(ModItems.LENS);
 
         handheldItem(ModItems.COBALT_PICKAXE);
         handheldItem(ModItems.COBALT_AXE);

@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-03T19:08:47.7091291	Loot Tables
+// 1.20.1	2025-05-17T15:44:33.4647525	Loot Tables
 4ed480eb386371bb3d68bed5de43174190e7789f data/terrariamod/loot_tables/blocks/adamantite_block.json
 d65b44737e64878d8b0b8cad5967711674660586 data/terrariamod/loot_tables/blocks/adamantite_ore.json
 9d479eb84d80d221ba319a24bb5aeda6086afaf8 data/terrariamod/loot_tables/blocks/cobalt_block.json
@@ -61,6 +61,7 @@ f107149a5825d35d52987a5a0c7c29932278bbb8 data/terrariamod/loot_tables/blocks/pea
 760e4a07bbff248ab42e0011bcf611ba83cc2bcf data/terrariamod/loot_tables/blocks/pearl_stairs.json
 aa550d087b80454d417244a53d2a316fbf6f4e20 data/terrariamod/loot_tables/blocks/pearl_stone.json
 488f70810d082cb05a58900dd15443080f363038 data/terrariamod/loot_tables/blocks/pearl_wood.json
+d085009163f080d576b22460965577d6b3daab9a data/terrariamod/loot_tables/blocks/portal_block.json
 889dda1dd30f8037dae6d27a33bdbb7ba1dac1e3 data/terrariamod/loot_tables/blocks/potted_crim_sapling.json
 4f5897d02ba10249e54a3cf1b96351d97b3d6dbc data/terrariamod/loot_tables/blocks/potted_death_weed.json
 d89320c275a1b1e6a389c99fea8ae78315324358 data/terrariamod/loot_tables/blocks/potted_ebon_sapling.json

@@ -4,48 +4,52 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.FlyingMob;
 import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.EnumSet;
 
 public class FlyRandomlyGoal extends Goal {
-    private final FlyingMob fly_mob;
+    private final FlyingMob flyMob;
+    private double targetX, targetY, targetZ;
 
-    public FlyRandomlyGoal(FlyingMob fly_mob) {
-        this.fly_mob = fly_mob;
+    public FlyRandomlyGoal(FlyingMob flyMob) {
+        this.flyMob = flyMob;
         this.setFlags(EnumSet.of(Goal.Flag.MOVE));
     }
 
     @Override
     public boolean canUse() {
-        return this.fly_mob.getTarget() == null && !this.fly_mob.getMoveControl().hasWanted();
+        return flyMob.getTarget() == null && !flyMob.getMoveControl().hasWanted();
+    }
+
+    @Override
+    public boolean canContinueToUse() {
+        return !flyMob.getNavigation().isDone()
+                && flyMob.distanceToSqr(targetX, targetY, targetZ) > 4;
     }
 
     @Override
     public void start() {
-        RandomSource random = this.fly_mob.getRandom();
-        double x, y, z;
+        RandomSource random = flyMob.getRandom();
 
         for (int i = 0; i < 10; i++) {
-            y = this.fly_mob.getY() + (random.nextDouble() * 2 - 1) * 2;
-            x = this.fly_mob.getX() + (random.nextDouble() * 32 - 16);
-            z = this.fly_mob.getZ() + (random.nextDouble() * 32 - 16);
+            double x = flyMob.getX() + (random.nextDouble() * 32 - 16);
+            double y = flyMob.getY() + (random.nextDouble() * 8 - 4);
+            double z = flyMob.getZ() + (random.nextDouble() * 32 - 16);
 
-            y = Mth.clamp(y, this.fly_mob.level().getMinBuildHeight() + 5, this.fly_mob.level().getMaxBuildHeight() - 5);
+            y = Mth.clamp(y,
+                    flyMob.level().getMinBuildHeight() + 5,
+                    flyMob.level().getMaxBuildHeight() - 5);
 
-            if (this.fly_mob.level().noCollision(this.fly_mob, this.fly_mob.getBoundingBox().move(x - this.fly_mob.getX(), y - this.fly_mob.getY(), z - this.fly_mob.getZ()))) {
-                this.fly_mob.getMoveControl().setWantedPosition(x, y, z, 1.0);
+            if (flyMob.level().noCollision(flyMob,
+                    flyMob.getBoundingBox().move(x - flyMob.getX(), y - flyMob.getY(), z - flyMob.getZ()))) {
 
-                double dx = x - this.fly_mob.getX();
-                double dy = y - this.fly_mob.getY();
-                double dz = z - this.fly_mob.getZ();
+                this.targetX = x;
+                this.targetY = y;
+                this.targetZ = z;
 
-                double horizontalDist = Math.sqrt(dx * dx + dz * dz);
-                float yaw = (float)(Mth.atan2(dz, dx) * (180F / Math.PI)) - 90F;
-                float pitch = (float)(-(Mth.atan2(dy, horizontalDist) * (180F / Math.PI)));
-
-                this.fly_mob.setYRot(yaw);
-                this.fly_mob.setYBodyRot(yaw);
-                this.fly_mob.setXRot(pitch);
+                flyMob.getMoveControl().setWantedPosition(x, y, z, 1.0);
                 break;
             }
         }

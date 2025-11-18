@@ -6,6 +6,7 @@ import com.ricky.terrariamod.entity.boss.EyeOfCthulhuModelOne;
 import com.ricky.terrariamod.entity.boss.EyeOfCthulhuModelTwo;
 import com.ricky.terrariamod.entity.boss.EyeOfCthulhuRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatRenderer;
+import com.ricky.terrariamod.entity.monster.bat_type.illuminant_bat.IlluminantBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRenderer;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraModel;
@@ -24,6 +25,7 @@ import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRe
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.mummy.MummyRenderer;
+import com.ricky.terrariamod.entity.monster.zombie_type.spore_zombie.SporeZombieRenderer;
 import com.ricky.terrariamod.entity.projectile.ammo.musket_ball.MusketBallRenderer;
 import com.ricky.terrariamod.entity.projectile.ammo.rocket.RocketRenderer;
 import com.ricky.terrariamod.entity.projectile.magic.MagicBallModel;
@@ -46,6 +48,7 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyRenderer::new);
         EntityRenderers.register(ModEntities.DARK_MUMMY.get(), DarkMummyRenderer::new);
         EntityRenderers.register(ModEntities.LIGHT_MUMMY.get(), LightMummyRenderer::new);
+        EntityRenderers.register(ModEntities.SPORE_ZOMBIE.get(), SporeZombieRenderer::new);
 
         EntityRenderers.register(ModEntities.ICE_SLIME.get(), IceSlimeRenderer::new);
         EntityRenderers.register(ModEntities.SAND_SLIME.get(), SandSlimeRenderer::new);
@@ -57,6 +60,7 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.LAVA_BAT.get(), LavaBatRenderer::new);
         EntityRenderers.register(ModEntities.ICE_BAT.get(), IceBatRenderer::new);
         EntityRenderers.register(ModEntities.JUNGLE_BAT.get(), JungleBatRenderer::new);
+        EntityRenderers.register(ModEntities.ILLUMINANT_BAT.get(), IlluminantBatRenderer::new);
 
         EntityRenderers.register(ModEntities.DEMON_EYE.get(), DemonEyeRenderer::new);
         EntityRenderers.register(ModEntities.CRIMERA.get(), CrimeraRenderer::new);

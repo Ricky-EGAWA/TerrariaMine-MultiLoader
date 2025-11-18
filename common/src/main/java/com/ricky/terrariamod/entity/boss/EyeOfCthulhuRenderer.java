@@ -21,7 +21,6 @@ public class EyeOfCthulhuRenderer extends MobRenderer<EyeOfCthulhuEntity, EyeOfC
     @Override
     public void render(EyeOfCthulhuEntity entity, float entityYaw, float partialTicks, @NotNull PoseStack poseStack,
                        @NotNull MultiBufferSource bufferSource, int packedLight) {
-        // モデルの切り替え（Forgeでは model フィールドが final のため、draw メソッドでモデルを直接選択する必要がある）
         if (entity.getCurrentPhase() == 2) {
             this.model = modelPhaseTwo;
         } else {

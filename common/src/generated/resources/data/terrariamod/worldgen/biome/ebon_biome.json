@@ -112,7 +112,20 @@
       }
     ],
     "misc": [],
-    "monster": [],
+    "monster": [
+      {
+        "type": "terrariamod:eater_of_soul",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 3
+      },
+      {
+        "type": "terrariamod:corrupt_slime",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 1
+      }
+    ],
     "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []

@@ -3,9 +3,12 @@ package com.ricky.terrariamod.entity.monster.flying_type.demon_eye;
 import com.ricky.terrariamod.entity.monster.flying_type.FlyMoveControl;
 import com.ricky.terrariamod.entity.monster.flying_type.FlyRandomlyGoal;
 import com.ricky.terrariamod.entity.monster.flying_type.TrackPlayerGoal;
+import com.ricky.terrariamod.item.ModItems;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class DemonEyeEntity extends FlyingMob {
@@ -26,6 +29,14 @@ public class DemonEyeEntity extends FlyingMob {
     protected void registerGoals() {
         this.goalSelector.addGoal(5, new FlyRandomlyGoal(this));
         this.targetSelector.addGoal(1, new TrackPlayerGoal(this));
+    }
+    @Override
+    protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHit) {
+        super.dropCustomDeathLoot(source, looting, recentlyHit);
+
+        if (this.level().getRandom().nextFloat() < 0.5f + 0.05f * looting) {
+            this.spawnAtLocation(new ItemStack(ModItems.LENS.get()));
+        }
     }
 }
 

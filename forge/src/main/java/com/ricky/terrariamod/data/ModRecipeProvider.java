@@ -89,6 +89,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         createTwoItemRecipe(exporter,RecipeCategory.COMBAT,ModItems.AMETHYST_STAFF.get(),"  B"," A ","A  ",Items.COPPER_INGOT,Items.AMETHYST_SHARD,"amethyst_staff",1);
         createTwoItemRecipe(exporter,RecipeCategory.COMBAT,ModItems.EMERALD_STAFF.get(),"  B"," A ","A  ",Items.IRON_INGOT,Items.EMERALD,"emerald_staff",1);
         createTwoItemRecipe(exporter,RecipeCategory.COMBAT,ModItems.PHOENIX_BLASTER.get(),"AAA","ABA","AAA",ModItems.HELLSTONE_INGOT.get(),ModItems.HANDGUN.get(),"phoenix_blaster",1);
+
+        createOneItemRecipe(exporter, RecipeCategory.COMBAT, ModItems.SUSPICIOUS_LOOKING_EYE.get(), "III", "I I", "III", ModItems.LENS.get(), "suspicious_looking_eye", "",1);
     }
 
     private void generateSmeltingAndBlastingRecipes(Consumer<FinishedRecipe> exporter, List<ItemLike> smeltables, ItemLike result, String name) {

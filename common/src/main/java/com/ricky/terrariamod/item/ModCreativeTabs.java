@@ -134,6 +134,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.INFINITE_LAVA_BUCKET.get());
                         output.accept(ModItems.INFINITE_WATER_BUCKET.get());
                         output.accept(ModItems.MAGIC_MIRROR.get());
+                        output.accept(ModItems.SUSPICIOUS_LOOKING_EYE.get());
+                        output.accept(ModItems.LENS.get());
                     })
                     .build()
     );

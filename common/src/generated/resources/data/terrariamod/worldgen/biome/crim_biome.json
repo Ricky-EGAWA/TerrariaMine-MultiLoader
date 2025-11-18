@@ -113,7 +113,20 @@
       }
     ],
     "misc": [],
-    "monster": [],
+    "monster": [
+      {
+        "type": "terrariamod:crimera",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 2
+      },
+      {
+        "type": "terrariamod:crim_slime",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 1
+      }
+    ],
     "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []

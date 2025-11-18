@@ -1,11 +1,8 @@
-package com.ricky.terrariamod.entity.monster.bat_type.ice_bat;
+package com.ricky.terrariamod.entity.monster.bat_type.illuminant_bat;
 
 import com.ricky.terrariamod.entity.monster.bat_type.BatAttackGoal;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -15,8 +12,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class IceBatEntity extends Bat {
-    public IceBatEntity(EntityType<? extends Bat> entityType, Level world) {
+public class IlluminantBatEntity extends Bat {
+    public IlluminantBatEntity(EntityType<? extends Bat> entityType, Level world) {
         super(entityType, world);
     }
 
@@ -36,10 +33,6 @@ public class IceBatEntity extends Bat {
 
     @Override
     public boolean doHurtTarget(@NotNull Entity target) {
-        boolean success = super.doHurtTarget(target);
-        if (success && target instanceof LivingEntity livingEntity) {
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40), this);
-        }
-        return success;
+        return super.doHurtTarget(target);
     }
 }
