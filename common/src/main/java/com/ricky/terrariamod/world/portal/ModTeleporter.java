@@ -8,85 +8,60 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.TicketType;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.portal.PortalInfo;
-import net.minecraft.world.phys.Vec3;
 
-import javax.annotation.Nullable;
 import java.util.Iterator;
 import java.util.Optional;
-import java.util.function.Function;
 
-public class ModTeleporter implements net.minecraft.world.level.portal.PortalForcer {
+public class ModTeleporter {
     public static final ResourceKey<Level> TERRARIA_DIMENSION = ResourceKey.create(Registries.DIMENSION,
             new ResourceLocation("terraria_dimension"));
 
-    private final ServerLevel level;
-    private final Direction.Axis portalAxis;
+    public static void teleportPlayer(ServerPlayer player) {
+        ServerLevel currentLevel = player.serverLevel();
+        ServerLevel targetLevel = currentLevel.dimension() == Level.OVERWORLD
+                ? player.server.getLevel(TERRARIA_DIMENSION)
+                : player.server.getLevel(Level.OVERWORLD);
 
-    public ModTeleporter(ServerLevel level, Direction.Axis portalAxis) {
-        this.level = level;
-        this.portalAxis = portalAxis;
-    }
+        if (targetLevel == null || targetLevel == currentLevel) return;
 
-    @Nullable
-    @Override
-    public PortalInfo getPortalInfo(Entity entity, ServerLevel destWorld, Function<ServerLevel, PortalInfo> defaultPortalInfo) {
-        WorldBorder worldBorder = destWorld.getWorldBorder();
-        BlockPos entityPos = entity.blockPosition();
+        BlockPos playerPos = player.blockPosition();
+        WorldBorder worldBorder = targetLevel.getWorldBorder();
 
         // ポータルを探す
-        Optional<BlockUtil.FoundRectangle> existingPortal = findPortalAround(entityPos, worldBorder);
+        Optional<BlockUtil.FoundRectangle> portal = findPortalAround(targetLevel, playerPos, worldBorder);
 
-        if (existingPortal.isPresent()) {
-            // 既存のポータルが見つかった場合
-            BlockUtil.FoundRectangle portal = existingPortal.get();
-            return getPortalInfoFromRectangle(entity, portal);
-        } else {
+        // チャンクをロード
+        targetLevel.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(playerPos), 3, playerPos);
+
+        if (portal.isEmpty()) {
             // ポータルを作成
-            Optional<BlockUtil.FoundRectangle> newPortal = createPortal(entityPos, portalAxis);
-            if (newPortal.isPresent()) {
-                return getPortalInfoFromRectangle(entity, newPortal.get());
-            }
+            portal = createPortal(targetLevel, playerPos, Direction.Axis.X);
         }
 
-        // フォールバック: デフォルトの位置
-        return new PortalInfo(entity.position(), entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
+        portal.ifPresent(rectangle -> {
+            BlockPos min = rectangle.minCorner;
+
+            // ポータルの最小コーナー（左下）にテレポート
+            player.teleportTo(targetLevel,
+                    min.getX() + 0.5,
+                    min.getY(),
+                    min.getZ() + 0.5,
+                    player.getYRot(),
+                    player.getXRot()
+            );
+        });
     }
 
-    private PortalInfo getPortalInfoFromRectangle(Entity entity, BlockUtil.FoundRectangle rectangle) {
-        BlockPos min = rectangle.minCorner;
-
-        // ポータルブロックの状態から軸情報を取得
-        BlockState portalState = this.level.getBlockState(min);
-        Direction.Axis axis = portalState.getValue(ModPortalBlock.AXIS);
-
-        // ポータルの中心座標を計算
-        double x, y, z;
-        if (axis == Direction.Axis.X) {
-            // X軸方向のポータル
-            x = min.getX() + 0.5;
-            y = min.getY();
-            z = min.getZ() + 0.5;
-        } else {
-            // Z軸方向のポータル
-            x = min.getX() + 0.5;
-            y = min.getY();
-            z = min.getZ() + 0.5;
-        }
-
-        return new PortalInfo(new Vec3(x, y, z), entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
-    }
-
-    private Optional<BlockUtil.FoundRectangle> findPortalAround(BlockPos pos, WorldBorder worldBorder) {
+    private static Optional<BlockUtil.FoundRectangle> findPortalAround(ServerLevel level, BlockPos pos, WorldBorder worldBorder) {
         int searchRadius = 128;
         BlockState targetPortalState = ModBlocks.PORTAL_BLOCK.get().defaultBlockState();
 
@@ -104,9 +79,10 @@ public class ModTeleporter implements net.minecraft.world.level.portal.PortalFor
             for (int dy = -16; dy <= 16; dy++) {
                 BlockPos checkPos = horizontalPos.offset(0, dy, 0);
 
-                if (checkPos.getY() < level.getMinBuildHeight() || checkPos.getY() > level.getMaxBuildHeight()) continue;
+                if (checkPos.getY() < level.getMinBuildHeight() || checkPos.getY() > level.getMaxBuildHeight())
+                    continue;
 
-                BlockState state = this.level.getBlockState(checkPos);
+                BlockState state = level.getBlockState(checkPos);
                 if (state.is(targetPortalState.getBlock())) {
                     double distance = pos.distSqr(checkPos);
                     if (distance < closestDistance) {
@@ -121,17 +97,17 @@ public class ModTeleporter implements net.minecraft.world.level.portal.PortalFor
         }
 
         if (closestPortal != null) {
-            this.level.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(closestPortal), 3, closestPortal);
-            BlockState portalState = this.level.getBlockState(closestPortal);
+            level.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(closestPortal), 3, closestPortal);
+            BlockState portalState = level.getBlockState(closestPortal);
             Direction.Axis axis = portalState.getValue(ModPortalBlock.AXIS);
-            return Optional.ofNullable(BlockUtil.getLargestRectangleAround(closestPortal, axis, 21, Direction.Axis.Y, 21, blockPos ->
-                    this.level.getBlockState(blockPos).is(portalState.getBlock())));
+            return Optional.ofNullable(BlockUtil.getLargestRectangleAround(closestPortal, axis, 21, Direction.Axis.Y, 21,
+                    blockPos -> level.getBlockState(blockPos).is(portalState.getBlock())));
         }
 
         return Optional.empty();
     }
 
-    public Optional<BlockUtil.FoundRectangle> createPortal(BlockPos pos, Direction.Axis axis) {
+    public static Optional<BlockUtil.FoundRectangle> createPortal(ServerLevel level, BlockPos pos, Direction.Axis axis) {
         Direction direction = Direction.get(Direction.AxisDirection.POSITIVE, axis);
         Direction right = direction.getClockWise();
         WorldBorder border = level.getWorldBorder();
@@ -154,9 +130,9 @@ public class ModTeleporter implements net.minecraft.world.level.portal.PortalFor
 
             for (int y = surfaceY; y >= level.getMinBuildHeight(); y--) {
                 candidate.setY(y);
-                if (canPortalReplaceBlock(candidate)) {
+                if (canPortalReplaceBlock(level, candidate)) {
                     int bottomY = y;
-                    while (bottomY > level.getMinBuildHeight() && canPortalReplaceBlock(candidate.move(Direction.DOWN))) {
+                    while (bottomY > level.getMinBuildHeight() && canPortalReplaceBlock(level, candidate.move(Direction.DOWN))) {
                         bottomY--;
                     }
 
@@ -166,7 +142,7 @@ public class ModTeleporter implements net.minecraft.world.level.portal.PortalFor
                     if (height >= 3) {
                         candidate.setY(bottomY);
 
-                        if (canHostFrame(candidate, mutable, direction, 0)) {
+                        if (canHostFrame(level, candidate, mutable, direction, 0)) {
                             double distance = pos.distSqr(candidate);
                             if (bestDistance == -1.0 || distance < bestDistance) {
                                 bestDistance = distance;
@@ -192,7 +168,8 @@ public class ModTeleporter implements net.minecraft.world.level.portal.PortalFor
                 for (int dz = -1; dz < 3; dz++) {
                     for (int dy = -1; dy < 4; dy++) {
                         BlockState state = dy < 0 ? Blocks.END_STONE.defaultBlockState() : Blocks.AIR.defaultBlockState();
-                        mutable.setWithOffset(bestPos, dx * direction.getStepX() + dz * right.getStepX(), dy, dx * direction.getStepZ() + dz * right.getStepZ());
+                        mutable.setWithOffset(bestPos, dx * direction.getStepX() + dz * right.getStepX(), dy,
+                                dx * direction.getStepZ() + dz * right.getStepZ());
                         level.setBlockAndUpdate(mutable, state);
                     }
                 }
@@ -220,27 +197,29 @@ public class ModTeleporter implements net.minecraft.world.level.portal.PortalFor
         }
 
         // チャンクをロード
-        this.level.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(bestPos), 3, bestPos);
+        level.getChunkSource().addRegionTicket(TicketType.PORTAL, new ChunkPos(bestPos), 3, bestPos);
 
         return Optional.of(new BlockUtil.FoundRectangle(bestPos, 2, 3));
     }
 
-    private boolean canPortalReplaceBlock(BlockPos.MutableBlockPos pos) {
-        BlockState blockState = this.level.getBlockState(pos);
+    private static boolean canPortalReplaceBlock(ServerLevel level, BlockPos.MutableBlockPos pos) {
+        BlockState blockState = level.getBlockState(pos);
         return blockState.canBeReplaced() && blockState.getFluidState().isEmpty();
     }
 
-    private boolean canHostFrame(BlockPos pos, BlockPos.MutableBlockPos mutablePos, Direction direction, int offset) {
+    private static boolean canHostFrame(ServerLevel level, BlockPos pos, BlockPos.MutableBlockPos mutablePos,
+                                        Direction direction, int offset) {
         Direction clockwise = direction.getClockWise();
 
         for (int i = -1; i < 3; i++) {
             for (int j = -1; j < 4; j++) {
-                mutablePos.setWithOffset(pos, direction.getStepX() * i + clockwise.getStepX() * offset, j, direction.getStepZ() * i + clockwise.getStepZ() * offset);
-                if (j < 0 && !this.level.getBlockState(mutablePos).isSolid()) {
+                mutablePos.setWithOffset(pos, direction.getStepX() * i + clockwise.getStepX() * offset, j,
+                        direction.getStepZ() * i + clockwise.getStepZ() * offset);
+                if (j < 0 && !level.getBlockState(mutablePos).isSolid()) {
                     return false;
                 }
 
-                if (j >= 0 && !this.canPortalReplaceBlock(mutablePos)) {
+                if (j >= 0 && !canPortalReplaceBlock(level, mutablePos)) {
                     return false;
                 }
             }
