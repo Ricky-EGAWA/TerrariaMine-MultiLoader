@@ -16,17 +16,10 @@ public class ModPortalBlock extends NetherPortalBlock {
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if (!level.isClientSide && entity instanceof ServerPlayer player) {
             if (!player.isPassenger() && !player.isVehicle() && player.canChangeDimensions()) {
-                // ポータル内にいるかチェック
-                if (player.isOnPortalCooldown()) {
+                // クールダウン中でなければテレポート
+                if (!player.isOnPortalCooldown()) {
                     player.setPortalCooldown();
-                } else {
-                    // ポータルタイマーをインクリメント（バニラと同じ）
-                    if (player.portalTime >= player.getPortalWaitTime()) {
-                        // 80ティック（4秒）経過したのでテレポート
-                        player.setPortalCooldown();
-                        ModTeleporter.teleportPlayer(player);
-                        player.portalTime = 0;
-                    }
+                    ModTeleporter.teleportPlayer(player);
                 }
             }
         }
