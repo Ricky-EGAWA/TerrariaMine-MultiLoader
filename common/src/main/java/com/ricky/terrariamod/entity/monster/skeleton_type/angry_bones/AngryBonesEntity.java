@@ -8,16 +8,17 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
-public class AngryBonesEntity extends Zombie {
+public class AngryBonesEntity extends Skeleton {
     private boolean hasInitializedEquipment = false;
 
-    public AngryBonesEntity(EntityType<? extends Zombie> entityType, Level level) {
+    public AngryBonesEntity(EntityType<? extends Skeleton> entityType, Level level) {
         super(entityType, level);
     }
 
