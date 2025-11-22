@@ -67,7 +67,6 @@ public class CursedSkullEntity extends FlyingMob {
     // 突進攻撃AIゴール
     static class ChargeAttackGoal extends Goal {
         private final CursedSkullEntity skull;
-        private int chargeTime;
 
         public ChargeAttackGoal(CursedSkullEntity skull) {
             this.skull = skull;
@@ -84,8 +83,8 @@ public class CursedSkullEntity extends FlyingMob {
         }
 
         @Override
-        public void start() {
-            this.chargeTime = 0;
+        public boolean canContinueToUse() {
+            return this.canUse();
         }
 
         @Override
@@ -95,37 +94,37 @@ public class CursedSkullEntity extends FlyingMob {
                 return;
             }
 
+            // ターゲットの位置を取得（頭の高さに合わせる）
+            Vec3 targetPos = new Vec3(target.getX(), target.getY() + target.getEyeHeight() * 0.5, target.getZ());
+            Vec3 skullPos = this.skull.position();
+
             double distance = this.skull.distanceToSqr(target);
 
-            // プレイヤーに5ブロック（25平方ブロック）まで近づいたら突進
-            if (distance < 25.0D && distance > 4.0D) {
-                // ターゲットに向かって移動
-                Vec3 targetPos = target.position();
-                Vec3 skullPos = this.skull.position();
-                Vec3 direction = targetPos.subtract(skullPos).normalize();
+            // ターゲットに向かう方向ベクトル
+            Vec3 direction = targetPos.subtract(skullPos).normalize();
 
-                this.skull.setDeltaMovement(direction.scale(0.4D));
-                this.skull.lookAt(target, 30.0F, 30.0F);
-            } else if (distance <= 4.0D) {
-                // 突進攻撃
-                this.chargeTime++;
-                if (this.chargeTime >= 10) {
-                    // 突進
-                    Vec3 targetPos = target.position();
-                    Vec3 skullPos = this.skull.position();
-                    Vec3 chargeDirection = targetPos.subtract(skullPos).normalize();
-
-                    this.skull.setDeltaMovement(chargeDirection.scale(0.8D));
-
-                    // 接触したらダメージ
-                    if (this.skull.distanceToSqr(target) < 2.0D) {
-                        this.skull.doHurtTarget(target);
-                        this.chargeTime = 0;
-                    }
-                }
+            // 距離に応じて速度を変える
+            double speed;
+            if (distance < 9.0D) {
+                // 3ブロック以内: 高速突進
+                speed = 0.6D;
+            } else if (distance < 25.0D) {
+                // 5ブロック以内: 中速移動
+                speed = 0.4D;
             } else {
-                // 遠すぎるので通常移動
-                this.chargeTime = 0;
+                // それ以上: 低速接近
+                speed = 0.3D;
+            }
+
+            // 移動を適用
+            this.skull.setDeltaMovement(direction.scale(speed));
+
+            // ターゲットを見る
+            this.skull.lookAt(target, 30.0F, 30.0F);
+
+            // 接触判定でダメージ
+            if (distance < 2.5D && this.skull.hasLineOfSight(target)) {
+                this.skull.doHurtTarget(target);
             }
         }
 
