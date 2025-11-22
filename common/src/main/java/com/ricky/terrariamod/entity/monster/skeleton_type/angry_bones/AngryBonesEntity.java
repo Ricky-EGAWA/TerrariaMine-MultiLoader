@@ -1,13 +1,10 @@
 package com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
@@ -16,11 +13,10 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ServerLevelAccessor;
-
-import javax.annotation.Nullable;
 
 public class AngryBonesEntity extends Zombie {
+    private boolean hasInitializedEquipment = false;
+
     public AngryBonesEntity(EntityType<? extends Zombie> entityType, Level level) {
         super(entityType, level);
     }
@@ -46,12 +42,18 @@ public class AngryBonesEntity extends Zombie {
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
     }
 
-    @Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
-                                        MobSpawnType spawnType, @Nullable SpawnGroupData spawnData) {
-        spawnData = super.finalizeSpawn(level, difficulty, spawnType, spawnData);
+    public void tick() {
+        super.tick();
 
+        // 初回のみ装備を設定
+        if (!this.level().isClientSide && !hasInitializedEquipment) {
+            setupEquipment();
+            hasInitializedEquipment = true;
+        }
+    }
+
+    private void setupEquipment() {
         // 赤茶色（BROWN）に染色された革防具を装備
         int brownColor = DyeColor.BROWN.getTextColor();
 
@@ -93,11 +95,6 @@ public class AngryBonesEntity extends Zombie {
         this.setDropChance(EquipmentSlot.LEGS, 0.0F);
         this.setDropChance(EquipmentSlot.FEET, 0.0F);
 
-        return spawnData;
-    }
-
-    @Override
-    protected void populateDefaultEquipmentSlots(DifficultyInstance difficulty) {
         // 武器を持たせない（素手で攻撃）
         this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
     }
