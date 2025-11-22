@@ -239,5 +239,6 @@
   "item.minecraft.lingering_potion.effect.fighter_potion": "Lingering Potion of Fighter",
   "item.minecraft.tipped_arrow.effect.fighter_potion": "Arrow of Fighter",
 
-  "entity.terrariamod.angry_bones": "Angry Bones"
+  "entity.terrariamod.angry_bones": "Angry Bones",
+  "entity.terrariamod.cursed_skull": "Cursed Skull"
 }

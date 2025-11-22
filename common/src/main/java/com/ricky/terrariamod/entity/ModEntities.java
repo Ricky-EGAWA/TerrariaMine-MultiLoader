@@ -7,6 +7,7 @@ import com.ricky.terrariamod.entity.monster.bat_type.illuminant_bat.IlluminantBa
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeEntity;
@@ -103,6 +104,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<EaterOfSoulEntity>> EATER_OU_SOUL =
             ENTITY_TYPES.register("eater_of_soul", () -> EntityType.Builder.of(EaterOfSoulEntity::new, MobCategory.MONSTER)
                     .sized(1f, 0.5f).build("eater_of_soul"));
+    public static final RegistryObject<EntityType<CursedSkullEntity>> CURSED_SKULL =
+            ENTITY_TYPES.register("cursed_skull", () -> EntityType.Builder.of(CursedSkullEntity::new, MobCategory.MONSTER)
+                    .sized(0.8f, 0.8f).build("cursed_skull"));
     //endregion
     //region boss
     public static final RegistryObject<EntityType<EyeOfCthulhuEntity>> EYE_OF_CTHULHU =
