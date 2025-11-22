@@ -6,7 +6,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -18,7 +17,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.storage.loot.LootParams;
 
 import javax.annotation.Nullable;
 
@@ -105,12 +103,13 @@ public class AngryBonesEntity extends Zombie {
     }
 
     @Override
-    protected void dropCustomDeathLoot(DamageSource damageSource, int looting, boolean wasRecentlyHit) {
-        super.dropCustomDeathLoot(damageSource, looting, wasRecentlyHit);
-
+    public void die(DamageSource damageSource) {
         // 骨を1~3個ドロップ
-        int boneCount = 1 + this.random.nextInt(3); // 1~3の範囲
-        this.spawnAtLocation(Items.BONE, boneCount);
+        if (!this.level().isClientSide) {
+            int boneCount = 1 + this.random.nextInt(3); // 1~3の範囲
+            this.spawnAtLocation(Items.BONE, boneCount);
+        }
+        super.die(damageSource);
     }
 
     @Override
