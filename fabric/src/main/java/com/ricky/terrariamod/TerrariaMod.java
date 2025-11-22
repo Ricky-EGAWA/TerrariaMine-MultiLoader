@@ -16,6 +16,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlim
 import com.ricky.terrariamod.entity.monster.slime_type.ice_slime.IceSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
@@ -63,6 +64,8 @@ public class TerrariaMod implements ModInitializer {
         ModWorldGeneration.generateModWorldGen();
 
         //region entity
+        FabricDefaultAttributeRegistry.register(ModEntities.ANGRY_BONES.get(), AngryBonesEntity.createAttributes());
+
         FabricDefaultAttributeRegistry.register(ModEntities.MUMMY.get(), MummyEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_MUMMY.get(), DarkMummyEntity.createAttributes());

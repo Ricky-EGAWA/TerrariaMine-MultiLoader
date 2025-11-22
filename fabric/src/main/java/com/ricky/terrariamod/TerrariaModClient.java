@@ -22,6 +22,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlim
 import com.ricky.terrariamod.entity.monster.slime_type.ice_slime.IceSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
@@ -69,6 +70,8 @@ public class TerrariaModClient implements ClientModInitializer {
         //endregion
 
         //region entity
+        EntityRendererRegistry.register(ModEntities.ANGRY_BONES.get(), AngryBonesRenderer::new);
+
         EntityRendererRegistry.register(ModEntities.MUMMY.get(), MummyRenderer::new);
         EntityRendererRegistry.register(ModEntities.LIGHT_MUMMY.get(), LightMummyRenderer::new);
         EntityRendererRegistry.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyRenderer::new);

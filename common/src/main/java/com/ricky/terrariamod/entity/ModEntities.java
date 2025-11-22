@@ -16,6 +16,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.ice_slime.IceSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.illuminantslime.IlluminantSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
@@ -33,6 +34,11 @@ import net.minecraft.world.entity.MobCategory;
 public class ModEntities {
     public static final RegistryProvider<EntityType<?>> ENTITY_TYPES =
             RegistryProvider.get(Registries.ENTITY_TYPE, Constants.MOD_ID);
+    //region skeleton type
+    public static final RegistryObject<EntityType<AngryBonesEntity>> ANGRY_BONES =
+            ENTITY_TYPES.register("angry_bones", () -> EntityType.Builder.of(AngryBonesEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("angry_bones"));
+    //endregion
     //region zombie type
     public static final RegistryObject<EntityType<MummyEntity>> MUMMY =
             ENTITY_TYPES.register("mummy", () -> EntityType.Builder.of(MummyEntity::new, MobCategory.MONSTER)
