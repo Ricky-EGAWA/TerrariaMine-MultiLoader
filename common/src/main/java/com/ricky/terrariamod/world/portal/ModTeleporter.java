@@ -50,11 +50,25 @@ public class ModTeleporter {
         portal.ifPresent(rectangle -> {
             BlockPos min = rectangle.minCorner;
 
-            // ポータルの最小コーナー（左下）にテレポート
+            // ポータルブロックの状態から軸情報を取得
+            BlockState portalState = targetLevel.getBlockState(min);
+            Direction.Axis axis = portalState.getValue(ModPortalBlock.AXIS);
+
+            // ポータルの外側（フレームの隣）にテレポート
+            // これにより連続テレポートを防ぐ
+            BlockPos teleportPos;
+            if (axis == Direction.Axis.X) {
+                // X軸ポータル：Z方向に移動して出る（フレームの前）
+                teleportPos = min.offset(0, 0, -1);
+            } else {
+                // Z軸ポータル：X方向に移動して出る（フレームの前）
+                teleportPos = min.offset(-1, 0, 0);
+            }
+
             player.teleportTo(targetLevel,
-                    min.getX() + 0.5,
-                    min.getY(),
-                    min.getZ() + 0.5,
+                    teleportPos.getX() + 0.5,
+                    teleportPos.getY(),
+                    teleportPos.getZ() + 0.5,
                     player.getYRot(),
                     player.getXRot()
             );
