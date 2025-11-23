@@ -18,6 +18,8 @@ import com.ricky.terrariamod.entity.monster.slime_type.illuminantslime.Illuminan
 import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterBallEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
@@ -39,6 +41,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<AngryBonesEntity>> ANGRY_BONES =
             ENTITY_TYPES.register("angry_bones", () -> EntityType.Builder.of(AngryBonesEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.99f).build("angry_bones"));
+    public static final RegistryObject<EntityType<DarkCasterEntity>> DARK_CASTER =
+            ENTITY_TYPES.register("dark_caster", () -> EntityType.Builder.of(DarkCasterEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("dark_caster"));
     //endregion
     //region zombie type
     public static final RegistryObject<EntityType<MummyEntity>> MUMMY =
@@ -121,6 +126,14 @@ public class ModEntities {
                             .clientTrackingRange(80)
                             .updateInterval(10)
                             .build("magic_ball")
+            );
+    public static final RegistryObject<EntityType<DarkCasterBallEntity>> DARK_CASTER_BALL =
+            ENTITY_TYPES.register("dark_caster_ball", () ->
+                    EntityType.Builder.<DarkCasterBallEntity>of(DarkCasterBallEntity::new, MobCategory.MISC)
+                            .sized(0.3f, 0.3f)
+                            .clientTrackingRange(80)
+                            .updateInterval(1)
+                            .build("dark_caster_ball")
             );
     public static final RegistryObject<EntityType<RocketEntity>> ROCKET =
             ENTITY_TYPES.register("rocket", () ->

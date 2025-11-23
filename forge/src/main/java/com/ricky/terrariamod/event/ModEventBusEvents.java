@@ -18,6 +18,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.ice_slime.IceSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
@@ -30,6 +31,7 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.ANGRY_BONES.get(), AngryBonesEntity.createAttributes().build());
+        event.put(ModEntities.DARK_CASTER.get(), DarkCasterEntity.createAttributes().build());
 
         event.put(ModEntities.MUMMY.get(), DarkMummyEntity.createAttributes().build());
         event.put(ModEntities.BLOOD_MUMMY.get(), BloodMummyEntity.createAttributes().build());
