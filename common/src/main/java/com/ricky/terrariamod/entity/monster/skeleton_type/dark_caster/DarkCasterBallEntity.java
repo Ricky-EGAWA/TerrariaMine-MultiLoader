@@ -6,7 +6,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
@@ -14,19 +14,18 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
-public class DarkCasterBallEntity extends Projectile {
+public class DarkCasterBallEntity extends ThrowableProjectile {
     private int lifeTime = 100; // 5秒（100 ticks）
     private float damage = 10.0F;
 
-    public DarkCasterBallEntity(EntityType<? extends Projectile> type, Level level) {
+    public DarkCasterBallEntity(EntityType<? extends ThrowableProjectile> type, Level level) {
         super(type, level);
         this.noPhysics = true; // 壁貫通
         this.setNoGravity(true);
     }
 
     public DarkCasterBallEntity(Level level, LivingEntity owner, float damage) {
-        super(ModEntities.DARK_CASTER_BALL.get(), level);
-        this.setOwner(owner);
+        super(ModEntities.DARK_CASTER_BALL.get(), owner, level);
         this.damage = damage;
         this.noPhysics = true;
         this.setNoGravity(true);
