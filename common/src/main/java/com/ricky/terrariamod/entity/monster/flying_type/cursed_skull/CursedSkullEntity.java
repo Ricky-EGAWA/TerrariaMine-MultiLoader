@@ -26,9 +26,9 @@ public class CursedSkullEntity extends FlyingMob {
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0D) // ハート10個分
-                .add(Attributes.MOVEMENT_SPEED, 0.25D)
+                .add(Attributes.MOVEMENT_SPEED, 0.15D)
                 .add(Attributes.ATTACK_DAMAGE, 12.0D) // ハート6個分
-                .add(Attributes.FOLLOW_RANGE, 16.0D);
+                .add(Attributes.FOLLOW_RANGE, 25.0D);
     }
 
     @Override
@@ -107,13 +107,13 @@ public class CursedSkullEntity extends FlyingMob {
             double speed;
             if (distance < 9.0D) {
                 // 3ブロック以内: 高速突進
-                speed = 0.6D;
+                speed = 0.2D;
             } else if (distance < 25.0D) {
                 // 5ブロック以内: 中速移動
-                speed = 0.4D;
+                speed = 0.3D;
             } else {
                 // それ以上: 低速接近
-                speed = 0.3D;
+                speed = 0.6D;
             }
 
             // 移動を適用

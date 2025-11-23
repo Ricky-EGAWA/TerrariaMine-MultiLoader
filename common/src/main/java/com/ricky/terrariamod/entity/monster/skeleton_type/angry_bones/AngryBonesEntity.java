@@ -54,8 +54,8 @@ public class AngryBonesEntity extends Zombie {
     }
 
     private void setupEquipment() {
-        // 赤茶色（BROWN）に染色された革防具を装備
-        int brownColor = DyeColor.BROWN.getTextColor();
+        // 赤茶色（RED）に染色された革防具を装備
+        int brownColor = DyeColor.RED.getTextColor();
 
         // ヘルメット
         ItemStack helmet = new ItemStack(Items.LEATHER_HELMET);
