@@ -24,6 +24,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.ice_slime.IceSlimeRendere
 import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
@@ -48,6 +49,7 @@ public class ClientModLifecycleEvents  {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(ModEntities.ANGRY_BONES.get(), AngryBonesRenderer::new);
+        EntityRenderers.register(ModEntities.DARK_CASTER.get(), DarkCasterRenderer::new);
 
         EntityRenderers.register(ModEntities.MUMMY.get(), MummyRenderer::new);
         EntityRenderers.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyRenderer::new);
