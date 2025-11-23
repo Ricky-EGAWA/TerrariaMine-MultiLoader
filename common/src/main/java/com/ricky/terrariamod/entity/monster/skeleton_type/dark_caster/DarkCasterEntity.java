@@ -1,7 +1,6 @@
 package com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster;
 
 import com.ricky.terrariamod.entity.ModEntities;
-import com.ricky.terrariamod.entity.projectile.magic.MagicBallEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -102,20 +101,11 @@ public class DarkCasterEntity extends Zombie {
         Vec3 targetPos = new Vec3(target.getX(), target.getEyeY(), target.getZ());
         Vec3 direction = targetPos.subtract(casterPos).normalize();
 
-        // 壁貫通版のMagicBallEntityを作成
-        MagicBallEntity magicBall = new MagicBallEntity(
-                this.level(),
-                this,
-                ItemStack.EMPTY,
-                99, // 最大ヒット数（実質無限）
-                0,  // 反射なし（壁貫通のため）
-                10, // ハート5個分のダメージ
-                0.0f, 0.5f, 1.0f // 青色
-        );
+        // 壁貫通版のカスタム弾を作成
+        DarkCasterBallEntity magicBall = new DarkCasterBallEntity(this.level(), this, 10.0F);
 
         magicBall.setPos(casterPos.x, casterPos.y, casterPos.z);
         magicBall.setDeltaMovement(direction.scale(0.8));
-        magicBall.noPhysics = true; // 壁貫通
 
         this.level().addFreshEntity(magicBall);
         this.playSound(SoundEvents.EVOKER_CAST_SPELL, 1.0F, 1.0F);
