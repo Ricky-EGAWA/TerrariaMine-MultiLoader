@@ -32,11 +32,12 @@ public class DarkCasterEntity extends Zombie {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 35.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.0D) // テレポートのみで移動
-                .add(Attributes.ATTACK_DAMAGE, 0.0D) // 魔法のみで攻撃
+                .add(Attributes.MOVEMENT_SPEED, 0.01D) // テレポートメインだが0だと問題が起きるため低速に設定
+                .add(Attributes.ATTACK_DAMAGE, 1.0D) // 魔法メインだが0だと問題が起きるため低ダメージに設定
                 .add(Attributes.ARMOR, 2.0D)
                 .add(Attributes.MAX_HEALTH, 20D) // ハート10個分
-                .add(Attributes.KNOCKBACK_RESISTANCE, 0.3D);
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0.3D)
+                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
     }
 
     @Override
@@ -62,12 +63,18 @@ public class DarkCasterEntity extends Zombie {
 
         // チェストプレート
         ItemStack chestplate = new ItemStack(Items.LEATHER_CHESTPLATE);
-        chestplate.getOrCreateTag().getCompound("display").putInt("color", blueColor);
+        net.minecraft.nbt.CompoundTag chestTag = chestplate.getOrCreateTag();
+        net.minecraft.nbt.CompoundTag chestDisplay = chestTag.getCompound("display");
+        chestDisplay.putInt("color", blueColor);
+        chestTag.put("display", chestDisplay);
         this.setItemSlot(EquipmentSlot.CHEST, chestplate);
 
         // レギンス
         ItemStack leggings = new ItemStack(Items.LEATHER_LEGGINGS);
-        leggings.getOrCreateTag().getCompound("display").putInt("color", blueColor);
+        net.minecraft.nbt.CompoundTag legsTag = leggings.getOrCreateTag();
+        net.minecraft.nbt.CompoundTag legsDisplay = legsTag.getCompound("display");
+        legsDisplay.putInt("color", blueColor);
+        legsTag.put("display", legsDisplay);
         this.setItemSlot(EquipmentSlot.LEGS, leggings);
 
         // ドロップ率を100%に
