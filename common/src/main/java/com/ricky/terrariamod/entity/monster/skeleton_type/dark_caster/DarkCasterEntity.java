@@ -12,7 +12,7 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -21,10 +21,10 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.EnumSet;
 
-public class DarkCasterEntity extends Zombie {
+public class DarkCasterEntity extends Skeleton {
     private boolean hasInitializedEquipment = false;
 
-    public DarkCasterEntity(EntityType<? extends Zombie> type, Level level) {
+    public DarkCasterEntity(EntityType<? extends Skeleton> type, Level level) {
         super(type, level);
     }
 

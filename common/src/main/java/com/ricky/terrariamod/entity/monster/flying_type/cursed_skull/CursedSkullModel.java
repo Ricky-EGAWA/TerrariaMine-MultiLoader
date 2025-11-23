@@ -27,7 +27,7 @@ public class CursedSkullModel extends EntityModel<CursedSkullEntity> {
         partdefinition.addOrReplaceChild("head",
                 CubeListBuilder.create()
                         .texOffs(0, 0)
-                        .addBox(-5.0F, -10.0F, -5.0F, 10.0F, 10.0F, 10.0F, new CubeDeformation(0.0F)),
+                        .addBox(-5.0F, -10.0F, -5.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(2.0F)),
                 PartPose.offset(0.0F, 0.0F, 0.0F));
 
         return LayerDefinition.create(meshdefinition, 64, 32);
