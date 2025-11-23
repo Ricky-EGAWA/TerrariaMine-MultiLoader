@@ -6,9 +6,8 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.monster.Zombie;
 
-public class DarkCasterRenderer extends HumanoidMobRenderer<Zombie, HumanoidModel<Zombie>> {
+public class DarkCasterRenderer extends HumanoidMobRenderer<DarkCasterEntity, HumanoidModel<DarkCasterEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation("minecraft", "textures/entity/skeleton/skeleton.png");
 
     public DarkCasterRenderer(EntityRendererProvider.Context context) {
@@ -20,7 +19,7 @@ public class DarkCasterRenderer extends HumanoidMobRenderer<Zombie, HumanoidMode
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Zombie entity) {
+    public ResourceLocation getTextureLocation(DarkCasterEntity entity) {
         return TEXTURE;
     }
 }
