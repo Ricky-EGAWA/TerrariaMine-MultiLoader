@@ -12,6 +12,8 @@ import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRendere
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraModel;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraRenderer;
+import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullModel;
+import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeModel;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulModel;
@@ -96,6 +98,8 @@ public class TerrariaModClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(CrimeraModel.LAYER_LOCATION, CrimeraModel::createBodyLayer);
         EntityRendererRegistry.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(EaterOfSoulModel.LAYER_LOCATION, EaterOfSoulModel::createBodyLayer);
+        EntityRendererRegistry.register(ModEntities.CURSED_SKULL.get(), CursedSkullRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(CursedSkullModel.LAYER_LOCATION, CursedSkullModel::createBodyLayer);
 
         EntityRendererRegistry.register(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(EyeOfCthulhuModelOne.LAYER_LOCATION, EyeOfCthulhuModelOne::createBodyLayer);

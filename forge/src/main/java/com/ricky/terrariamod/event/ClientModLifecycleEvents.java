@@ -11,6 +11,8 @@ import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatRendere
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraModel;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraRenderer;
+import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullModel;
+import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeModel;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulModel;
@@ -68,6 +70,7 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.DEMON_EYE.get(), DemonEyeRenderer::new);
         EntityRenderers.register(ModEntities.CRIMERA.get(), CrimeraRenderer::new);
         EntityRenderers.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulRenderer::new);
+        EntityRenderers.register(ModEntities.CURSED_SKULL.get(), CursedSkullRenderer::new);
 
         EntityRenderers.register(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuRenderer::new);
 
@@ -80,6 +83,7 @@ public class ClientModLifecycleEvents  {
         event.registerLayerDefinition(DemonEyeModel.LAYER_LOCATION, DemonEyeModel::createBodyLayer);
         event.registerLayerDefinition(CrimeraModel.LAYER_LOCATION, CrimeraModel::createBodyLayer);
         event.registerLayerDefinition(EaterOfSoulModel.LAYER_LOCATION, EaterOfSoulModel::createBodyLayer);
+        event.registerLayerDefinition(CursedSkullModel.LAYER_LOCATION, CursedSkullModel::createBodyLayer);
         event.registerLayerDefinition(EyeOfCthulhuModelOne.LAYER_LOCATION, EyeOfCthulhuModelOne::createBodyLayer);
         event.registerLayerDefinition(EyeOfCthulhuModelTwo.LAYER_LOCATION, EyeOfCthulhuModelTwo::createBodyLayer);
 

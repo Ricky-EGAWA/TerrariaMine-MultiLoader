@@ -8,6 +8,7 @@ import com.ricky.terrariamod.entity.monster.bat_type.illuminant_bat.IlluminantBa
 import com.ricky.terrariamod.entity.monster.bat_type.jungle_bat.JungleBatEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeEntity;
@@ -50,6 +51,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.DEMON_EYE.get(), DemonEyeEntity.createAttributes().build());
         event.put(ModEntities.CRIMERA.get(), CrimeraEntity.createAttributes().build());
         event.put(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulEntity.createAttributes().build());
+        event.put(ModEntities.CURSED_SKULL.get(), CursedSkullEntity.createAttributes().build());
 
         event.put(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuEntity.createAttributes().build());
     }
