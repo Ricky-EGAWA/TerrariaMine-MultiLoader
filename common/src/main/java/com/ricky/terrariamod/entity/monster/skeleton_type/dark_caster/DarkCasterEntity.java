@@ -79,6 +79,9 @@ public class DarkCasterEntity extends Skeleton {
         // ドロップ率を100%に
         this.setDropChance(EquipmentSlot.CHEST, 2.0F);
         this.setDropChance(EquipmentSlot.LEGS, 2.0F);
+
+        // 武器を持たせない（素手で攻撃）
+        this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
     }
 
     @Override

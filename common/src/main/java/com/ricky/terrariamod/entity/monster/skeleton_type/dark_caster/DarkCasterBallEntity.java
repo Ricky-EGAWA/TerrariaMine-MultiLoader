@@ -16,7 +16,7 @@ import org.joml.Vector3f;
 
 public class DarkCasterBallEntity extends ThrowableProjectile {
     private int lifeTime = 100; // 5秒（100 ticks）
-    private float damage = 10.0F;
+    private float damage = 5.0F;
 
     public DarkCasterBallEntity(EntityType<? extends ThrowableProjectile> type, Level level) {
         super(type, level);

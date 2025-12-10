@@ -27,7 +27,7 @@ public class CursedSkullEntity extends FlyingMob {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0D) // ハート10個分
                 .add(Attributes.MOVEMENT_SPEED, 0.15D)
-                .add(Attributes.ATTACK_DAMAGE, 12.0D) // ハート6個分
+                .add(Attributes.ATTACK_DAMAGE, 8.0D) // ハート6個分
                 .add(Attributes.FOLLOW_RANGE, 25.0D);
     }
 

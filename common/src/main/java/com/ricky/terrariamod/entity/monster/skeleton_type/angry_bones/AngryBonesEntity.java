@@ -34,7 +34,7 @@ public class AngryBonesEntity extends Skeleton {
                 .add(Attributes.MOVEMENT_SPEED, 0.25F)
                 // ゾンビの攻撃力は3（イージー）、5（ノーマル）、7（ハード）
                 // 2.5倍なので12.5（ノーマル基準）
-                .add(Attributes.ATTACK_DAMAGE, 12.5D)
+                .add(Attributes.ATTACK_DAMAGE, 7.5D)
                 .add(Attributes.ARMOR, 2.0D)
                 // ゾンビの体力は20、2.5倍で50
                 .add(Attributes.MAX_HEALTH, 50D)
