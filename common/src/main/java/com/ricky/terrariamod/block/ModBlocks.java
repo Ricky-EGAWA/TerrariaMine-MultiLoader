@@ -211,6 +211,26 @@ public class ModBlocks {
     public static final Supplier<Block> PORTAL_BLOCK = registerBlockWithItem("portal_block",
             () -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_PORTAL)));
 
+    //region ダンジョン用ブロック
+    public static final Supplier<Block> DUNGEON_TILE_GREEN = registerBlockWithItem("dungeon_tile_green",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final Supplier<Block> DUNGEON_TILE_GREEN_STAIRS = registerBlockWithItem("dungeon_tile_green_stairs",
+            () -> new ModStairBlock(ModBlocks.DUNGEON_TILE_GREEN.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)));
+    public static final Supplier<Block> DUNGEON_TILE_GREEN_SLAB = registerBlockWithItem("dungeon_tile_green_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)));
+    public static final Supplier<Block> DUNGEON_TILE_GREEN_WALL = registerBlockWithItem("dungeon_tile_green_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+
+    public static final Supplier<Block> DUNGEON_BRICK_GREEN = registerBlockWithItem("dungeon_brick_green",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final Supplier<Block> DUNGEON_BRICK_GREEN_STAIRS = registerBlockWithItem("dungeon_brick_green_stairs",
+            () -> new ModStairBlock(ModBlocks.DUNGEON_BRICK_GREEN.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)));
+    public static final Supplier<Block> DUNGEON_BRICK_GREEN_SLAB = registerBlockWithItem("dungeon_brick_green_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)));
+    public static final Supplier<Block> DUNGEON_BRICK_GREEN_WALL = registerBlockWithItem("dungeon_brick_green_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+    //endregion
+
     public static Block getSlab(String materialName) {
         return switch (materialName.toLowerCase()) {
             case "ebon" -> EBON_SLAB.get();

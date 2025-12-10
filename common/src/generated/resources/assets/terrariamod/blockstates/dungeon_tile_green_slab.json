@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "terrariamod:block/dungeon_tile_green_slab"
+    },
+    "type=double": {
+      "model": "terrariamod:block/dungeon_tile_green"
+    },
+    "type=top": {
+      "model": "terrariamod:block/dungeon_tile_green_slab_top"
+    }
+  }
+}

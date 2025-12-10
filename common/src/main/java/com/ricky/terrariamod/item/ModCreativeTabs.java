@@ -246,6 +246,17 @@ public class ModCreativeTabs {
 
                         // ICICLE
 //                        output.accept(ModBlocks.ICICLE.get());
+
+                        //region Dungeon Blocks
+                        output.accept(ModBlocks.DUNGEON_TILE_GREEN.get());
+                        output.accept(ModBlocks.DUNGEON_TILE_GREEN_STAIRS.get());
+                        output.accept(ModBlocks.DUNGEON_TILE_GREEN_SLAB.get());
+                        output.accept(ModBlocks.DUNGEON_TILE_GREEN_WALL.get());
+                        output.accept(ModBlocks.DUNGEON_BRICK_GREEN.get());
+                        output.accept(ModBlocks.DUNGEON_BRICK_GREEN_STAIRS.get());
+                        output.accept(ModBlocks.DUNGEON_BRICK_GREEN_SLAB.get());
+                        output.accept(ModBlocks.DUNGEON_BRICK_GREEN_WALL.get());
+                        //endregion
                     })
                     .build()
     );

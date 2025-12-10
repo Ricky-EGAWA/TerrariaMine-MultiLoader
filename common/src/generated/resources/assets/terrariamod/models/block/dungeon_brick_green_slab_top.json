@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "terrariamod:block/dungeon_brick_green",
+    "side": "terrariamod:block/dungeon_brick_green",
+    "top": "terrariamod:block/dungeon_brick_green"
+  }
+}
