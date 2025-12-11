@@ -214,6 +214,8 @@ public class ModBlocks {
     //region ダンジョン用ブロック
     public static final Supplier<Block> DUNGEON_TILE_GREEN = registerBlockWithItem("dungeon_tile_green",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final Supplier<Block> DUNGEON_TILE_GREEN_FRAGILE = registerBlockWithItem("dungeon_tile_green_fragile",
+            () -> new FragileBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final Supplier<Block> DUNGEON_TILE_GREEN_STAIRS = registerBlockWithItem("dungeon_tile_green_stairs",
             () -> new ModStairBlock(ModBlocks.DUNGEON_TILE_GREEN.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)));
     public static final Supplier<Block> DUNGEON_TILE_GREEN_SLAB = registerBlockWithItem("dungeon_tile_green_slab",
@@ -223,12 +225,22 @@ public class ModBlocks {
 
     public static final Supplier<Block> DUNGEON_BRICK_GREEN = registerBlockWithItem("dungeon_brick_green",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final Supplier<Block> DUNGEON_BRICK_GREEN_FRAGILE = registerBlockWithItem("dungeon_brick_green_fragile",
+            () -> new FragileBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final Supplier<Block> DUNGEON_BRICK_GREEN_STAIRS = registerBlockWithItem("dungeon_brick_green_stairs",
             () -> new ModStairBlock(ModBlocks.DUNGEON_BRICK_GREEN.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)));
     public static final Supplier<Block> DUNGEON_BRICK_GREEN_SLAB = registerBlockWithItem("dungeon_brick_green_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)));
     public static final Supplier<Block> DUNGEON_BRICK_GREEN_WALL = registerBlockWithItem("dungeon_brick_green_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+
+    public static final Supplier<Block> SPIKE_BLOCK = registerBlockWithItem("spike_block",
+            () -> new SpikeBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
+    public static final Supplier<Block> LOCKED_GOLDEN_CHEST = registerBlockWithItem("locked_golden_chest",
+            () -> new LockedGoldenChestBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
+    public static final Supplier<Block> GOLDEN_CHEST = registerBlockWithItem("golden_chest",
+            () -> new GoldenChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST).noOcclusion()));
     //endregion
 
     public static Block getSlab(String materialName) {
