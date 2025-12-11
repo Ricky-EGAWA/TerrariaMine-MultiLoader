@@ -107,16 +107,24 @@ public class ModLootTableProvider extends BlockLootSubProvider {
 
         add(ModBlocks.PORTAL_BLOCK.get(), noDrop());
 
-//        dropSelf(ModBlocks.DUNGEON_TILE_GREEN.get());
-//        dropSelf(ModBlocks.DUNGEON_TILE_GREEN_SLAB.get());
-//        dropSelf(ModBlocks.DUNGEON_TILE_GREEN_STAIRS.get());
-//        dropSelf(ModBlocks.DUNGEON_TILE_GREEN_WALL.get());
-//        dropSelf(ModBlocks.DUNGEON_BRICK_GREEN.get());
-//        dropSelf(ModBlocks.DUNGEON_BRICK_GREEN_SLAB.get());
-//        dropSelf(ModBlocks.DUNGEON_BRICK_GREEN_STAIRS.get());
-//        dropSelf(ModBlocks.DUNGEON_BRICK_GREEN_WALL.get());
-//        dropSelf(ModBlocks.SPIKE_BLOCK.get());
-//        dropSelf(ModBlocks.GOLDEN_CHEST.get());
+        // Dungeon Blocks
+        dropSelf(ModBlocks.DUNGEON_TILE_GREEN.get());
+        dropSelf(ModBlocks.DUNGEON_TILE_GREEN_SLAB.get());
+        dropSelf(ModBlocks.DUNGEON_TILE_GREEN_STAIRS.get());
+        dropSelf(ModBlocks.DUNGEON_TILE_GREEN_WALL.get());
+        dropSelf(ModBlocks.DUNGEON_BRICK_GREEN.get());
+        dropSelf(ModBlocks.DUNGEON_BRICK_GREEN_SLAB.get());
+        dropSelf(ModBlocks.DUNGEON_BRICK_GREEN_STAIRS.get());
+        dropSelf(ModBlocks.DUNGEON_BRICK_GREEN_WALL.get());
+
+        // Fragile blocks - no drops when broken
+        add(ModBlocks.DUNGEON_TILE_GREEN_FRAGILE.get(), noDrop());
+        add(ModBlocks.DUNGEON_BRICK_GREEN_FRAGILE.get(), noDrop());
+
+        // Special blocks
+        dropSelf(ModBlocks.SPIKE_BLOCK.get());
+        dropSelf(ModBlocks.LOCKED_GOLDEN_CHEST.get());
+        dropSelf(ModBlocks.GOLDEN_CHEST.get());
     }
 
     @Override
