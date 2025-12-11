@@ -1,5 +1,10 @@
 package com.ricky.terrariamod.platform.services;
 
+import com.ricky.terrariamod.block.entity.GoldenChestBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+
+import java.util.function.Supplier;
+
 public interface IPlatformHelper {
 
     /**
@@ -30,7 +35,13 @@ public interface IPlatformHelper {
      * @return The name of the environment type.
      */
     default String getEnvironmentName() {
-
         return isDevelopmentEnvironment() ? "development" : "production";
     }
+
+    /**
+     * Registers the GoldenChestBlockEntity type.
+     *
+     * @return A supplier for the BlockEntityType.
+     */
+    Supplier<BlockEntityType<GoldenChestBlockEntity>> registerGoldenChestBlockEntity();
 }

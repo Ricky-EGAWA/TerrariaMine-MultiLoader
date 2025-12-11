@@ -1,11 +1,20 @@
 package com.ricky.terrariamod.platform;
 
+import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.block.ModBlocks;
+import com.ricky.terrariamod.block.entity.GoldenChestBlockEntity;
 import com.ricky.terrariamod.platform.services.IPlatformHelper;
-import com.ricky.terrariamod.platform.services.IManaComponent;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+
+import java.util.function.Supplier;
 
 public class FabricPlatformHelper implements IPlatformHelper {
+    private static BlockEntityType<GoldenChestBlockEntity> GOLDEN_CHEST_TYPE;
 
     @Override
     public String getPlatformName() {
@@ -14,13 +23,21 @@ public class FabricPlatformHelper implements IPlatformHelper {
 
     @Override
     public boolean isModLoaded(String modId) {
-
         return FabricLoader.getInstance().isModLoaded(modId);
     }
 
     @Override
     public boolean isDevelopmentEnvironment() {
-
         return FabricLoader.getInstance().isDevelopmentEnvironment();
+    }
+
+    @Override
+    public Supplier<BlockEntityType<GoldenChestBlockEntity>> registerGoldenChestBlockEntity() {
+        GOLDEN_CHEST_TYPE = Registry.register(
+                BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                new ResourceLocation(Constants.MOD_ID, "golden_chest"),
+                FabricBlockEntityTypeBuilder.create(GoldenChestBlockEntity::new, ModBlocks.GOLDEN_CHEST.get()).build()
+        );
+        return () -> GOLDEN_CHEST_TYPE;
     }
 }
