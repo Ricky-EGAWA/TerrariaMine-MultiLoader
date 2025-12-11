@@ -155,8 +155,8 @@ public class DarkCasterEntity extends Skeleton {
         private int actionTimer;
         private int shotsFired;
         private static final int SHOTS_PER_ATTACK = 3;
-        private static final int TICKS_BETWEEN_SHOTS = 15; // 0.75秒
-        private static final int COOLDOWN_AFTER_ATTACK = 40; // 2秒
+        private static final int TICKS_BETWEEN_SHOTS = 40; // 2秒
+        private static final int COOLDOWN_AFTER_ATTACK = 80; // 4秒
 
         public TeleportAndShootGoal(DarkCasterEntity caster) {
             this.caster = caster;

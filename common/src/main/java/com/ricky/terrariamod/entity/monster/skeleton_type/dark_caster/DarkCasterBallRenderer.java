@@ -31,7 +31,7 @@ public class DarkCasterBallRenderer extends EntityRenderer<DarkCasterBallEntity>
         poseStack.scale(-1.0F, -1.0F, 1.0F);
 
         VertexConsumer vertexConsumer = buffer.getBuffer(model.renderType(getTextureLocation(entity)));
-        model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
+        model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, 1, 1, 1, 0);
 
         poseStack.popPose();
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
