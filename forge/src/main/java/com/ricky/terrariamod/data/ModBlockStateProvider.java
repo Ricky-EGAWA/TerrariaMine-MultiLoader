@@ -165,6 +165,38 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.PEARL_PRESSURE_PLATE);
         blockItem(ModBlocks.PEARL_FENCE_GATE);
         //endregion
+
+        //region Dungeon Blocks
+        // Dungeon Tile Green
+        blockWithItem(ModBlocks.DUNGEON_TILE_GREEN);
+        stairsBlock(((StairBlock) ModBlocks.DUNGEON_TILE_GREEN_STAIRS.get()), blockTexture(ModBlocks.DUNGEON_TILE_GREEN.get()));
+        slabBlock(((SlabBlock) ModBlocks.DUNGEON_TILE_GREEN_SLAB.get()), blockTexture(ModBlocks.DUNGEON_TILE_GREEN.get()), blockTexture(ModBlocks.DUNGEON_TILE_GREEN.get()));
+        wallBlock(((WallBlock) ModBlocks.DUNGEON_TILE_GREEN_WALL.get()), blockTexture(ModBlocks.DUNGEON_TILE_GREEN.get()));
+        blockItem(ModBlocks.DUNGEON_TILE_GREEN_STAIRS);
+        blockItem(ModBlocks.DUNGEON_TILE_GREEN_SLAB);
+        wallBlockItem(ModBlocks.DUNGEON_TILE_GREEN_WALL, ModBlocks.DUNGEON_TILE_GREEN);
+
+        // Dungeon Brick Green
+        blockWithItem(ModBlocks.DUNGEON_BRICK_GREEN);
+        stairsBlock(((StairBlock) ModBlocks.DUNGEON_BRICK_GREEN_STAIRS.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()));
+        slabBlock(((SlabBlock) ModBlocks.DUNGEON_BRICK_GREEN_SLAB.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()));
+        wallBlock(((WallBlock) ModBlocks.DUNGEON_BRICK_GREEN_WALL.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()));
+        blockItem(ModBlocks.DUNGEON_BRICK_GREEN_STAIRS);
+        blockItem(ModBlocks.DUNGEON_BRICK_GREEN_SLAB);
+        wallBlockItem(ModBlocks.DUNGEON_BRICK_GREEN_WALL, ModBlocks.DUNGEON_BRICK_GREEN);
+
+        // Fragile Blocks - use same texture as regular blocks
+        blockWithItem(ModBlocks.DUNGEON_TILE_GREEN_FRAGILE);
+        blockWithItem(ModBlocks.DUNGEON_BRICK_GREEN_FRAGILE);
+
+        // Spike Block
+        blockWithItem(ModBlocks.SPIKE_BLOCK);
+
+        // Chest Blocks - these need custom rendering, so just register simple block states
+        horizontalBlock(ModBlocks.LOCKED_GOLDEN_CHEST.get(), modLoc("block/locked_golden_chest"));
+        simpleBlockItem(ModBlocks.LOCKED_GOLDEN_CHEST.get(), models().getExistingFile(modLoc("block/locked_golden_chest")));
+        // Golden Chest uses entity rendering, so no block model needed
+        //endregion
     }
 
 
@@ -205,5 +237,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .texture("bottom", modLoc("block/" + blockName + "_bottom"));
 
         simpleBlockWithItem(blockRegistryObject.get(), model);
+    }
+
+    private void wallBlockItem(Supplier<Block> wallBlock, Supplier<Block> textureBlock) {
+        String wallName = ForgeRegistries.BLOCKS.getKey(wallBlock.get()).getPath();
+        simpleBlockItem(wallBlock.get(), models().wallInventory(wallName + "_inventory", blockTexture(textureBlock.get())));
     }
 }

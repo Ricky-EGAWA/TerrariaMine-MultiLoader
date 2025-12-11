@@ -1,6 +1,7 @@
 package com.ricky.terrariamod;
 
 import com.ricky.terrariamod.block.ModBlocks;
+import com.ricky.terrariamod.block.entity.ModBlockEntities;
 import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.item.ModCreativeTabs;
 import com.ricky.terrariamod.item.ModItems;
@@ -22,6 +23,7 @@ public class TerrariaMod {
 
         ModItems.register();
         ModBlocks.register();
+        ModBlockEntities.register();
         ModCreativeTabs.register();
         ModEntities.register();
 

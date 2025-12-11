@@ -119,6 +119,11 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     //endregion
 
+    //region dungeon items
+    public static final RegistryObject<Item> GOLDEN_KEY = ITEMS.register("golden_key",
+            () -> new Item(new Item.Properties()));
+    //endregion
+
     //region 防具
     public static final RegistryObject<Item> OAK_HELMET = ITEMS.register("oak_helmet",
             () -> new ModArmorItem(ModArmorMaterials.OAK, ArmorItem.Type.HELMET, new Item.Properties()));

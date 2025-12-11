@@ -1,6 +1,7 @@
 package com.ricky.terrariamod;
 
 import com.ricky.terrariamod.block.ModBlocks;
+import com.ricky.terrariamod.block.entity.ModBlockEntities;
 import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.boss.EyeOfCthulhuEntity;
 import com.ricky.terrariamod.entity.monster.bat_type.ice_bat.IceBatEntity;
@@ -50,6 +51,7 @@ public class TerrariaMod implements ModInitializer {
 
         ModItems.register();
         ModBlocks.register();
+        ModBlockEntities.register();
         ModCreativeTabs.register();
         ModEntities.register();
 

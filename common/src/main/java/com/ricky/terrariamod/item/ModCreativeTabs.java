@@ -136,6 +136,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.MAGIC_MIRROR.get());
                         output.accept(ModItems.SUSPICIOUS_LOOKING_EYE.get());
                         output.accept(ModItems.LENS.get());
+                        output.accept(ModItems.GOLDEN_KEY.get());
                     })
                     .build()
     );
@@ -249,13 +250,18 @@ public class ModCreativeTabs {
 
                         //region Dungeon Blocks
                         output.accept(ModBlocks.DUNGEON_TILE_GREEN.get());
+                        output.accept(ModBlocks.DUNGEON_TILE_GREEN_FRAGILE.get());
                         output.accept(ModBlocks.DUNGEON_TILE_GREEN_STAIRS.get());
                         output.accept(ModBlocks.DUNGEON_TILE_GREEN_SLAB.get());
                         output.accept(ModBlocks.DUNGEON_TILE_GREEN_WALL.get());
                         output.accept(ModBlocks.DUNGEON_BRICK_GREEN.get());
+                        output.accept(ModBlocks.DUNGEON_BRICK_GREEN_FRAGILE.get());
                         output.accept(ModBlocks.DUNGEON_BRICK_GREEN_STAIRS.get());
                         output.accept(ModBlocks.DUNGEON_BRICK_GREEN_SLAB.get());
                         output.accept(ModBlocks.DUNGEON_BRICK_GREEN_WALL.get());
+                        output.accept(ModBlocks.SPIKE_BLOCK.get());
+                        output.accept(ModBlocks.LOCKED_GOLDEN_CHEST.get());
+                        output.accept(ModBlocks.GOLDEN_CHEST.get());
                         //endregion
                     })
                     .build()

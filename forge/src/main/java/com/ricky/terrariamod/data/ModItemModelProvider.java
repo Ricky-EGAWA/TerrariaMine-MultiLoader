@@ -58,6 +58,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.HANDGUN);
         handheldItem(ModItems.PHOENIX_BLASTER);
 
+        // Dungeon Items
+        simpleItem(ModItems.GOLDEN_KEY);
+
         //region 防具
         simpleItem(ModItems.OAK_HELMET);
         simpleItem(ModItems.OAK_CHESTPLATE);
