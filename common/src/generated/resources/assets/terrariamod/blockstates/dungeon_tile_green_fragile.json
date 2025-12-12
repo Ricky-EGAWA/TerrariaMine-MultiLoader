@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "terrariamod:block/dungeon_tile_green_fragile"
+    }
+  }
+}

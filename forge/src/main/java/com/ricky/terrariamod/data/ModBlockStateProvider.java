@@ -176,7 +176,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.DUNGEON_TILE_GREEN_SLAB);
         wallBlockItem(ModBlocks.DUNGEON_TILE_GREEN_WALL, ModBlocks.DUNGEON_TILE_GREEN);
 
-        // Dungeon Brick Green
         blockWithItem(ModBlocks.DUNGEON_BRICK_GREEN);
         stairsBlock(((StairBlock) ModBlocks.DUNGEON_BRICK_GREEN_STAIRS.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()));
         slabBlock(((SlabBlock) ModBlocks.DUNGEON_BRICK_GREEN_SLAB.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()));

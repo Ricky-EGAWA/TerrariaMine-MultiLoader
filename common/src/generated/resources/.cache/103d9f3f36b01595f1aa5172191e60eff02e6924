@@ -1,11 +1,11 @@
-// 1.20.1	2025-05-17T15:44:33.4813755	Registries
-0ef377514ad8563d9317fe225b2461fc508946a9 data/terrariamod/worldgen/biome/crim_biome.json
+// 1.20.1	2025-12-11T15:56:38.1731177	Registries
+5da8e4a8e84ba56af3fe7c3759682d33ba78746e data/terrariamod/worldgen/biome/crim_biome.json
 ab038d89886de2d798a8dbc6d144d4a754fb72ca data/terrariamod/worldgen/biome/crim_desert_biome.json
 37cf47ab25d95e3df9f20beb8c69c563fce8900b data/terrariamod/worldgen/biome/crim_ice_biome.json
-f2dffd149b31233c939d33a833fade6a385a6b14 data/terrariamod/worldgen/biome/ebon_biome.json
+b3cca6c31f7d35b455eaabb92411462960e90f32 data/terrariamod/worldgen/biome/ebon_biome.json
 0330ca8dcce13aa0ee8dd0cb626b79036c6c10c3 data/terrariamod/worldgen/biome/ebon_desert_biome.json
 88de8cf2e9ea25b8912b689485c20c8474bb5654 data/terrariamod/worldgen/biome/ebon_ice_biome.json
 8198d10180ef6e31157bae32d1506f98c51db2e5 data/terrariamod/worldgen/biome/glowing_mushroom_biome.json
-2229cd65f499f41df8b39976176c94641bef1158 data/terrariamod/worldgen/biome/pearl_biome.json
+a39af1c6eaadd9ff4a84e9884ec6badf62a50d94 data/terrariamod/worldgen/biome/pearl_biome.json
 52bb9da6a24992a29e6ee336cf85024893afe4c0 data/terrariamod/worldgen/biome/pearl_desert_biome.json
 b2ab700a76671a8ae9b481ca05b14d5944803874 data/terrariamod/worldgen/biome/pearl_ice_biome.json
