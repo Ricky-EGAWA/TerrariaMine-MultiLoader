@@ -114,6 +114,12 @@
     "misc": [],
     "monster": [
       {
+        "type": "terrariamod:demon_eye",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 3
+      },
+      {
         "type": "terrariamod:eater_of_soul",
         "maxCount": 5,
         "minCount": 3,

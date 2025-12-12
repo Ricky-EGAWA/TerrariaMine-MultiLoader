@@ -115,6 +115,12 @@
     "misc": [],
     "monster": [
       {
+        "type": "terrariamod:demon_eye",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 3
+      },
+      {
         "type": "terrariamod:crimera",
         "maxCount": 5,
         "minCount": 3,

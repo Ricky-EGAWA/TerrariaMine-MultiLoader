@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "terrariamod:block/dungeon_brick_green_fragile"
+  }
+}

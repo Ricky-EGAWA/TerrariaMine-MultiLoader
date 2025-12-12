@@ -176,7 +176,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.DUNGEON_TILE_GREEN_SLAB);
         wallBlockItem(ModBlocks.DUNGEON_TILE_GREEN_WALL, ModBlocks.DUNGEON_TILE_GREEN);
 
-        // Dungeon Brick Green
         blockWithItem(ModBlocks.DUNGEON_BRICK_GREEN);
         stairsBlock(((StairBlock) ModBlocks.DUNGEON_BRICK_GREEN_STAIRS.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()));
         slabBlock(((SlabBlock) ModBlocks.DUNGEON_BRICK_GREEN_SLAB.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()), blockTexture(ModBlocks.DUNGEON_BRICK_GREEN.get()));
@@ -189,13 +188,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DUNGEON_TILE_GREEN_FRAGILE);
         blockWithItem(ModBlocks.DUNGEON_BRICK_GREEN_FRAGILE);
 
-        // Spike Block
-        blockWithItem(ModBlocks.SPIKE_BLOCK);
 
         // Chest Blocks - these need custom rendering, so just register simple block states
-        ModelFile lockedChestModel = models().cubeAll("locked_golden_chest", modLoc("block/locked_golden_chest"));
-        horizontalBlock(ModBlocks.LOCKED_GOLDEN_CHEST.get(), lockedChestModel);
-        simpleBlockItem(ModBlocks.LOCKED_GOLDEN_CHEST.get(), lockedChestModel);
+//        ModelFile lockedChestModel = models().cubeAll("locked_golden_chest", modLoc("block/locked_golden_chest"));
+//        horizontalBlock(ModBlocks.LOCKED_GOLDEN_CHEST.get(), lockedChestModel);
+//        simpleBlockItem(ModBlocks.LOCKED_GOLDEN_CHEST.get(), lockedChestModel);
 
         // Golden Chest - uses entity rendering for animation, use particle texture only
         ModelFile goldenChestModel = models().getBuilder("golden_chest")
