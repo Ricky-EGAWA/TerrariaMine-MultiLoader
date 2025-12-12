@@ -192,14 +192,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Spike Block
         blockWithItem(ModBlocks.SPIKE_BLOCK);
 
-        // Chest Blocks - these need custom rendering, so just register simple block states
-        ModelFile lockedChestModel = models().cubeAll("locked_golden_chest", modLoc("block/locked_golden_chest"));
+        // Chest Blocks - both use entity rendering, register particle texture only models
+        // Locked Golden Chest - uses entity rendering (always closed)
+        ModelFile lockedChestModel = models().getBuilder("locked_golden_chest")
+                .texture("particle", modLoc("entity/chest/locked_golden_chest"));
         horizontalBlock(ModBlocks.LOCKED_GOLDEN_CHEST.get(), lockedChestModel);
-        simpleBlockItem(ModBlocks.LOCKED_GOLDEN_CHEST.get(), lockedChestModel);
 
-        // Golden Chest - uses entity rendering for animation, use particle texture only
+        // Golden Chest - uses entity rendering for animation
         ModelFile goldenChestModel = models().getBuilder("golden_chest")
-                .texture("particle", modLoc("block/golden_chest"));
+                .texture("particle", modLoc("entity/chest/golden_chest"));
         horizontalBlock(ModBlocks.GOLDEN_CHEST.get(), goldenChestModel);
         //endregion
     }

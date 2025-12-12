@@ -1,6 +1,9 @@
 package com.ricky.terrariamod;
 
 import com.ricky.terrariamod.block.ModBlocks;
+import com.ricky.terrariamod.block.entity.ModBlockEntities;
+import com.ricky.terrariamod.block.entity.renderer.GoldenChestBlockEntityRenderer;
+import com.ricky.terrariamod.block.entity.renderer.LockedGoldenChestBlockEntityRenderer;
 import com.ricky.terrariamod.client.render.ManaHudOverlay;
 import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.boss.EyeOfCthulhuModelOne;
@@ -44,6 +47,7 @@ import com.ricky.terrariamod.util.KeyInputHandler;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
@@ -114,6 +118,11 @@ public class TerrariaModClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.ROCKET.get(), RocketRenderer::new);
         EntityRendererRegistry.register(ModEntities.MUSKET_BALL.get(), MusketBallRenderer::new);
+        //endregion
+
+        //region block entity renderers
+        BlockEntityRendererRegistry.register(ModBlockEntities.GOLDEN_CHEST.get(), GoldenChestBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.register(ModBlockEntities.LOCKED_GOLDEN_CHEST.get(), LockedGoldenChestBlockEntityRenderer::new);
         //endregion
 
         KeyBindings.init(new FabricKeyBindHelper());

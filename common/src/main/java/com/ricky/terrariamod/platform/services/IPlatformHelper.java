@@ -1,6 +1,7 @@
 package com.ricky.terrariamod.platform.services;
 
 import com.ricky.terrariamod.block.entity.GoldenChestBlockEntity;
+import com.ricky.terrariamod.block.entity.LockedGoldenChestBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.function.Supplier;
@@ -44,4 +45,11 @@ public interface IPlatformHelper {
      * @return A supplier for the BlockEntityType.
      */
     Supplier<BlockEntityType<GoldenChestBlockEntity>> registerGoldenChestBlockEntity();
+
+    /**
+     * Registers the LockedGoldenChestBlockEntity type.
+     *
+     * @return A supplier for the BlockEntityType.
+     */
+    Supplier<BlockEntityType<LockedGoldenChestBlockEntity>> registerLockedGoldenChestBlockEntity();
 }

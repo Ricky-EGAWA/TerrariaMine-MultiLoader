@@ -3,6 +3,7 @@ package com.ricky.terrariamod.platform;
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.block.ModBlocks;
 import com.ricky.terrariamod.block.entity.GoldenChestBlockEntity;
+import com.ricky.terrariamod.block.entity.LockedGoldenChestBlockEntity;
 import com.ricky.terrariamod.platform.services.IPlatformHelper;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -19,6 +20,8 @@ public class ForgePlatformHelper implements IPlatformHelper {
             DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, Constants.MOD_ID);
 
     private static RegistryObject<BlockEntityType<GoldenChestBlockEntity>> GOLDEN_CHEST_TYPE;
+    private static RegistryObject<BlockEntityType<LockedGoldenChestBlockEntity>> LOCKED_GOLDEN_CHEST_TYPE;
+    private static boolean registered = false;
 
     @Override
     public String getPlatformName() {
@@ -35,11 +38,26 @@ public class ForgePlatformHelper implements IPlatformHelper {
         return !FMLLoader.isProduction();
     }
 
+    private void ensureRegistered() {
+        if (!registered) {
+            BLOCK_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+            registered = true;
+        }
+    }
+
     @Override
     public Supplier<BlockEntityType<GoldenChestBlockEntity>> registerGoldenChestBlockEntity() {
-        BLOCK_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ensureRegistered();
         GOLDEN_CHEST_TYPE = BLOCK_ENTITIES.register("golden_chest",
                 () -> BlockEntityType.Builder.of(GoldenChestBlockEntity::new, ModBlocks.GOLDEN_CHEST.get()).build(null));
         return GOLDEN_CHEST_TYPE;
+    }
+
+    @Override
+    public Supplier<BlockEntityType<LockedGoldenChestBlockEntity>> registerLockedGoldenChestBlockEntity() {
+        ensureRegistered();
+        LOCKED_GOLDEN_CHEST_TYPE = BLOCK_ENTITIES.register("locked_golden_chest",
+                () -> BlockEntityType.Builder.of(LockedGoldenChestBlockEntity::new, ModBlocks.LOCKED_GOLDEN_CHEST.get()).build(null));
+        return LOCKED_GOLDEN_CHEST_TYPE;
     }
 }

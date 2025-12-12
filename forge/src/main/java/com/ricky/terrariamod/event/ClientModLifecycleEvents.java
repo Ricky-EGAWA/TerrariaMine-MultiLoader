@@ -1,6 +1,9 @@
 package com.ricky.terrariamod.event;
 
 import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.block.entity.ModBlockEntities;
+import com.ricky.terrariamod.block.entity.renderer.GoldenChestBlockEntityRenderer;
+import com.ricky.terrariamod.block.entity.renderer.LockedGoldenChestBlockEntityRenderer;
 import com.ricky.terrariamod.entity.ModEntities;
 import com.ricky.terrariamod.entity.boss.EyeOfCthulhuModelOne;
 import com.ricky.terrariamod.entity.boss.EyeOfCthulhuModelTwo;
@@ -92,6 +95,13 @@ public class ClientModLifecycleEvents  {
         event.registerLayerDefinition(EyeOfCthulhuModelTwo.LAYER_LOCATION, EyeOfCthulhuModelTwo::createBodyLayer);
 
         event.registerLayerDefinition(MagicBallModel.LAYER_LOCATION, MagicBallModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        // Block Entity Renderers
+        event.registerBlockEntityRenderer(ModBlockEntities.GOLDEN_CHEST.get(), GoldenChestBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.LOCKED_GOLDEN_CHEST.get(), LockedGoldenChestBlockEntityRenderer::new);
     }
     @SubscribeEvent
     public static void registerKeys(RegisterKeyMappingsEvent event) {
