@@ -4,8 +4,12 @@ import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.block.ModBlocks;
 import com.ricky.terrariamod.block.entity.GoldenChestBlockEntity;
 import com.ricky.terrariamod.block.entity.LockedGoldenChestBlockEntity;
+import com.ricky.terrariamod.block.item.ForgeChestBlockItem;
 import com.ricky.terrariamod.platform.services.IPlatformHelper;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -59,5 +63,10 @@ public class ForgePlatformHelper implements IPlatformHelper {
         LOCKED_GOLDEN_CHEST_TYPE = BLOCK_ENTITIES.register("locked_golden_chest",
                 () -> BlockEntityType.Builder.of(LockedGoldenChestBlockEntity::new, ModBlocks.LOCKED_GOLDEN_CHEST.get()).build(null));
         return LOCKED_GOLDEN_CHEST_TYPE;
+    }
+
+    @Override
+    public BlockItem createChestBlockItem(Block block, Item.Properties properties) {
+        return new ForgeChestBlockItem(block, properties);
     }
 }

@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.ricky.terrariamod.Constants;
+import com.ricky.terrariamod.block.custom.GoldenChestBlock;
 import com.ricky.terrariamod.block.entity.GoldenChestBlockEntity;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.ModelPart;
@@ -15,8 +16,10 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.ChestType;
 
 public class GoldenChestBlockEntityRenderer implements BlockEntityRenderer<GoldenChestBlockEntity> {
     // Single chest model parts
@@ -75,12 +78,17 @@ public class GoldenChestBlockEntityRenderer implements BlockEntityRenderer<Golde
                        MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         BlockState blockState = blockEntity.getBlockState();
 
+        // Get chest type
+        ChestType chestType = blockState.hasProperty(GoldenChestBlock.TYPE) ?
+                blockState.getValue(GoldenChestBlock.TYPE) : ChestType.SINGLE;
+        boolean isDoubleChest = chestType != ChestType.SINGLE;
+
         poseStack.pushPose();
 
         // Get rotation from facing direction
         float rotation = 0.0F;
-        if (blockState.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
-            Direction direction = blockState.getValue(BlockStateProperties.HORIZONTAL_FACING);
+        if (blockState.hasProperty(GoldenChestBlock.FACING)) {
+            Direction direction = blockState.getValue(GoldenChestBlock.FACING);
             rotation = direction.toYRot();
         }
 
@@ -94,12 +102,31 @@ public class GoldenChestBlockEntityRenderer implements BlockEntityRenderer<Golde
         openness = 1.0F - openness;
         openness = 1.0F - openness * openness * openness;
 
-        // Render single chest (for now, double chest support can be added when block supports it)
-        Material material = GOLDEN_CHEST_LOCATION;
-        VertexConsumer vertexConsumer = material.buffer(bufferSource, RenderType::entityCutout);
+        // Select material and model parts based on chest type
+        Material material;
+        ModelPart lid, latch, base;
 
-        this.renderChest(poseStack, vertexConsumer, this.singleChestLid, this.singleChestLatch,
-                this.singleChestBase, openness, packedLight, packedOverlay);
+        if (isDoubleChest) {
+            if (chestType == ChestType.LEFT) {
+                material = GOLDEN_CHEST_LEFT_LOCATION;
+                lid = this.doubleChestLeftLid;
+                latch = this.doubleChestLeftLatch;
+                base = this.doubleChestLeftBase;
+            } else {
+                material = GOLDEN_CHEST_RIGHT_LOCATION;
+                lid = this.doubleChestRightLid;
+                latch = this.doubleChestRightLatch;
+                base = this.doubleChestRightBase;
+            }
+        } else {
+            material = GOLDEN_CHEST_LOCATION;
+            lid = this.singleChestLid;
+            latch = this.singleChestLatch;
+            base = this.singleChestBase;
+        }
+
+        VertexConsumer vertexConsumer = material.buffer(bufferSource, RenderType::entityCutout);
+        this.renderChest(poseStack, vertexConsumer, lid, latch, base, openness, packedLight, packedOverlay);
 
         poseStack.popPose();
     }

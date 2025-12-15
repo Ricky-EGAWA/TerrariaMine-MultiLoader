@@ -10,6 +10,9 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.function.Supplier;
@@ -51,5 +54,11 @@ public class FabricPlatformHelper implements IPlatformHelper {
                 FabricBlockEntityTypeBuilder.create(LockedGoldenChestBlockEntity::new, ModBlocks.LOCKED_GOLDEN_CHEST.get()).build()
         );
         return () -> LOCKED_GOLDEN_CHEST_TYPE;
+    }
+
+    @Override
+    public BlockItem createChestBlockItem(Block block, Item.Properties properties) {
+        // For Fabric, we use a regular BlockItem and register the renderer in TerrariaModClient
+        return new BlockItem(block, properties);
     }
 }

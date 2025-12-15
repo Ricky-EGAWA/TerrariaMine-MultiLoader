@@ -2,6 +2,7 @@ package com.ricky.terrariamod.block;
 
 import com.ricky.terrariamod.Constants;
 import com.ricky.terrariamod.block.custom.*;
+import com.ricky.terrariamod.platform.Services;
 import com.ricky.terrariamod.registry.RegistryProvider;
 import com.ricky.terrariamod.world.ModConfiguredFeatures;
 import com.ricky.terrariamod.world.portal.ModPortalBlock;
@@ -237,9 +238,9 @@ public class ModBlocks {
     public static final Supplier<Block> SPIKE_BLOCK = registerBlockWithItem("spike_block",
             () -> new SpikeBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
-    public static final Supplier<Block> LOCKED_GOLDEN_CHEST = registerBlockWithItem("locked_golden_chest",
+    public static final Supplier<Block> LOCKED_GOLDEN_CHEST = registerChestBlockWithItem("locked_golden_chest",
             () -> new LockedGoldenChestBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK)));
-    public static final Supplier<Block> GOLDEN_CHEST = registerBlockWithItem("golden_chest",
+    public static final Supplier<Block> GOLDEN_CHEST = registerChestBlockWithItem("golden_chest",
             () -> new GoldenChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST).noOcclusion()));
     //endregion
 
@@ -317,6 +318,13 @@ public class ModBlocks {
         ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
         return block;
     }
+
+    private static Supplier<Block> registerChestBlockWithItem(String name, Supplier<Block> blockSupplier) {
+        Supplier<Block> block = BLOCKS.register(name, blockSupplier);
+        ITEMS.register(name, () -> Services.PLATFORM.createChestBlockItem(block.get(), new Item.Properties()));
+        return block;
+    }
+
     public static void register() {
     }
 }
