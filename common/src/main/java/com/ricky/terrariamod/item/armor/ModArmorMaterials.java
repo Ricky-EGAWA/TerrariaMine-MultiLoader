@@ -30,16 +30,16 @@ public enum ModArmorMaterials implements ArmorMaterial {
     NIGHT("night", 25, new int[] {2,0,0,0}, 19,
             SoundEvents.ARMOR_EQUIP_NETHERITE, 0f, 0f, () -> Ingredient.of(Blocks.GLASS)),
 
-    COBALT("cobalt", 35, new int[] {4,8,6,4}, 15,
+    COBALT("cobalt", 35, new int[] {6,8,6,5}, 15,
             SoundEvents.ARMOR_EQUIP_NETHERITE, 4f, 0.1f, () -> Ingredient.of(ModItems.COBALT_INGOT.get())),
-    ORICHALCUM("orichalcum", 45, new int[] {5,12,9,4}, 15,
+    ORICHALCUM("orichalcum", 45, new int[] {7,12,9,2}, 15,
             SoundEvents.ARMOR_EQUIP_NETHERITE, 4f, 0.2f, () -> Ingredient.of(ModItems.ORICHALCUM_INGOT.get())),
 
-    ADAMANTITE("adamantite", 50, new int[] {6,16,12,6}, 15,
+    ADAMANTITE("adamantite", 50, new int[] {8,16,12,0}, 15,
             SoundEvents.ARMOR_EQUIP_NETHERITE, 5f, 0.3f, () -> Ingredient.of(ModItems.ADAMANTITE_INGOT.get())),
 
     HELLSTONE("hellstone", 40, new int[] {3,8,6,3}, 15,
-            SoundEvents.ARMOR_EQUIP_NETHERITE, 3f, 0.1f, () -> Ingredient.of(ModItems.ADAMANTITE_INGOT.get()));
+            SoundEvents.ARMOR_EQUIP_NETHERITE, 3f, 0.1f, () -> Ingredient.of(ModItems.HELLSTONE_INGOT.get()));
 
     private final String name;
     private final int durabilityMultiplier;

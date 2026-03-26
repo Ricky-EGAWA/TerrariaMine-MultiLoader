@@ -67,7 +67,7 @@ public class ModItems {
     public static final RegistryObject<Item> COBALT_SHOVEL = ITEMS.register("cobalt_shovel",
             () -> new ShovelItem(ModToolMaterial.COBALT_INGOT, 1, -3f, new Item.Properties()));
     public static final RegistryObject<Item> COBALT_SWORD = ITEMS.register("cobalt_sword",
-            () -> new SwordItem(ModToolMaterial.COBALT_INGOT, 5, -2.4f, new Item.Properties()));
+            () -> new SwordItem(ModToolMaterial.COBALT_INGOT, 7, -2.4f, new Item.Properties()));
 
     public static final RegistryObject<Item> ORICHALCUM_PICKAXE = ITEMS.register("orichalcum_pickaxe",
             () -> new ModPickaxeItem(ModToolMaterial.ORICHALCUM_INGOT, 2, -3f, new Item.Properties()));
@@ -76,7 +76,7 @@ public class ModItems {
     public static final RegistryObject<Item> ORICHALCUM_SHOVEL = ITEMS.register("orichalcum_shovel",
             () -> new ShovelItem(ModToolMaterial.ORICHALCUM_INGOT, 1, -3f, new Item.Properties()));
     public static final RegistryObject<Item> ORICHALCUM_SWORD = ITEMS.register("orichalcum_sword",
-            () -> new SwordItem(ModToolMaterial.ORICHALCUM_INGOT, 5, -2.4f, new Item.Properties()));
+            () -> new SwordItem(ModToolMaterial.ORICHALCUM_INGOT, 9, -2.4f, new Item.Properties()));
 
     public static final RegistryObject<Item> ADAMANTITE_PICKAXE = ITEMS.register("adamantite_pickaxe",
             () -> new ModPickaxeItem(ModToolMaterial.ADAMANTITE_INGOT, 2, -3f, new Item.Properties()));
@@ -85,7 +85,7 @@ public class ModItems {
     public static final RegistryObject<Item> ADAMANTITE_SHOVEL = ITEMS.register("adamantite_shovel",
             () -> new ShovelItem(ModToolMaterial.ADAMANTITE_INGOT, 1, -3f, new Item.Properties()));
     public static final RegistryObject<Item> ADAMANTITE_SWORD = ITEMS.register("adamantite_sword",
-            () -> new SwordItem(ModToolMaterial.ADAMANTITE_INGOT, 5, -2.4f, new Item.Properties()));
+            () -> new SwordItem(ModToolMaterial.ADAMANTITE_INGOT, 13, -2.4f, new Item.Properties()));
 
     public static final RegistryObject<Item> HELLSTONE_PICKAXE = ITEMS.register("hellstone_pickaxe",
             () -> new ModPickaxeItem(ModToolMaterial.HELLSTONE_INGOT, 2, -3f, new Item.Properties()));
@@ -94,7 +94,7 @@ public class ModItems {
     public static final RegistryObject<Item> HELLSTONE_SHOVEL = ITEMS.register("hellstone_shovel",
             () -> new ShovelItem(ModToolMaterial.HELLSTONE_INGOT, 1, -3f, new Item.Properties()));
     public static final RegistryObject<Item> HELLSTONE_SWORD = ITEMS.register("hellstone_sword",
-            () -> new SwordItem(ModToolMaterial.HELLSTONE_INGOT, 5, -2.4f, new Item.Properties()));
+            () -> new SwordItem(ModToolMaterial.HELLSTONE_INGOT, 6, -2.4f, new Item.Properties()));
 
     public static final RegistryObject<Item> AMETHYST_STAFF = ITEMS.register("amethyst_staff",
             () -> new AmethystStaffItem(new Item.Properties()));
