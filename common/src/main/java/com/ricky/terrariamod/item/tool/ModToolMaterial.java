@@ -7,16 +7,16 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModToolMaterial implements Tier {
-    COBALT_INGOT(5, 2200, 11f, 6f, 20,
+    COBALT_INGOT(5, 2200, 11f, 5f, 20,
             () -> Ingredient.of(ModItems.COBALT_INGOT.get())),
 
-    ORICHALCUM_INGOT(6, 2500, 13f, 7.5f, 23,
+    ORICHALCUM_INGOT(6, 2500, 13f, 6f, 23,
             () -> Ingredient.of(ModItems.ORICHALCUM_INGOT.get())),
 
-    ADAMANTITE_INGOT(7, 3000, 15f, 9f, 25,
+    ADAMANTITE_INGOT(7, 3000, 15f, 8f, 25,
             () -> Ingredient.of(ModItems.ADAMANTITE_INGOT.get())),
 
-    HELLSTONE_INGOT(4, 1800, 10f, 5f, 20,
+    HELLSTONE_INGOT(4, 1800, 10f, 4f, 20,
             () -> Ingredient.of(ModItems.HELLSTONE_INGOT.get()));
 
     private final int miningLevel;
