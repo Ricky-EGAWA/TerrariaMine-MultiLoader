@@ -77,6 +77,7 @@ public class TerrariaModClient implements ClientModInitializer {
         //region entity
         EntityRendererRegistry.register(ModEntities.ANGRY_BONES.get(), AngryBonesRenderer::new);
         EntityRendererRegistry.register(ModEntities.BLUE_ARMORED_BONES.get(), BlueArmoredBonesRenderer::new);
+        EntityRendererRegistry.register(ModEntities.RUSTY_ARMORED_BONES.get(), RustyArmoredBonesRenderer::new);
         EntityRendererRegistry.register(ModEntities.DARK_CASTER.get(), DarkCasterRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.MUMMY.get(), MummyRenderer::new);

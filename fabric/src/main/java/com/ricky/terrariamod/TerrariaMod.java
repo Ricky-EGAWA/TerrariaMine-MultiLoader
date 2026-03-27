@@ -69,6 +69,7 @@ public class TerrariaMod implements ModInitializer {
         //region entity
         FabricDefaultAttributeRegistry.register(ModEntities.ANGRY_BONES.get(), AngryBonesEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.BLUE_ARMORED_BONES.get(), BlueArmoredBonesEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.RUSTY_ARMORED_BONES.get(), RustyArmoredBonesEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_CASTER.get(), DarkCasterEntity.createAttributes());
 
         FabricDefaultAttributeRegistry.register(ModEntities.MUMMY.get(), MummyEntity.createAttributes());

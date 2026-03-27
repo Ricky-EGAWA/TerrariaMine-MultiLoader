@@ -52,6 +52,7 @@ public class ClientModLifecycleEvents  {
     public static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(ModEntities.ANGRY_BONES.get(), AngryBonesRenderer::new);
         EntityRenderers.register(ModEntities.BLUE_ARMORED_BONES.get(), BlueArmoredBonesRenderer::new);
+        EntityRenderers.register(ModEntities.RUSTY_ARMORED_BONES.get(), RustyArmoredBonesRenderer::new);
         EntityRenderers.register(ModEntities.DARK_CASTER.get(), DarkCasterRenderer::new);
 
         EntityRenderers.register(ModEntities.MUMMY.get(), MummyRenderer::new);
