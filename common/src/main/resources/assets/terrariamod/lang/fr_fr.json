@@ -226,6 +226,8 @@
   "entity.terrariamod.skeleton_commando": "Squelette Commando",
   "entity.terrariamod.skeleton_sniper": "Squelette Sniper",
   "entity.terrariamod.tactical_skeleton": "Squelette Tactique",
-  "entity.terrariamod.giant_cursed_skull": "Crâne Maudit Géant"
+  "entity.terrariamod.giant_cursed_skull": "Crâne Maudit Géant",
+  "entity.terrariamod.bone_lee": "Bone Lee",
+  "entity.terrariamod.dungeon_spirit": "Esprit du Donjon"
 
 }

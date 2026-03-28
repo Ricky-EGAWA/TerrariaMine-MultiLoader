@@ -16,6 +16,8 @@ import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkull
 import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeModel;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeRenderer;
+import com.ricky.terrariamod.entity.monster.flying_type.dungeon_spirit.DungeonSpiritModel;
+import com.ricky.terrariamod.entity.monster.flying_type.dungeon_spirit.DungeonSpiritRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulModel;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.giant_cursed_skull.GiantCursedSkullModel;
@@ -28,6 +30,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeR
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.BlueArmoredBonesRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.bone_lee.BoneLeeRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer.NecromancerRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer_armed.NecromancerArmedRenderer;
@@ -93,6 +96,7 @@ public class TerrariaModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.BLUE_ARMORED_BONES.get(), BlueArmoredBonesRenderer::new);
         EntityRendererRegistry.register(ModEntities.RUSTY_ARMORED_BONES.get(), RustyArmoredBonesRenderer::new);
         EntityRendererRegistry.register(ModEntities.HELL_ARMORED_BONES.get(), HellArmoredBonesRenderer::new);
+        EntityRendererRegistry.register(ModEntities.BONE_LEE.get(), BoneLeeRenderer::new);
         EntityRendererRegistry.register(ModEntities.DARK_CASTER.get(), DarkCasterRenderer::new);
         EntityRendererRegistry.register(ModEntities.NECROMANCER.get(), NecromancerRenderer::new);
         EntityRendererRegistry.register(ModEntities.NECROMANCER_ARMED.get(), NecromancerArmedRenderer::new);
@@ -133,6 +137,8 @@ public class TerrariaModClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(CursedSkullModel.LAYER_LOCATION, CursedSkullModel::createBodyLayer);
         EntityRendererRegistry.register(ModEntities.GIANT_CURSED_SKULL.get(), GiantCursedSkullRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(GiantCursedSkullModel.LAYER_LOCATION, GiantCursedSkullModel::createBodyLayer);
+        EntityRendererRegistry.register(ModEntities.DUNGEON_SPIRIT.get(), DungeonSpiritRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(DungeonSpiritModel.LAYER_LOCATION, DungeonSpiritModel::createBodyLayer);
 
         EntityRendererRegistry.register(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(EyeOfCthulhuModelOne.LAYER_LOCATION, EyeOfCthulhuModelOne::createBodyLayer);

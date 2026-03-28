@@ -254,5 +254,7 @@
   "entity.terrariamod.skeleton_commando": "Skeleton Commando",
   "entity.terrariamod.skeleton_sniper": "Skeleton Sniper",
   "entity.terrariamod.tactical_skeleton": "Tactical Skeleton",
-  "entity.terrariamod.giant_cursed_skull": "Giant Cursed Skull"
+  "entity.terrariamod.giant_cursed_skull": "Giant Cursed Skull",
+  "entity.terrariamod.bone_lee": "Bone Lee",
+  "entity.terrariamod.dungeon_spirit": "Dungeon Spirit"
 }

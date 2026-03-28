@@ -10,6 +10,7 @@ import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.dungeon_spirit.DungeonSpiritEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.giant_cursed_skull.GiantCursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeEntity;
@@ -20,6 +21,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeE
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.BlueArmoredBonesEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.bone_lee.BoneLeeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer.NecromancerEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer_armed.NecromancerArmedEntity;
@@ -47,6 +49,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.BLUE_ARMORED_BONES.get(), BlueArmoredBonesEntity.createAttributes().build());
         event.put(ModEntities.RUSTY_ARMORED_BONES.get(), RustyArmoredBonesEntity.createAttributes().build());
         event.put(ModEntities.HELL_ARMORED_BONES.get(), HellArmoredBonesEntity.createAttributes().build());
+        event.put(ModEntities.BONE_LEE.get(), BoneLeeEntity.createAttributes().build());
         event.put(ModEntities.DARK_CASTER.get(), DarkCasterEntity.createAttributes().build());
         event.put(ModEntities.NECROMANCER.get(), NecromancerEntity.createAttributes().build());
         event.put(ModEntities.NECROMANCER_ARMED.get(), NecromancerArmedEntity.createAttributes().build());
@@ -80,6 +83,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulEntity.createAttributes().build());
         event.put(ModEntities.CURSED_SKULL.get(), CursedSkullEntity.createAttributes().build());
         event.put(ModEntities.GIANT_CURSED_SKULL.get(), GiantCursedSkullEntity.createAttributes().build());
+        event.put(ModEntities.DUNGEON_SPIRIT.get(), DungeonSpiritEntity.createAttributes().build());
 
         event.put(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuEntity.createAttributes().build());
     }

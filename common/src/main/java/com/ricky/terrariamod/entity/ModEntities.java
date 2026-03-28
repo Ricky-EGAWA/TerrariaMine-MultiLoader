@@ -9,6 +9,7 @@ import com.ricky.terrariamod.entity.monster.bat_type.lava_bat.LavaBatEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.dungeon_spirit.DungeonSpiritEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.giant_cursed_skull.GiantCursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeEntity;
@@ -20,6 +21,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeE
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.BlueArmoredBonesEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.bone_lee.BoneLeeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterBallEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.diabolist.DiabolistInfernoBallEntity;
@@ -64,6 +66,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<HellArmoredBonesEntity>> HELL_ARMORED_BONES =
             ENTITY_TYPES.register("hell_armored_bones", () -> EntityType.Builder.of(HellArmoredBonesEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.99f).build("hell_armored_bones"));
+    public static final RegistryObject<EntityType<BoneLeeEntity>> BONE_LEE =
+            ENTITY_TYPES.register("bone_lee", () -> EntityType.Builder.of(BoneLeeEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("bone_lee"));
     public static final RegistryObject<EntityType<DarkCasterEntity>> DARK_CASTER =
             ENTITY_TYPES.register("dark_caster", () -> EntityType.Builder.of(DarkCasterEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.99f).build("dark_caster"));
@@ -165,6 +170,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<GiantCursedSkullEntity>> GIANT_CURSED_SKULL =
             ENTITY_TYPES.register("giant_cursed_skull", () -> EntityType.Builder.of(GiantCursedSkullEntity::new, MobCategory.MONSTER)
                     .sized(2.0f, 2.0f).build("giant_cursed_skull"));
+    public static final RegistryObject<EntityType<DungeonSpiritEntity>> DUNGEON_SPIRIT =
+            ENTITY_TYPES.register("dungeon_spirit", () -> EntityType.Builder.of(DungeonSpiritEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 0.6f).build("dungeon_spirit"));
     //endregion
     //region boss
     public static final RegistryObject<EntityType<EyeOfCthulhuEntity>> EYE_OF_CTHULHU =

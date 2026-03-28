@@ -253,5 +253,7 @@
   "entity.terrariamod.skeleton_commando": "骷髅コマンドー",
   "entity.terrariamod.skeleton_sniper": "骷髅スナイパー",
   "entity.terrariamod.tactical_skeleton": "タクティカルスケルトン",
-  "entity.terrariamod.giant_cursed_skull": "巨大呪われた骸骨"
+  "entity.terrariamod.giant_cursed_skull": "巨大呪われた骸骨",
+  "entity.terrariamod.bone_lee": "ボーン・リー",
+  "entity.terrariamod.dungeon_spirit": "ダンジョンの幽霊"
 }
