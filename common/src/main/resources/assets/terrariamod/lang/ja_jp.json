@@ -239,6 +239,9 @@
   "item.minecraft.tipped_arrow.effect.fighter_potion": "戦士の矢",
 
   "entity.terrariamod.angry_bones": "アングリーボーンズ",
+  "entity.terrariamod.blue_armored_bones": "ブルーアーマードボーンズ",
+  "entity.terrariamod.rusty_armored_bones": "ラスティアーマードボーンズ",
+  "entity.terrariamod.hell_armored_bones": "ヘルアーマードボーンズ",
   "entity.terrariamod.dark_caster": "ダークキャスター",
   "entity.terrariamod.cursed_skull": "カースドスカル"
 }

@@ -240,6 +240,9 @@
   "item.minecraft.tipped_arrow.effect.fighter_potion": "Arrow of Fighter",
 
   "entity.terrariamod.angry_bones": "Angry Bones",
+  "entity.terrariamod.blue_armored_bones": "Blue Armored Bones",
+  "entity.terrariamod.rusty_armored_bones": "Rusty Armored Bones",
+  "entity.terrariamod.hell_armored_bones": "Hell Armored Bones",
   "entity.terrariamod.dark_caster": "Dark Caster",
   "entity.terrariamod.cursed_skull": "Cursed Skull"
 }
