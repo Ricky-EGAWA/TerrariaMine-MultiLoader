@@ -245,5 +245,13 @@
   "entity.terrariamod.dark_caster": "ダークキャスター",
   "entity.terrariamod.cursed_skull": "カースドスカル",
   "entity.terrariamod.necromancer": "ネクロマンサー",
-  "entity.terrariamod.necromancer_armed": "武装ネクロマンサー"
+  "entity.terrariamod.necromancer_armed": "武装ネクロマンサー",
+  "entity.terrariamod.ragged_caster": "ボロキャスター",
+  "entity.terrariamod.ragged_caster_armed": "武装ボロキャスター",
+  "entity.terrariamod.diabolist_red": "デビロリスト",
+  "entity.terrariamod.diabolist_white": "デビロリスト",
+  "entity.terrariamod.skeleton_commando": "骷髅コマンドー",
+  "entity.terrariamod.skeleton_sniper": "骷髅スナイパー",
+  "entity.terrariamod.tactical_skeleton": "タクティカルスケルトン",
+  "entity.terrariamod.giant_cursed_skull": "巨大呪われた骸骨"
 }

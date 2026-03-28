@@ -10,6 +10,7 @@ import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.giant_cursed_skull.GiantCursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeEntity;
@@ -21,9 +22,17 @@ import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBones
 import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.BlueArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterBallEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.diabolist.DiabolistInfernoBallEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.diabolist.DiabolistRedEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.diabolist.DiabolistWhiteEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer.NecromancerEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer_armed.NecromancerArmedEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.ragged_caster.RaggedCasterEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.ragged_caster_armed.RaggedCasterArmedEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.skeleton_commando.SkeletonCommandoEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.skeleton_sniper.SkeletonSniperEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.tactical_skeleton.TacticalSkeletonEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.rusty_armored_bones.RustyArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
@@ -64,6 +73,27 @@ public class ModEntities {
     public static final RegistryObject<EntityType<NecromancerArmedEntity>> NECROMANCER_ARMED =
             ENTITY_TYPES.register("necromancer_armed", () -> EntityType.Builder.of(NecromancerArmedEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.99f).build("necromancer_armed"));
+    public static final RegistryObject<EntityType<RaggedCasterEntity>> RAGGED_CASTER =
+            ENTITY_TYPES.register("ragged_caster", () -> EntityType.Builder.of(RaggedCasterEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("ragged_caster"));
+    public static final RegistryObject<EntityType<RaggedCasterArmedEntity>> RAGGED_CASTER_ARMED =
+            ENTITY_TYPES.register("ragged_caster_armed", () -> EntityType.Builder.of(RaggedCasterArmedEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("ragged_caster_armed"));
+    public static final RegistryObject<EntityType<DiabolistRedEntity>> DIABOLIST_RED =
+            ENTITY_TYPES.register("diabolist_red", () -> EntityType.Builder.of(DiabolistRedEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("diabolist_red"));
+    public static final RegistryObject<EntityType<DiabolistWhiteEntity>> DIABOLIST_WHITE =
+            ENTITY_TYPES.register("diabolist_white", () -> EntityType.Builder.of(DiabolistWhiteEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("diabolist_white"));
+    public static final RegistryObject<EntityType<SkeletonCommandoEntity>> SKELETON_COMMANDO =
+            ENTITY_TYPES.register("skeleton_commando", () -> EntityType.Builder.of(SkeletonCommandoEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("skeleton_commando"));
+    public static final RegistryObject<EntityType<SkeletonSniperEntity>> SKELETON_SNIPER =
+            ENTITY_TYPES.register("skeleton_sniper", () -> EntityType.Builder.of(SkeletonSniperEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("skeleton_sniper"));
+    public static final RegistryObject<EntityType<TacticalSkeletonEntity>> TACTICAL_SKELETON =
+            ENTITY_TYPES.register("tactical_skeleton", () -> EntityType.Builder.of(TacticalSkeletonEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("tactical_skeleton"));
     //endregion
     //region zombie type
     public static final RegistryObject<EntityType<MummyEntity>> MUMMY =
@@ -132,6 +162,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<CursedSkullEntity>> CURSED_SKULL =
             ENTITY_TYPES.register("cursed_skull", () -> EntityType.Builder.of(CursedSkullEntity::new, MobCategory.MONSTER)
                     .sized(0.8f, 0.8f).build("cursed_skull"));
+    public static final RegistryObject<EntityType<GiantCursedSkullEntity>> GIANT_CURSED_SKULL =
+            ENTITY_TYPES.register("giant_cursed_skull", () -> EntityType.Builder.of(GiantCursedSkullEntity::new, MobCategory.MONSTER)
+                    .sized(2.0f, 2.0f).build("giant_cursed_skull"));
     //endregion
     //region boss
     public static final RegistryObject<EntityType<EyeOfCthulhuEntity>> EYE_OF_CTHULHU =
@@ -139,6 +172,14 @@ public class ModEntities {
                     .sized(3f, 3f).build("eye_of_cthulhu"));
     //endregion
     //region projectile
+    public static final RegistryObject<EntityType<DiabolistInfernoBallEntity>> DIABOLIST_INFERNO_BALL =
+            ENTITY_TYPES.register("diabolist_inferno_ball", () ->
+                    EntityType.Builder.<DiabolistInfernoBallEntity>of(DiabolistInfernoBallEntity::new, MobCategory.MISC)
+                            .sized(0.3f, 0.3f)
+                            .clientTrackingRange(80)
+                            .updateInterval(1)
+                            .build("diabolist_inferno_ball")
+            );
     public static final RegistryObject<EntityType<MagicBallEntity>> MAGIC_BALL =
             ENTITY_TYPES.register("magic_ball", () ->
                     EntityType.Builder.<MagicBallEntity>of(MagicBallEntity::new, MobCategory.MISC)

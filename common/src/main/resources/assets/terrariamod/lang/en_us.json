@@ -246,5 +246,13 @@
   "entity.terrariamod.dark_caster": "Dark Caster",
   "entity.terrariamod.cursed_skull": "Cursed Skull",
   "entity.terrariamod.necromancer": "Necromancer",
-  "entity.terrariamod.necromancer_armed": "Armed Necromancer"
+  "entity.terrariamod.necromancer_armed": "Armed Necromancer",
+  "entity.terrariamod.ragged_caster": "Ragged Caster",
+  "entity.terrariamod.ragged_caster_armed": "Armed Ragged Caster",
+  "entity.terrariamod.diabolist_red": "Diabolist",
+  "entity.terrariamod.diabolist_white": "Diabolist",
+  "entity.terrariamod.skeleton_commando": "Skeleton Commando",
+  "entity.terrariamod.skeleton_sniper": "Skeleton Sniper",
+  "entity.terrariamod.tactical_skeleton": "Tactical Skeleton",
+  "entity.terrariamod.giant_cursed_skull": "Giant Cursed Skull"
 }

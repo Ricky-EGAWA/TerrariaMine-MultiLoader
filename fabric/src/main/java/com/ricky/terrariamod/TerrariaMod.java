@@ -11,6 +11,7 @@ import com.ricky.terrariamod.entity.monster.flying_type.crimera.CrimeraEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.cursed_skull.CursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeEntity;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulEntity;
+import com.ricky.terrariamod.entity.monster.flying_type.giant_cursed_skull.GiantCursedSkullEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeEntity;
 import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeEntity;
@@ -22,8 +23,15 @@ import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.Blu
 import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer.NecromancerEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer_armed.NecromancerArmedEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.ragged_caster.RaggedCasterEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.ragged_caster_armed.RaggedCasterArmedEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.skeleton_commando.SkeletonCommandoEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.skeleton_sniper.SkeletonSniperEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.tactical_skeleton.TacticalSkeletonEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.rusty_armored_bones.RustyArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.diabolist.DiabolistRedEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.diabolist.DiabolistWhiteEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyEntity;
@@ -78,6 +86,13 @@ public class TerrariaMod implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.DARK_CASTER.get(), DarkCasterEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.NECROMANCER.get(), NecromancerEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.NECROMANCER_ARMED.get(), NecromancerArmedEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.RAGGED_CASTER.get(), RaggedCasterEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.RAGGED_CASTER_ARMED.get(), RaggedCasterArmedEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.DIABOLIST_RED.get(), DiabolistRedEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.DIABOLIST_WHITE.get(), DiabolistWhiteEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.SKELETON_COMMANDO.get(), SkeletonCommandoEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.SKELETON_SNIPER.get(), SkeletonSniperEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.TACTICAL_SKELETON.get(), TacticalSkeletonEntity.createAttributes());
 
         FabricDefaultAttributeRegistry.register(ModEntities.MUMMY.get(), MummyEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyEntity.createAttributes());
@@ -101,6 +116,7 @@ public class TerrariaMod implements ModInitializer {
         FabricDefaultAttributeRegistry.register(ModEntities.CRIMERA.get(), CrimeraEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.CURSED_SKULL.get(), CursedSkullEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.GIANT_CURSED_SKULL.get(), GiantCursedSkullEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuEntity.createAttributes());
         //endregion
 

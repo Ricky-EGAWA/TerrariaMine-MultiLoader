@@ -17,6 +17,8 @@ import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeModel;
 import com.ricky.terrariamod.entity.monster.flying_type.demon_eye.DemonEyeRenderer;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulModel;
 import com.ricky.terrariamod.entity.monster.flying_type.eater_of_soul.EaterOfSoulRenderer;
+import com.ricky.terrariamod.entity.monster.flying_type.giant_cursed_skull.GiantCursedSkullModel;
+import com.ricky.terrariamod.entity.monster.flying_type.giant_cursed_skull.GiantCursedSkullRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.corrupt_slime.CorruptSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.crim_slime.CrimSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.slime_type.dungeon_slime.DungeonSlimeRenderer;
@@ -28,9 +30,17 @@ import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.Blu
 import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer.NecromancerRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer_armed.NecromancerArmedRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.ragged_caster.RaggedCasterRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.ragged_caster_armed.RaggedCasterArmedRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.skeleton_commando.SkeletonCommandoRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.skeleton_sniper.SkeletonSniperRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.tactical_skeleton.TacticalSkeletonRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.rusty_armored_bones.RustyArmoredBonesRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterBallRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.diabolist.DiabolistInfernoBallRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.diabolist.DiabolistRedRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.diabolist.DiabolistWhiteRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyRenderer;
 import com.ricky.terrariamod.entity.monster.zombie_type.light_mummy.LightMummyRenderer;
@@ -61,6 +71,14 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.DARK_CASTER.get(), DarkCasterRenderer::new);
         EntityRenderers.register(ModEntities.NECROMANCER.get(), NecromancerRenderer::new);
         EntityRenderers.register(ModEntities.NECROMANCER_ARMED.get(), NecromancerArmedRenderer::new);
+        EntityRenderers.register(ModEntities.RAGGED_CASTER.get(), RaggedCasterRenderer::new);
+        EntityRenderers.register(ModEntities.RAGGED_CASTER_ARMED.get(), RaggedCasterArmedRenderer::new);
+        EntityRenderers.register(ModEntities.DIABOLIST_RED.get(), DiabolistRedRenderer::new);
+        EntityRenderers.register(ModEntities.DIABOLIST_WHITE.get(), DiabolistWhiteRenderer::new);
+        EntityRenderers.register(ModEntities.DIABOLIST_INFERNO_BALL.get(), DiabolistInfernoBallRenderer::new);
+        EntityRenderers.register(ModEntities.SKELETON_COMMANDO.get(), SkeletonCommandoRenderer::new);
+        EntityRenderers.register(ModEntities.SKELETON_SNIPER.get(), SkeletonSniperRenderer::new);
+        EntityRenderers.register(ModEntities.TACTICAL_SKELETON.get(), TacticalSkeletonRenderer::new);
 
         EntityRenderers.register(ModEntities.MUMMY.get(), MummyRenderer::new);
         EntityRenderers.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyRenderer::new);
@@ -84,6 +102,7 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.CRIMERA.get(), CrimeraRenderer::new);
         EntityRenderers.register(ModEntities.EATER_OU_SOUL.get(), EaterOfSoulRenderer::new);
         EntityRenderers.register(ModEntities.CURSED_SKULL.get(), CursedSkullRenderer::new);
+        EntityRenderers.register(ModEntities.GIANT_CURSED_SKULL.get(), GiantCursedSkullRenderer::new);
 
         EntityRenderers.register(ModEntities.EYE_OF_CTHULHU.get(), EyeOfCthulhuRenderer::new);
 
@@ -98,6 +117,7 @@ public class ClientModLifecycleEvents  {
         event.registerLayerDefinition(CrimeraModel.LAYER_LOCATION, CrimeraModel::createBodyLayer);
         event.registerLayerDefinition(EaterOfSoulModel.LAYER_LOCATION, EaterOfSoulModel::createBodyLayer);
         event.registerLayerDefinition(CursedSkullModel.LAYER_LOCATION, CursedSkullModel::createBodyLayer);
+        event.registerLayerDefinition(GiantCursedSkullModel.LAYER_LOCATION, GiantCursedSkullModel::createBodyLayer);
         event.registerLayerDefinition(EyeOfCthulhuModelOne.LAYER_LOCATION, EyeOfCthulhuModelOne::createBodyLayer);
         event.registerLayerDefinition(EyeOfCthulhuModelTwo.LAYER_LOCATION, EyeOfCthulhuModelTwo::createBodyLayer);
 
