@@ -199,6 +199,12 @@
   "item.terrariamod.flamarang": "火焰回旋镖",
   "item.terrariamod.shroomerang": "蘑菇回旋镖",
   "item.terrariamod.thorn_chakram": "荆棘环刃",
-  "item.terrariamod.trimarang": "三重回旋镖"
+  "item.terrariamod.trimarang": "三重回旋镖",
+
+  "entity.terrariamod.angry_bones": "愤怒骷髅",
+  "entity.terrariamod.blue_armored_bones": "蓝色装甲骷髅",
+  "entity.terrariamod.rusty_armored_bones": "生锈装甲骷髅",
+  "entity.terrariamod.hell_armored_bones": "地狱装甲骷髅",
+  "entity.terrariamod.dark_caster": "暗黑法师"
 
 }

@@ -48,6 +48,14 @@
 - 提交信息: "调整 Terraria 武器和防具数值以匹配官方数据"
 - 推送成功到: https://github.com/Ricky-EGAWA/TerrariaMine-MultiLoader
 
+## 开发工具
+
+### terramod-helper Skill (2026-03-27)
+- **位置**: `~/.workbuddy/skills/terramod-helper/`
+- **用途**: 加速 TerrariaMine 模组开发
+- **包含**: 项目架构参考、Terraria数值表、Item/Block/Entity代码模板
+- **触发**: 用户提到添加物品/方块/怪物/武器/防具等 Terraria 相关内容时自动加载
+
 ## GitHub 配置
 - **Personal Access Token**: Fine-grained token ("work buddy")
 - **配置的仓库**: Ricky-EGAWA/TerrariaMine-MultiLoader

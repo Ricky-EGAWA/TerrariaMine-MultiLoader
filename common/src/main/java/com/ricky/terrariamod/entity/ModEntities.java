@@ -21,6 +21,7 @@ import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBones
 import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.BlueArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterBallEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.rusty_armored_bones.RustyArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
@@ -49,6 +50,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<RustyArmoredBonesEntity>> RUSTY_ARMORED_BONES =
             ENTITY_TYPES.register("rusty_armored_bones", () -> EntityType.Builder.of(RustyArmoredBonesEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.99f).build("rusty_armored_bones"));
+    public static final RegistryObject<EntityType<HellArmoredBonesEntity>> HELL_ARMORED_BONES =
+            ENTITY_TYPES.register("hell_armored_bones", () -> EntityType.Builder.of(HellArmoredBonesEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("hell_armored_bones"));
     public static final RegistryObject<EntityType<DarkCasterEntity>> DARK_CASTER =
             ENTITY_TYPES.register("dark_caster", () -> EntityType.Builder.of(DarkCasterEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.99f).build("dark_caster"));
