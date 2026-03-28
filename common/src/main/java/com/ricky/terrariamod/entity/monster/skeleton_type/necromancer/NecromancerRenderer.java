@@ -1,4 +1,4 @@
-package com.ricky.terrariamod.entity.monster.skeleton_type.bone_lee;
+package com.ricky.terrariamod.entity.monster.skeleton_type.necromancer;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -8,11 +8,11 @@ import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.Skeleton;
 
-public class BoneLeeRenderer extends HumanoidMobRenderer<Skeleton, HumanoidModel<Skeleton>> {
+public class NecromancerRenderer extends HumanoidMobRenderer<Skeleton, HumanoidModel<Skeleton>> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation("terrariamod", "textures/entity/bone_lee.png");
+            new ResourceLocation("minecraft", "textures/entity/skeleton/skeleton.png");
 
-    public BoneLeeRenderer(EntityRendererProvider.Context context) {
+    public NecromancerRenderer(EntityRendererProvider.Context context) {
         super(context, new HumanoidModel<>(context.bakeLayer(ModelLayers.SKELETON)), 0.5F);
         this.addLayer(new HumanoidArmorLayer<>(this,
                 new HumanoidModel<>(context.bakeLayer(ModelLayers.ZOMBIE_INNER_ARMOR)),

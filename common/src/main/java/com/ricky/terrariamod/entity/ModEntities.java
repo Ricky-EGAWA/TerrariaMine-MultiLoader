@@ -19,10 +19,11 @@ import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeE
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.BlueArmoredBonesEntity;
-import com.ricky.terrariamod.entity.monster.skeleton_type.bone_lee.BoneLeeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterBallEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer.NecromancerEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer_armed.NecromancerArmedEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.rusty_armored_bones.RustyArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.dark_mummy.DarkMummyEntity;
@@ -57,9 +58,12 @@ public class ModEntities {
     public static final RegistryObject<EntityType<DarkCasterEntity>> DARK_CASTER =
             ENTITY_TYPES.register("dark_caster", () -> EntityType.Builder.of(DarkCasterEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.99f).build("dark_caster"));
-    public static final RegistryObject<EntityType<BoneLeeEntity>> BONE_LEE =
-            ENTITY_TYPES.register("bone_lee", () -> EntityType.Builder.of(BoneLeeEntity::new, MobCategory.MONSTER)
-                    .sized(0.6f, 1.99f).build("bone_lee"));
+    public static final RegistryObject<EntityType<NecromancerEntity>> NECROMANCER =
+            ENTITY_TYPES.register("necromancer", () -> EntityType.Builder.of(NecromancerEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("necromancer"));
+    public static final RegistryObject<EntityType<NecromancerArmedEntity>> NECROMANCER_ARMED =
+            ENTITY_TYPES.register("necromancer_armed", () -> EntityType.Builder.of(NecromancerArmedEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("necromancer_armed"));
     //endregion
     //region zombie type
     public static final RegistryObject<EntityType<MummyEntity>> MUMMY =

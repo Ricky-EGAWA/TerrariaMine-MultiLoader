@@ -19,8 +19,9 @@ import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeE
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.BlueArmoredBonesEntity;
-import com.ricky.terrariamod.entity.monster.skeleton_type.bone_lee.BoneLeeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer.NecromancerEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.necromancer_armed.NecromancerArmedEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.rusty_armored_bones.RustyArmoredBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterEntity;
 import com.ricky.terrariamod.entity.monster.zombie_type.blood_mummy.BloodMummyEntity;
@@ -39,7 +40,8 @@ public class ModEventBusEvents {
         event.put(ModEntities.RUSTY_ARMORED_BONES.get(), RustyArmoredBonesEntity.createAttributes().build());
         event.put(ModEntities.HELL_ARMORED_BONES.get(), HellArmoredBonesEntity.createAttributes().build());
         event.put(ModEntities.DARK_CASTER.get(), DarkCasterEntity.createAttributes().build());
-        event.put(ModEntities.BONE_LEE.get(), BoneLeeEntity.createAttributes().build());
+        event.put(ModEntities.NECROMANCER.get(), NecromancerEntity.createAttributes().build());
+        event.put(ModEntities.NECROMANCER_ARMED.get(), NecromancerArmedEntity.createAttributes().build());
 
         event.put(ModEntities.MUMMY.get(), DarkMummyEntity.createAttributes().build());
         event.put(ModEntities.BLOOD_MUMMY.get(), BloodMummyEntity.createAttributes().build());
