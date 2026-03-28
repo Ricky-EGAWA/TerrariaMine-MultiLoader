@@ -19,6 +19,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeE
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.BlueArmoredBonesEntity;
+import com.ricky.terrariamod.entity.monster.skeleton_type.bone_lee.BoneLeeEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterBallEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterEntity;
 import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesEntity;
@@ -56,6 +57,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<DarkCasterEntity>> DARK_CASTER =
             ENTITY_TYPES.register("dark_caster", () -> EntityType.Builder.of(DarkCasterEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.99f).build("dark_caster"));
+    public static final RegistryObject<EntityType<BoneLeeEntity>> BONE_LEE =
+            ENTITY_TYPES.register("bone_lee", () -> EntityType.Builder.of(BoneLeeEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.99f).build("bone_lee"));
     //endregion
     //region zombie type
     public static final RegistryObject<EntityType<MummyEntity>> MUMMY =

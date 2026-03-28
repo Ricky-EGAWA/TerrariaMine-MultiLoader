@@ -25,6 +25,7 @@ import com.ricky.terrariamod.entity.monster.slime_type.jungle_slime.JungleSlimeR
 import com.ricky.terrariamod.entity.monster.slime_type.sand_slime.SandSlimeRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.angry_bones.AngryBonesRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.blue_armored_bones.BlueArmoredBonesRenderer;
+import com.ricky.terrariamod.entity.monster.skeleton_type.bone_lee.BoneLeeRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.hell_armored_bones.HellArmoredBonesRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.rusty_armored_bones.RustyArmoredBonesRenderer;
 import com.ricky.terrariamod.entity.monster.skeleton_type.dark_caster.DarkCasterBallRenderer;
@@ -57,6 +58,7 @@ public class ClientModLifecycleEvents  {
         EntityRenderers.register(ModEntities.RUSTY_ARMORED_BONES.get(), RustyArmoredBonesRenderer::new);
         EntityRenderers.register(ModEntities.HELL_ARMORED_BONES.get(), HellArmoredBonesRenderer::new);
         EntityRenderers.register(ModEntities.DARK_CASTER.get(), DarkCasterRenderer::new);
+        EntityRenderers.register(ModEntities.BONE_LEE.get(), BoneLeeRenderer::new);
 
         EntityRenderers.register(ModEntities.MUMMY.get(), MummyRenderer::new);
         EntityRenderers.register(ModEntities.BLOOD_MUMMY.get(), BloodMummyRenderer::new);
